@@ -1,0 +1,97 @@
+<simpleButton>
+	
+	<!-- Parametres du template -->
+	<Param name="label">Text</Param>
+	<Param name="Size" />
+	<Param name="radioGroup" />
+	<Param name="selected" />
+	<Param name="radioMode" />
+	<Param name="checkBox">false</Param>
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="Hooks"><onRelease /></Param>
+	<Param name="uri">[config.ui.skin]assets.swf|btn_orange</Param>
+	<Param name="css" >[config.ui.skin]css/button.css</Param>
+	<Param name="cssClass">p</Param>
+	<Param name="multiline">false</Param>
+	<Param name="visible">true</Param>
+	<Param name="noBackground">false</Param>
+	<Param name="bgThemeDataId">button</Param>
+	<Param name="smooth">false</Param>
+	<Param name="forceUppercase">false</Param>
+	<Param name="useDefaultFont">false</Param>
+	<Param name="labelSize">null</Param>
+	<Param name="labelAnchors">
+		<Anchor>
+			<AbsDimension x="0" y="0"/>
+		</Anchor>
+	</Param>
+
+	<!-- Variables internes au template -->
+	<Var name="textureName">'btn_texture_' + '#name'</Var>
+	<Var name="labelName">'btn_lbl_' + '#name'</Var>
+	
+	<Var name="bgNormal">'#bgThemeDataId' + '_normal'</Var>
+	<Var name="bgOver">'#bgThemeDataId' + '_over'</Var>
+	<Var name="bgPressed">'#bgThemeDataId' + '_pressed'</Var>	
+	<Var name="bgDisabled">'#bgThemeDataId' + '_disabled'</Var>
+	<Var name="bgSelected">'#bgThemeDataId' + '_selected'</Var>
+	<Var name="labelSize">('#labelSize' == 'null') ? '#Size' : '#labelSize'</Var>
+	<Var name="labelAnchors">('#labelAnchors' == 'null') ? ' ' : '#labelAnchors'</Var>
+	
+	
+	<Button name="#name">
+		<Common>
+			<checkBox>#checkBox</checkBox>
+			<radioGroup>#radioGroup</radioGroup>
+			<radioMode>#radioMode</radioMode>
+			<selected>#selected</selected>
+			<visible>#visible</visible>
+			
+			<Anchors>#Anchors</Anchors>
+
+			<TextureBitmap strata="LOW" name="$textureName" ignore="#noBackground">
+				<Size>#Size</Size>
+				<themeDataId>$bgNormal</themeDataId>
+				<smooth>#smooth</smooth>
+			</TextureBitmap>
+			
+			<Label name="$labelName">
+				<Anchors>#labelAnchors</Anchors>
+				<Size>$labelSize</Size>
+				<text>#label</text>
+				<cssClass>#cssClass</cssClass>
+				<css>#css</css>
+				<verticalAlign>center</verticalAlign>
+				<multiline>#multiline</multiline>
+				<wordWrap>#multiline</wordWrap>
+				<forceUppercase>#forceUppercase</forceUppercase>
+				<useDefaultFont>#useDefaultFont</useDefaultFont>
+			</Label>
+			
+			<Hooks>#Hooks</Hooks>
+		</Common>
+		
+		<State type="OVER">
+			<SetProperties target="$textureName">
+				<themeDataId>$bgOver</themeDataId>
+			</SetProperties>
+		</State>		
+		<State type="PRESSED">
+			<SetProperties target="$textureName">
+				<themeDataId>$bgPressed</themeDataId>
+			</SetProperties>
+		</State>
+		<State type="DISABLED">
+			<SetProperties target="$textureName">
+				<themeDataId>$bgDisabled</themeDataId>
+			</SetProperties>
+		</State>
+		<State type="SELECTED">
+			<SetProperties target="$textureName">
+				<themeDataId>$bgSelected</themeDataId>
+			</SetProperties>
+		</State>
+	</Button>
+	
+</simpleButton>

@@ -1,0 +1,46 @@
+<Container>
+	<Anchors>
+		<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT" />
+	</Anchors>
+	
+	<!-- Label fixe zone d'effet -->
+	<Label>
+		<text>[ui.common.spellArea][ui.common.colon]</text>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="135" y="30" />
+		</Size>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+	
+	<!-- Icone zone d'effet -->
+	<Texture>
+		<uri>#areaUri</uri>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="135" y="6" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="36" y="18" />
+		</Size>
+	</Texture>
+	
+	<!-- Taille de la zone d'effet -->
+	<Label>
+		<text>#areaSize</text>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="170" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="230" y="30" />
+		</Size>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+</Container>

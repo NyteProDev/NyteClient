@@ -1,0 +1,80 @@
+<smallTabButton>
+	
+	<!-- Parametres du template -->
+	<Param name="Size" />
+	<Param name="strata" />
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="Hooks" />
+	<Param name="uri" />
+	<Param name="radioGroup" />
+	<Param name="selected" />
+	<Param name="radioMode" />
+	<Param name="checkBox">false</Param>
+	
+	<!-- Variables internes au template -->	
+	<Var name="bgTextureName">'_bgTexture' + '#name'</Var>
+	<Var name="iconTextureName">'_icon' + '#name'</Var>
+	
+	<Button name="#name" strata="#strata">
+		<Common>
+			
+			<checkBox>#checkBox</checkBox>
+			<Size>
+				#Size
+			</Size>
+			
+			<radioGroup>#radioGroup</radioGroup>
+			<radioMode>#radioMode</radioMode>
+			<selected>#selected</selected>
+			
+			<Anchors>#Anchors</Anchors>
+			
+			<Texture strata="LOW" name="$bgTextureName">
+				<Size>
+					#Size
+				</Size>
+				<uri>[local.assets]btn_onglet</uri>
+			</Texture>
+			
+			<Texture strata="LOW" name="$iconTextureName">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER">
+						<AbsDimension x="4"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension y="0.6" />
+				</Size>
+				<keepRatio>true</keepRatio>
+				<uri>#uri</uri>
+			</Texture>
+			
+			<Hooks>#Hooks</Hooks>
+		</Common>
+		
+		<State type="OVER">
+			<SetProperties target="$bgTextureName">
+				<gotoAndStop>over</gotoAndStop>
+			</SetProperties>
+			<SetProperties target="$iconTextureName">
+				<gotoAndStop>over</gotoAndStop>
+			</SetProperties>
+		</State>
+		
+		<State type="PRESSED">
+			<SetProperties target="$bgTextureName">
+				<gotoAndStop>pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED">
+			<SetProperties target="$bgTextureName">
+				<gotoAndStop>selected</gotoAndStop>
+			</SetProperties>
+			
+		</State>
+		
+	</Button>
+	
+</smallTabButton>

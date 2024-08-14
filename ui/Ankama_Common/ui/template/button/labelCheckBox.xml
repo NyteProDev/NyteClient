@@ -1,0 +1,95 @@
+<labelCheckBox>
+	
+	<!-- Parametres du template -->
+	<Param name="Size" >
+		<AbsDimension x="15" y="15" />
+	</Param>
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="Hooks"><onRelease /></Param>
+	<Param name="uri" >[local.assets]tx_light_checkbox</Param>
+	<Param name="labelWidth">250</Param>
+	<Param name="labelHeight">16</Param>
+	<Param name="text">no text</Param>
+	<Param name="css">[local.css]normal2.css</Param>
+	<Param name="cssClass">p</Param>
+	<Param name="selected">false</Param>
+	<Param name="labelPosX">20</Param>
+	<Param name="boxPosY">6</Param>
+	<Param name="visible"/>
+	
+	<!-- Variables internes au template -->
+	<Var name="labelName">'btn_label_' + '#name'</Var>
+	<Var name="textureName">'btn_texture_' + '#name'</Var>
+	
+	
+	<Button name="#name">
+		<Common>
+			<checkBox>true</checkBox>
+			<Anchors>#Anchors</Anchors>
+			<visible>#visible</visible>
+			<Texture name="$textureName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					#Size
+				</Size>
+				<uri>#uri</uri>
+			</Texture>
+			
+			<Label name="$labelName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="#labelPosX" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="#labelWidth" y="#labelHeight" />
+				</Size>
+				<text>#text</text>
+				<css>#css</css>
+				<cssClass>#cssClass</cssClass>
+			</Label>
+			<selected>#selected</selected>
+			<Hooks>#Hooks</Hooks>
+		</Common>
+		
+		<State type="OVER">
+			<SetProperties target="$textureName">
+				<gotoAndStop>over</gotoAndStop>
+			</SetProperties>
+		</State>		
+		<State type="PRESSED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="DISABLED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>disabled</gotoAndStop>
+			</SetProperties>
+			<SetProperties target="$labelName">
+				<cssClass>disabled</cssClass>
+			</SetProperties>
+		</State>
+		<State type="SELECTED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="SELECTED_OVER">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected_over</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="SELECTED_PRESSED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected_pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+	</Button>
+	
+</labelCheckBox>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+   <Constants>
+   	<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		<Button name="btn_channel">
+			<Common>
+				<Size>
+					<AbsDimension x="300" y="25" />
+				</Size>
+				<mouseChildren>false</mouseChildren>
+			
+				<Texture>
+					<Size>
+						<AbsDimension x="300" y="25" />
+					</Size>
+					<bgColor>0</bgColor>
+					<bgAlpha>0</bgAlpha>
+				</Texture>
+
+				<!-- Label lbl_colorChannel-->
+		
+				<Label name="lbl_colorChannel">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="70" y="1" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="230" y="20" />
+					</Size>
+					<css>[local.css]normal2.css</css>
+				</Label>
+		
+				<!-- Texture tx_color-->
+		
+				<Texture name="tx_color">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="55" y="16" />
+					</Size>
+					<uri>[local.assets]options_colorRectangle</uri>
+				</Texture>
+		
+				<!-- Texture tx_colorbubble-->
+		
+				<Texture name="tx_colorbubble">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="55" y="18" />
+					</Size>
+					<uri>[local.assets]options_colorBubble</uri>
+				</Texture>
+				
+			</Common>
+			
+			<State type="OVER">
+				<SetProperties target="btn_channel">
+					<bgColor>[colors.grid.over]</bgColor>
+				</SetProperties>
+			</State>
+			<State type="DISABLED">
+			</State>
+			<State type="SELECTED">
+				<SetProperties target="btn_channel">
+					<bgColor>[colors.grid.selected]</bgColor>
+				</SetProperties>
+			</State>
+			<State type="SELECTED_OVER">
+				<SetProperties target="btn_channel">
+					<bgColor>[colors.grid.selected]</bgColor>
+				</SetProperties>
+			</State>
+			
+		</Button>
+	</Container>
+</Definition>

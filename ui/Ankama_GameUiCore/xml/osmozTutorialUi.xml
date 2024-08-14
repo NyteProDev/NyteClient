@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+	   	<Constant name="common" value="[config.ui.skin]common/" />
+	   	<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<Constant name="hints_uri" value="[config.content.path]gfx/icons/hints/" />
+	</Constants>
+	
+	<window>
+		<title>[ui.osmoz.tutorial]</title>
+		<movable>true</movable>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				
+			</Anchor>
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="900" y="600" />
+		</Size>
+		<iconUri>[local.hints_uri]417.png</iconUri>
+		
+		<Content>
+			<block dark="true">
+				<Size>
+					<AbsDimension x="250" y="526" />
+				</Size>
+				
+				<Content>
+					<Grid name="gd_tutorials">
+						<Size>
+							<AbsDimension x="250" y="526" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateTutorials</rendererArgs>
+						<slotWidth>240</slotWidth>
+						<slotHeight>40</slotHeight>
+						
+						<Container name="ctr_tutorial">
+							<Size>
+								<AbsDimension x="240" y="50" />
+							</Size>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="6" />
+								</Anchor>
+							</Anchors>
+							
+							<Button name="btn_tutorial">
+								<Common>
+									<Size>
+										<AbsDimension x="240" y="50" />
+									</Size>
+									<radioMode>true</radioMode>
+
+									<Texture name="tx_tutorialIco">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="5" y="13" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="24" y="24" />
+										</Size>
+									</Texture>
+									
+									<Label name="lbl_tutorialName">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="40" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="240" y="21" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+								</Common>
+
+								<State type="OVER">
+									<SetProperties target="btn_tutorial">
+										<bgColor>[colors.grid.over]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED">
+									<SetProperties target="btn_tutorial">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_OVER">
+									<SetProperties target="btn_tutorial">
+										<bgColor>[colors.grid.selected]</bgColor>
+									</SetProperties>
+								</State>
+							</Button>
+							
+						</Container>
+						
+					</Grid>
+					
+				</Content>
+			
+			</block>
+			
+			
+			<block dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="265" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="605" y="526" />
+				</Size>
+				<Content>
+				
+					<ScrollContainer>
+						<Size>
+							<AbsDimension x="580" y="524" />
+						</Size>
+						<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+						<TextureBitmap name="tx_tutorialBitmap">
+							<Size>
+								<AbsDimension x="575"/>
+							</Size>
+							<uri>mod://Ankama_GameUiCore/tutorials/placeholder.png</uri>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</ScrollContainer>
+					
+				</Content>
+			</block>
+				
+		</Content>
+		
+	</window>
+
+</Definition>

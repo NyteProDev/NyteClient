@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false" debug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+    <Import url="[config.mod.template.button]searchInput.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+
+    <Constants>
+        <Constant name="gfx" value="[config.gfx.path]"/>
+        <Constant name="picto_uri" value="[config.gfx.path]characteristics/characteristics.swf|" />
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+    </Constants>
+	
+	<Container>
+	
+		<Button name="btn_cat">
+			<Common>
+										<radioMode>true</radioMode>
+						
+										<Texture>
+											<Size>
+												<AbsDimension x="290" y="34" />
+											</Size>
+										<bgColor>[colors.grid.line]</bgColor>
+										</Texture>
+
+
+				<Label name="lbl_cat">
+					<Anchors>
+												<Anchor>
+													<AbsDimension x="15" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="270" y="21" />
+											</Size>
+											<css>[local.css]normal2.css</css>
+										</Label>
+				
+			</Common>
+		</Button>
+		
+	</Container>
+	
+</Definition>
+

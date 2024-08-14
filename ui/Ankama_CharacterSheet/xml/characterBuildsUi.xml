@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" labelDebug="false" debug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+    <Import url="[config.mod.template]specific/equipmentSlot.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+
+		<Constant name="picto_uri" value="[config.gfx.path]characteristics/characteristics.swf|" />
+		<Constant name="characteristics" value="[config.ui.skin]texture/Characteristics/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="iconsUri" value="[config.content.path]gfx/presets/icons.swf|" />
+
+        <Constant name="ctrSpellButtonsWidth" value="160" />
+	</Constants>
+
+
+	<window name="wnd_builds">
+		<Anchors>
+			<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<AbsDimension x="0" y="-150" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1290" y="807" />
+		</Size>
+		<title>[ui.build.builds]</title>
+		<noSeparator>true</noSeparator>
+		<movable>true</movable>
+		<hintAvailable>true</hintAvailable>
+		<Content>
+            <Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="1280" y="30" />
+                </Size>
+
+                <Texture>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="1260" y="30" />
+                    </Size>
+                    <uri>[local.common]bg_dark.png</uri>
+                </Texture>
+
+                <Label name="lbl_warningCharacter">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="300" y="2" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="640" y="20" />
+                    </Size>
+                    <cssClass>center</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+            </Container>
+
+			<Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-18" y="-48" />
+                    </Anchor>
+                </Anchors>
+
+				<Container name="ctr_regular">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="22" y="80" />
+							</Anchor>
+						</Anchors>
+
+						<block name="charStatsBlock">
+							<Size>
+								<AbsDimension x="336" y="140" />
+							</Size>
+							<bgAlpha>0.6</bgAlpha>
+							<withBottomBlockSparator>true</withBottomBlockSparator>
+							<Content>
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="326" y="50" />
+									</Size>
+									<TextureBitmap>
+										<Size>
+											<AbsDimension x="326" y="45" />
+										</Size>
+										<themeDataId>bg_small_border_dark</themeDataId>
+									</TextureBitmap>
+									<Texture>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="22" y="22" />
+										</Size>
+										<uri>[local.texture]icon_pv.png</uri>
+									</Texture>
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="50" y="11" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="190" y="0" />
+										</Size>
+										<text>[ui.common.lifePoints] </text>
+										<cssClass>medium</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Label name="lbl_healthPointsValue">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="240" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="0" />
+										</Size>
+										<cssClass>whitecondensedboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="40" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="326" y="40" />
+									</Size>
+									<TextureBitmap>
+										<Size>
+											<AbsDimension x="326" y="45" />
+										</Size>
+										<themeDataId>bg_small_border_dark</themeDataId>
+									</TextureBitmap>
+									<Texture>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="22" y="22" />
+										</Size>
+										<uri>[local.texture]icon_pa.png</uri>
+									</Texture>
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="50" y="11" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="190" y="0" />
+										</Size>
+										<text>[ui.stats.actionPoints] </text>
+										<cssClass>medium</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Label name="lbl_actionPointsValue">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="240" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="0" />
+										</Size>
+										<cssClass>whitecondensedboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="80" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="326" y="50" />
+									</Size>
+									<TextureBitmap>
+										<Size>
+											<AbsDimension x="326" y="45" />
+										</Size>
+										<themeDataId>bg_small_border_dark</themeDataId>
+									</TextureBitmap>
+									<Texture>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="22" y="22" />
+										</Size>
+										<uri>[local.texture]icon_pm.png</uri>
+									</Texture>
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="50" y="11" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="190" y="0" />
+										</Size>
+										<text>[ui.stats.movementPoints] </text>
+										<cssClass>medium</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Label name="lbl_movementPointsValue">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="240" y="12" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="0" />
+										</Size>
+										<cssClass>whitecondensedboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+							</Content>
+						</block>
+						<!-- CARACTERISTIQUES -->
+
+
+						<block name="statBlock">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="0" y="141" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="336" y="340" />
+							</Size>
+							<bgAlpha>0.6</bgAlpha>
+							<Content>
+								<Grid name="gd_carac">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="12" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="330" y="254" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateCaracLine</rendererArgs>
+									<slotWidth>371</slotWidth>
+									<slotHeight>39</slotHeight>
+
+									<Container name="caracItemCtr">
+										<Size>
+											<AbsDimension x="371" y="30" />
+										</Size>
+
+										<Texture name="tx_pictoCarac">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="9" y="2" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="32" y="32" />
+											</Size>
+										</Texture>
+
+										<Label name="lbl_nameCarac">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="45" y="6" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="145" y="22" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+										</Label>
+
+										<Label name="lbl_valueCarac">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="190" y="6" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="73" y="22" />
+											</Size>
+											<cssClass>whitecondensedboldright</cssClass>
+											<css>[local.css]normal2.css</css>
+										</Label>
+
+										<themeIconButton name="btn_plus">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="280" y="4" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="26" y="26" />
+											</Size>
+											<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png
+											</iconUri>
+										</themeIconButton>
+
+										<TextureBitmap name="tx_gridSeparator">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="50" y="37" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="200" y="2" />
+											</Size>
+											<uri>[local.common]window_separator_black_horizontal.png
+											</uri>
+										</TextureBitmap>
+									</Container>
+								</Grid>
+
+								<Container>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="37" y="270" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="250" y="44" />
+									</Size>
+									<TextureBitmap>
+										<Size>
+											<AbsDimension x="220" y="44" />
+										</Size>
+										<themeDataId>bg_small_border_dark</themeDataId>
+									</TextureBitmap>
+									<Label name="lbl_pointsToDivide">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="15" y="11" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="145" y="0" />
+										</Size>
+										<text>[ui.charaSheet.pointsToDivide][ui.common.colon]</text>
+										<css>[local.css]small2.css</css>
+									</Label>
+									<Label name="lbl_statPoints">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="160" y="11" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="45" y="0" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									<Container name="ctr_pointsToDivide">
+										<Size>
+											<AbsDimension x="220" y="44" />
+										</Size>
+										<bgColor>#ff00ff</bgColor>
+										<bgAlpha>0</bgAlpha>
+									</Container>
+
+									<themeIconButton name="btn_reset">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="220" y="9" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="26" y="26" />
+										</Size>
+										<iconUri>[config.ui.skin]texture/btnIcon/btnIcon_reset.png</iconUri>
+										<iconAnchors>
+											<Anchor relativePoint="TOPLEFT">
+												<AbsDimension x="2" y="2" />
+											</Anchor>
+											<Anchor relativePoint="BOTTOMRIGHT">
+												<AbsDimension x="-2" y="-2" />
+											</Anchor>
+										</iconAnchors>
+									</themeIconButton>
+								</Container>
+							</Content>
+						</block>
+				</Container>
+
+				<!-- CONTENU DETAILLE -->
+
+				<Container name="ctr_advanced">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="22" y="80" />
+						</Anchor>
+					</Anchors>
+					<block>
+						<Size>
+							<AbsDimension x="336" y="481" />
+						</Size>
+						<Content>
+
+							<Grid name="gd_caracAdvanced">
+								<Size>
+									<AbsDimension x="326" y="467" />
+								</Size>
+								<rendererName>MultiGridRenderer</rendererName>
+								<rendererArgs>updateCategory,getCatLineType,getCatDataLength</rendererArgs>
+								<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+								<slotWidth>326</slotWidth>
+								<slotHeight>26</slotHeight>
+								<Container name="ctr_cat">
+									<Size>
+										<AbsDimension x="326" y="20" />
+									</Size>
+									<Button name="btn_cat">
+										<Common>
+											<radioMode>true</radioMode>
+
+											<Texture name="tx_cat">
+												<Size>
+													<AbsDimension x="326" y="30" />
+												</Size>
+												<uri>[local.common]list_menu_background.png</uri>
+											</Texture>
+
+											<Label name="lbl_catName">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="15" y="4" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="280" y="22" />
+												</Size>
+												<css>[local.css]small2.css</css>
+											</Label>
+
+											<Texture name="tx_catplusminus">
+												<Anchors>
+													<Anchor>
+														<AbsDimension x="280" y="5" />
+													</Anchor>
+												</Anchors>
+												<Size>
+													<AbsDimension x="20" y="20" />
+												</Size>
+												<visible>true</visible>
+											</Texture>
+
+										</Common>
+									</Button>
+								</Container>
+
+								<Container name="ctr_caracAdvancedItem">
+									<Size>
+										<AbsDimension x="342" y="30" />
+									</Size>
+									<Texture name="tx_picto">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="8" y="9" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="15" y="15" />
+										</Size>
+									</Texture>
+
+									<Label name="lbl_favExplanation">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="3" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="315" y="22" />
+										</Size>
+										<text>[ui.charaSheet.noFavorite]</text>
+										<css>[local.css]small2.css</css>
+										<cssClass>lightgreycenter</cssClass>
+										<visible>false</visible>
+									</Label>
+
+									<Label name="lbl_value">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="242" y="5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="22" />
+										</Size>
+										<cssClass>condensedboldright</cssClass>
+										<css>[local.css]small2.css</css>
+									</Label>
+
+									<Label name="lbl_name">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="25" y="5" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="210" y="22" />
+										</Size>
+										<css>[local.css]small2.css</css>
+										<visible>true</visible>
+									</Label>
+								</Container>
+							</Grid>
+						</Content>
+					</block>
+				</Container>
+
+				<themeHorizontalTab name="btn_regular">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="35" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="40" />
+					</Size>
+					<text>[ui.stats.summary]</text>
+					<css>[local.css]normal2.css</css>
+				</themeHorizontalTab>
+				<themeHorizontalTab name="btn_advanced">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="150" y="45" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="120" y="40" />
+					</Size>
+					<text>[ui.stats.advanced]</text>
+					<css>[local.css]normal2.css</css>
+				</themeHorizontalTab>
+			</Container>
+
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="335" y="-11" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="21" y="550" />
+                </Size>
+                <themeDataId>window_separator</themeDataId>
+            </TextureBitmap>
+
+            <Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="338" y="-25" />
+                    </Anchor>
+                </Anchors>
+
+                <Texture>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="80" y="120" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="400" y="400" />
+                    </Size>
+                    <uri>[local.common]light_bg_inventory.png</uri>
+                </Texture>
+
+                <Texture name="tx_inventoryLight">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="-50" y="70" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="662" y="524" />
+                    </Size>
+                    <uri>[local.common]light_bg_inventory.png</uri>
+                    <visible>false</visible>
+                </Texture>
+
+                <!-- Slots d'equipement -->
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="40" y="75" />
+                        </Anchor>
+                    </Anchors>
+
+                    <!-- Bloc en haut à gauche -->
+                    <Container>
+                        <equipmentSlot name="slot_0" width="64" height="64">
+                            <emptyTexture>[local.texture]slot/tx_slot_collar.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_4" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="70" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_ring.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_2" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="140" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_ring.png</emptyTexture>
+                        </equipmentSlot>
+                    </Container>
+
+                    <!-- Bloc en haut à droite -->
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="420" y="0" />
+                            </Anchor>
+                        </Anchors>
+
+                        <equipmentSlot name="slot_6" width="64" height="64">
+                            <emptyTexture>[local.texture]slot/tx_slot_helmet.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_7" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="70" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_cape.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_3" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="140" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_belt.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_5" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="210" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_shoe.png</emptyTexture>
+                        </equipmentSlot>
+                    </Container>
+                    <!-- Bloc en bas -->
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="300" />
+                            </Anchor>
+                        </Anchors>
+
+                        <equipmentSlot name="slot_1" width="64" height="64">
+                            <emptyTexture>[local.texture]slot/tx_slot_weapon.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_15" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_shield.png</emptyTexture>
+                        </equipmentSlot>
+                        <Texture name="tx_cross">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="86" y="16" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="32" y="32" />
+                            </Size>
+                            <visible>false</visible>
+                            <uri>[local.texture]icon_lock.png</uri>
+                        </Texture>
+
+                        <equipmentSlot name="slot_30" width="44" height="44">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="220" y="22" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_costume.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_28" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="350" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_companon.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_8" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="420" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_pet.png</emptyTexture>
+                        </equipmentSlot>
+                    </Container>
+
+                    <!-- Slots de dofus/trophées et idoles -->
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="35" y="390" />
+                            </Anchor>
+                        </Anchors>
+
+                        <equipmentSlot name="slot_9" width="64" height="64">
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_10" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="70" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_11" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="140" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_12" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="210" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_13" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="280" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+
+                        <equipmentSlot name="slot_14" width="64" height="64">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="350" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <emptyTexture>[local.texture]slot/tx_slot_dofus.png</emptyTexture>
+                        </equipmentSlot>
+                    </Container>
+                </Container>
+
+                <Container>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="97" y="40" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="369" y="358" />
+                    </Size>
+
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="90" y="248" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="189" y="106" />
+                        </Size>
+                        <uri>[local.texture]background/base_character_sprite.png</uri>
+                    </Texture>
+
+                    <EntityDisplayer name="entityDisplayer">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="85" y="65" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="189" y="260" />
+                        </Size>
+                    </EntityDisplayer>
+
+                    <themeIconButton name="btn_rightArrow">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="57" y="280" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="62" y="42" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_turn_outside</bgThemeDataId>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+                    <themeIconButton name="btn_leftArrow">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="248" y="280" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="62" y="42" />
+                        </Size>
+                        <bgScaleX>-1</bgScaleX>
+                        <bgThemeDataId>btn_arrow_turn_outside</bgThemeDataId>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+                </Container>
+
+                <Texture name="tx_lock">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="100" y="30" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="362" y="400" />
+                    </Size>
+                    <alpha>0.4</alpha>
+                    <uri>[local.texture]btnIcon/btnIcon_lock.png</uri>
+                    <visible>false</visible>
+                </Texture>
+            </Container>
+
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="880" y="-11" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="21" y="770" />
+                </Size>
+                <themeDataId>window_separator</themeDataId>
+            </TextureBitmap>
+
+            <block>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="901" y="30" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="347" y="700" />
+                </Size>
+
+                <Content>
+                    <TextureBitmap name="tx_separator">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="158" y="2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="18" y="686" />
+                        </Size>
+                        <themeDataId>window_separator</themeDataId>
+                    </TextureBitmap>
+
+                    <Grid name="gd_spell">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="7" y="-7" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="330" y="693" />
+                        </Size>
+                        <rendererName>InlineXmlGridRenderer</rendererName>
+                        <rendererArgs>updateSpellLine</rendererArgs>
+                        <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                        <slotWidth>160</slotWidth>
+                        <slotHeight>63</slotHeight>
+                        <verticalScroll>false</verticalScroll>
+
+						<Container name="ctr_spellButtons">
+							<Size>
+								<AbsDimension x="160" y="60" />
+							</Size>
+
+							<Button name="btn_spell">
+								<Common>
+									<Size>
+										<AbsDimension x="78" y="60" />
+									</Size>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="1" />
+										</Anchor>
+									</Anchors>
+									<radioMode>true</radioMode>
+									<linkedTo>slot_icon</linkedTo>
+
+									<Texture name="tx_bgSpell">
+										<Size>
+											<AbsDimension x="78" y="60" />
+										</Size>
+										<uri>[local.texture]spell/btn_spell_normal.png</uri>
+									</Texture>
+
+									<Label name="lbl_spellName">
+										<Anchors>
+											<Anchor >
+												<AbsDimension x="70" y="20" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="220" y="30" />
+										</Size>
+										<css>[local.css]small2.css</css>
+									</Label>
+								</Common>
+
+								<State type="OVER">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_over.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="PRESSED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_pressed.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_OVER">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected_over.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_PRESSED">
+									<SetProperties target="tx_bgSpell">
+										<uri>[local.texture]spell/btn_spell_selected_pressed.png</uri>
+									</SetProperties>
+								</State>
+							</Button>
+
+							<Slot name="slot_icon">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="18" y="9" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="42" y="42" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<mouseEnabled>false</mouseEnabled>
+							</Slot>
+
+							<Button name="btn_spellVariant">
+								<Common>
+									<Size>
+										<AbsDimension x="78" y="60" />
+									</Size>
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="80" y="1" />
+										</Anchor>
+									</Anchors>
+									<radioMode>true</radioMode>
+									<linkedTo>slot_iconVariant</linkedTo>
+
+									<Texture name="tx_bgSpellVariant">
+										<Size>
+											<AbsDimension x="78" y="60" />
+										</Size>
+										<uri>[local.texture]spell/btn_spell_normal.png</uri>
+									</Texture>
+
+									<Label name="lbl_spellVariantName">
+										<Anchors>
+											<Anchor >
+												<AbsDimension x="70" y="20" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="220" y="30" />
+										</Size>
+										<css>[local.css]small2.css</css>
+									</Label>
+								</Common>
+
+								<State type="OVER">
+									<SetProperties target="tx_bgSpellVariant">
+										<uri>[local.texture]spell/btn_spell_over.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="PRESSED">
+									<SetProperties target="tx_bgSpellVariant">
+										<uri>[local.texture]spell/btn_spell_pressed.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED">
+									<SetProperties target="tx_bgSpellVariant">
+										<uri>[local.texture]spell/btn_spell_selected.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_OVER">
+									<SetProperties target="tx_bgSpellVariant">
+										<uri>[local.texture]spell/btn_spell_selected_over.png</uri>
+									</SetProperties>
+								</State>
+
+								<State type="SELECTED_PRESSED">
+									<SetProperties target="tx_bgSpellVariant">
+										<uri>[local.texture]spell/btn_spell_selected_pressed.png</uri>
+									</SetProperties>
+								</State>
+							</Button>
+
+							<Slot name="slot_iconVariant">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="18" y="9" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="42" y="42" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<mouseEnabled>false</mouseEnabled>
+							</Slot>
+
+							<Texture name="tx_spellBound">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="71" y="30" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="17" y="8" />
+								</Size>
+								<uri>[local.texture]spell/tx_spell_bound.png</uri>
+								<visible>false</visible>
+							</Texture>
+						</Container>
+                    </Grid>
+
+                </Content>
+            </block>
+
+            <block name="blk_builds" dark="false">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="4" y="515" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="880" y="216" />
+                </Size>
+
+                <Content>
+
+                    <Container>
+                        <Size>
+                            <AbsDimension x="880" y="30" />
+                        </Size>
+
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="870" y="30" />
+                            </Size>
+                            <uri>[local.common]bg_dark.png</uri>
+                        </Texture>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="9" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="325" y="20" />
+                            </Size>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                            <text>[ui.build.buildsList]</text>
+                        </Label>
+
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="335" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="535" y="20" />
+                            </Size>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                            <text>[ui.build.buildSave]</text>
+                        </Label>
+                    </Container>
+
+
+                    <Grid name="gd_builds">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="9" y="38" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="325" y="166" />
+                        </Size>
+                        <slotWidth>50</slotWidth>
+                        <slotHeight>50</slotHeight>
+                        <autoSelectMode>0</autoSelectMode>
+                        <rendererName>SlotGridRenderer</rendererName>
+                        <rendererArgs>[local.texture]slot/emptySlot.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css
+                        </rendererArgs>
+                        <scrollDisplay>never</scrollDisplay>
+                    </Grid>
+
+                    <Container name="ctr_plusBuild">
+                        <Size>
+                            <AbsDimension x="50" y="50" />
+                        </Size>
+                        <bgColor>0x000000</bgColor>
+                        <bgAlpha>0</bgAlpha>
+
+                        <Texture>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="30" y="30" />
+                            </Size>
+                            <uri>[local.texture]icon_man.png</uri>
+                            <alpha>0.5</alpha>
+                        </Texture>
+                    </Container>
+
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="350" y="32" />
+                            </Anchor>
+                        </Anchors>
+
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="12" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture>
+                                <Size>
+                                    <AbsDimension x="102" y="102" />
+                                </Size>
+                                <uri>[local.texture]slot/slot_dark_background_full.png</uri>
+                            </Texture>
+
+                            <Texture name="tx_buildIcon">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="6" y="6" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="94" y="94" />
+                                </Size>
+                            </Texture>
+
+                            <Container name="ctr_editBuildIcon">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="70" y="70" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <bgColor>[colors.tooltip.bg]</bgColor>
+                                <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="6" y="6" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="18" y="18" />
+                                    </Size>
+                                    <uri>[local.texture]icon_pen.png</uri>
+                                </Texture>
+                            </Container>
+                        </Container>
+
+                        <Container>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="115" y="42" />
+                                </Anchor>
+                            </Anchors>
+
+                            <TextureBitmap>
+                                <Size>
+                                    <AbsDimension x="305" y="42" />
+                                </Size>
+                                <themeDataId>bg_small_border_dark</themeDataId>
+                            </TextureBitmap>
+
+                            <Input name="inp_buildName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="19" y="10" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="274" y="40" />
+                                </Size>
+                                <css>[local.css]normal2.css</css>
+                                <text>Configuration</text>
+                            </Input>
+                        </Container>
+
+                        <Texture name="tx_lockBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="458" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="48" y="48" />
+                            </Size>
+                            <uri>[local.texture]lock_yellow.png</uri>
+                            <visible>false</visible>
+                        </Texture>
+                        <Texture name="tx_unlockBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="458" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="48" y="48" />
+                            </Size>
+                            <uri>[local.texture]lock_disabled.png</uri>
+                            <visible>false</visible>
+                        </Texture>
+
+                        <simpleButton label="[ui.common.equip]" name="btn_equipBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="2" y="131" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="32" />
+                            </Size>
+                        </simpleButton>
+
+                        <themeIconButton name="btn_resetBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="212" y="131" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="32" y="32" />
+                            </Size>
+                            <iconUri>[local.texture]btnIcon/btnIcon_refresh.png</iconUri>
+                        </themeIconButton>
+
+                        <themeIconButton name="btn_deleteBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="256" y="131" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="32" y="32" />
+                            </Size>
+                            <iconUri>[local.texture]btnIcon/btnIcon_trash.png</iconUri>
+                        </themeIconButton>
+
+                        <simpleButton label="[ui.common.save]" name="btn_saveBuild">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="300" y="131" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="32" />
+                            </Size>
+                        </simpleButton>
+                    </Container>
+                </Content>
+            </block>
+
+            <Container name="ctr_buildIcons">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="465" y="535" />
+                    </Anchor>
+                </Anchors>
+                <visible>false</visible>
+
+                <Container>
+                    <Size>
+                        <AbsDimension x="460" y="160" />
+                    </Size>
+                    <bgColor>[colors.tooltip.bg]</bgColor>
+                    <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+                </Container>
+
+                <Grid name="gd_buildIcons">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="450" y="150" />
+                    </Size>
+                    <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                    <scrollDisplay>never</scrollDisplay>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateIcon</rendererArgs>
+                    <slotWidth>30</slotWidth>
+                    <slotHeight>30</slotHeight>
+                    <hPadding>0</hPadding>
+
+                    <Container>
+                        <Size>
+                            <AbsDimension x="30" y="30" />
+                        </Size>
+                        <Button name="btn_icon">
+                            <Common>
+                                <Texture name="tx_selected">
+                                    <Size>
+                                        <AbsDimension x="30" y="30" />
+                                    </Size>
+                                    <uri>[local.texture]slot/selected.png</uri>
+                                    <visible>false</visible>
+                                </Texture>
+                                <Texture name="tx_icon">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="30" y="30" />
+                                    </Size>
+                                    <luminosity>1</luminosity>
+                                </Texture>
+                                <Hooks>
+                                    <onSelectItem />
+                                </Hooks>
+                                <cacheAsBitmap>true</cacheAsBitmap>
+                            </Common>
+                            <State type="OVER">
+                                <SetProperties target="tx_icon">
+                                    <luminosity>1.5</luminosity>
+                                </SetProperties>
+                                <SetProperties target="tx_selected">
+                                    <visible>false</visible>
+                                </SetProperties>
+                            </State>
+                            <State type="SELECTED">
+                                <SetProperties target="tx_icon">
+                                    <luminosity>1.5</luminosity>
+                                </SetProperties>
+                                <SetProperties target="tx_selected">
+                                    <visible>true</visible>
+                                </SetProperties>
+                            </State>
+                        </Button>
+                    </Container>
+
+                    <Hooks>
+                        <onSelectItem />
+                    </Hooks>
+                </Grid>
+            </Container>
+        </Content>
+		<OverFrameContent>
+			<Texture name="tx_mask">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-7" y="-40"/>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="1270" y="790" />
+				</Size>
+				<bgColor>0</bgColor>
+				<bgAlpha>0.3</bgAlpha>
+			</Texture>
+		</OverFrameContent>
+	</window>
+</Definition>
+

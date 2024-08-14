@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="tx_minus_uri" value="[config.ui.skin]texture/hud/icon_minus_floating_menu.png" />
+    </Constants>
+
+	<Container strata="TOP">
+		<mouseEnabled>true</mouseEnabled>
+		<Container name="ctr_main">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="180" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="238" y="0" />
+			</Size>
+			
+			<Container name="ctr_list">
+				<Size>
+                    <AbsDimension x="238" y="100" />
+                </Size>
+				<MinimalSize>
+					<AbsDimension x="238" y="100" />
+				</MinimalSize>
+				<bgColor>[colors.chat.bgColor]</bgColor>
+				<bgAlpha>0.7</bgAlpha>
+				
+				<ScrollContainer name="gridScrollContainer">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="40" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="208" y="0" />
+					</Size>
+					<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+					<useHorizontalScroll>false</useHorizontalScroll>
+					<mouseEnabled>false</mouseEnabled>
+				</ScrollContainer>
+				
+				<Grid name="gd_quests">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="208" y="0" />
+					</Size>
+					<rendererName>MultiGridRenderer</rendererName>
+					<rendererArgs>updateLine,getLineType</rendererArgs>
+					<slotWidth>208</slotWidth>
+					<slotHeight>25</slotHeight>
+					<autoSelectMode>0</autoSelectMode>
+					<Container name="ctr_quest">
+						<Size>
+							<AbsDimension x="208" y="25" />
+						</Size>
+						<Button name="btn_quest">
+							<Common>
+								<Label name="lbl_quest">
+									<Size>
+										<AbsDimension x="208" y="22" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<cssClass>questtitle</cssClass>
+									<wordWrap>true</wordWrap>
+									<multiline>true</multiline>
+								</Label>
+								<Hooks>
+									<onRelease/>
+									<onRightClick/>
+								</Hooks>
+							</Common>
+						</Button>
+					</Container>
+					<Container name="ctr_objective">
+						<Size>
+							<AbsDimension x="208" y="25" />
+						</Size>
+						<themeIconButton name="btn_loc">
+							<Size>
+								<AbsDimension x="22" y="22" />
+							</Size>
+							<bgThemeDataId>btn_pin</bgThemeDataId>
+							<smooth>true</smooth>
+						</themeIconButton>
+						<Button name="btn_objective">
+							<Common>
+								<Label name="lbl_objective">
+									<Size>
+										<AbsDimension x="208" y="22" />
+									</Size>
+									<css>[local.css]normal2.css</css>
+									<cssClass>questobjective</cssClass>
+									<wordWrap>true</wordWrap>
+									<multiline>true</multiline>
+									<hyperlinkEnabled>true</hyperlinkEnabled>
+									<useStyleSheet>true</useStyleSheet>
+								</Label>
+								<Hooks>
+									<onRelease/>
+									<onRightClick/>
+									<onRollOver/>
+									<onRollOut/>
+								</Hooks>
+								<mouseChildren>true</mouseChildren>
+							</Common>
+						</Button>
+					</Container>
+				</Grid>
+				<resizeController>true</resizeController>
+				<resizeTarget>ctr_list</resizeTarget>
+				<isMagnetic>true</isMagnetic>
+				<Hooks>
+					<onWheel/>
+				</Hooks>
+			</Container>
+			
+			<TextureBitmap name="tx_title">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-1" y="-3" />
+					</Anchor>
+				</Anchors>
+                <Size>
+                    <AbsDimension x="240" y="31" />
+                </Size>
+                <themeDataId>floating_window_bar</themeDataId>
+                <dragController>true</dragController>
+                <dragTarget>ctr_main</dragTarget>
+                <dragBoundsContainer>ctr_list</dragBoundsContainer>
+                <useDragMagnetism>true</useDragMagnetism>
+				<restrictionFunctionName>restrictPosition</restrictionFunctionName>
+			</TextureBitmap>
+			
+			<Label name="lbl_title">
+				<Size>
+					<AbsDimension x="220"/>
+				</Size>
+				<verticalAlign>center</verticalAlign>
+				<cssClass>smallcenter</cssClass>
+				<css>[local.css]title.css</css>
+				<text>[ui.common.quests]</text>
+				<useDefaultFont>true</useDefaultFont>
+			</Label>
+			
+			<themeIconButton name="btn_options">
+				<Size>
+					<AbsDimension x="26" y="26" />
+				</Size>
+				<bgScaleX>0</bgScaleX>
+				<iconUri>[local.texture]hud/icon_option_floating_menu.png</iconUri>
+				<Hooks>
+					<onRelease/>
+				</Hooks>
+			</themeIconButton>
+			
+            <Button name="btn_minimize">
+                <Common>
+                    <Container>
+                        <Size>
+                            <AbsDimension x="18" y="18" />
+                        </Size>
+                        <bgColor>0xff00ff</bgColor>
+                        <bgAlpha>0</bgAlpha>
+                    </Container>
+                    <TextureBitmap name="tx_minMax">
+                        <uri>[local.tx_minus_uri]</uri>
+                    </TextureBitmap>
+					
+					<Hooks>
+						<onRelease/>
+					</Hooks>
+                </Common>
+            </Button>
+		</Container>
+	</Container>
+</Definition>

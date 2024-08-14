@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" debug="false" labelDebug="false">
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+
+    <Constants>
+        <Constant name="content" value="[config.content.path]" />
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture_uri" value="[config.ui.skin]texture/" />
+        <Constant name="bitmap_uri" value="[config.ui.skin]bitmap/" />
+    </Constants>
+
+    <window name="subhintEditor">
+        <Anchors>
+            <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+                <AbsDimension x="-150" y="-150" />
+            </Anchor>
+        </Anchors>
+        <Size>
+            <AbsDimension x="497" y="790" />
+        </Size>
+        <title>[ui.common.editor]</title>
+        <noSeparator>true</noSeparator>
+        <movable>true</movable>
+        <noHelpButton>true</noHelpButton>
+
+        <Content>
+            <Container name="ctr_pageTop">
+                <Size>
+                    <AbsDimension x="460" y="50" />
+                </Size>
+                <themeIconButton name="btn_prevSubhint">
+                    <Anchors>
+                        <Anchor relativeTo="ctr_pageTop" relativePoint="TOPLEFT" point="BOTTOMRIGHT">
+                            <AbsDimension x="70" y="90" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="30" y="40" />
+                    </Size>
+                    <bgThemeDataId>btn_big_arrow</bgThemeDataId>
+                    <rotation>180</rotation>
+                    <smooth>true</smooth>
+                </themeIconButton>
+                <simpleButton name="btn_createSubhint">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="52" y="17" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="170" y="25"/>
+                    </Size>
+                    <label>[ui.uiTutorial.createSubhint]</label>
+                </simpleButton>
+                <simpleButton name="btn_subhintList">
+                    <Anchors>
+                        <Anchor relativeTo="btn_createSubhint" relativePoint="TOPRIGHT" point="TOPLEFT">
+                            <AbsDimension x="18" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="170" y="25"/>
+                    </Size>
+                    <label>[ui.uiTutorial.subhintList]</label>
+                </simpleButton>
+                <themeIconButton name="btn_nextSubhint">
+                    <Anchors>
+                        <Anchor relativeTo="ctr_pageTop" relativePoint="TOPRIGHT" point="TOPRIGHT">
+                            <AbsDimension x="-10" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="30" y="40" />
+                    </Size>
+                    <bgThemeDataId>btn_big_arrow</bgThemeDataId>
+                    <smooth>true</smooth>
+                </themeIconButton>
+            </Container>
+
+            <Texture name="tx_separator">
+                <Anchors>
+                    <Anchor relativeTo="ctr_pageTop" relativePoint="BOTTOMLEFT">
+                        <AbsDimension x="55" y="5" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension y="2" />
+                    <RelDimension x="0.77"/>
+                </Size>
+                <uri>[local.common]window_separator_grey_horizontal.png</uri>
+            </Texture>
+
+            <block name="blk_tooltip">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="10" y="65"/>
+                    </Anchor>
+                </Anchors>
+                <withBottomBlockSparator>true</withBottomBlockSparator>
+                <Size>
+                    <AbsDimension x="440" y="277"/>
+                </Size>
+
+                <Content>
+                    <Label name="lbl_ttText">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="15"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="84" />
+                        </Size>
+                        <text>[ui.uiTutorial.tooltipText]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttText" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="255" y="104" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <TextAreaInput name="inp_ttText">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttText" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="235" y="84" />
+                        </Size>
+                        <css>[local.css]tooltip_default.css</css>
+                        <hideScroll>true</hideScroll>
+                        <maxChars>600</maxChars>
+                    </TextAreaInput>
+
+                    <Label name="lbl_ttUri">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttText" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.tooltipImage]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttUri" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="220" y="42"/>
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_ttUri">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttUri" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                    </Input>
+
+                    <simpleButton name="btn_selectUri">
+                        <Anchors>
+                            <Anchor relativeTo="inp_ttUri" relativePoint="TOPRIGHT" point="TOPLEFT">
+                                <AbsDimension x="10" y="-1" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="30" y="25"/>
+                        </Size>
+                        <label>...</label>
+                    </simpleButton>
+
+                    <Label name="lbl_ttAnchor">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttUri" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.anchor]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <Label name="lbl_ttOffsetXY">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttAnchor" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.offsetXY]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttOffsetXY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="25" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_ttOffsetX">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttOffsetXY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="35" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>2</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+
+                    <themeIconButton name="btn_upArrowTtOffsetX">
+                        <Anchors>
+                            <Anchor relativeTo="inp_ttOffsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="9" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>-90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <themeIconButton name="btn_downArrowTtOffsetX">
+                        <Anchors>
+                            <Anchor relativeTo="btn_upArrowTtOffsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <Label name="lbl_ttOffsetXYSeparator">
+                        <Anchors>
+                            <Anchor relativeTo="inp_ttOffsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="40" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="15" y="22" />
+                        </Size>
+                        <text>/</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttOffsetXYSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_ttOffsetY">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttOffsetXYSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="25" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>2</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+
+                    <themeIconButton name="btn_upArrowTtOffsetY">
+                        <Anchors>
+                            <Anchor relativeTo="inp_ttOffsetY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="9" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>-90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <themeIconButton name="btn_downArrowTtOffsetY">
+                        <Anchors>
+                            <Anchor relativeTo="btn_upArrowTtOffsetY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <Label name="lbl_ttWidth">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttOffsetXY" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.tooltipWidth]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttWidth" relativePoint="TOPRIGHT">
+                                <AbsDimension x="85" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+                    <Input name="inp_ttWidth">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_ttWidth" relativePoint="TOPRIGHT">
+                                <AbsDimension x="95" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>3</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+                    <themeIconButton name="btn_upArrowTtWidth">
+                        <Anchors>
+                            <Anchor relativeTo="inp_ttWidth" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="9" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>-90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <themeIconButton name="btn_downArrowTtWidth">
+                        <Anchors>
+                            <Anchor relativeTo="btn_upArrowTtWidth" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+                </Content>
+            </block>
+            <block name="blk_subhint">
+                <Anchors>
+                    <Anchor  relativeTo="$LAST" relativePoint="BOTTOMLEFT">
+                        <AbsDimension x="0" y="0"/>
+                    </Anchor>
+                </Anchors>
+                <withBottomBlockSparator>true</withBottomBlockSparator>
+                <Size>
+                    <AbsDimension x="440" y="290"/>
+                </Size>
+                <Content>
+                    <Label name="lbl_uiName">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="10" y="15"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.uiName]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_uiName" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Label name="lbl_uiNameDisplay">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_uiName" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="170" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <cssClass>disabled</cssClass>
+                    </Label>
+
+                    <themeLabelCheckBox name="btn_dropTabName">
+                        <Anchors>
+                            <Anchor  relativeTo="lbl_uiNameDisplay" point="TOPLEFT" relativePoint="TOPRIGHT">
+                                <AbsDimension x="10" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <labelPosX>20</labelPosX>
+                        <labelWidth>100</labelWidth>
+                        <text>Fenêtre</text>
+                        <selected>false</selected>
+                    </themeLabelCheckBox>
+
+                    <Label name="lbl_anchoredElement">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_uiName" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.anchoredElement]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_anchoredElement" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_anchoredElement">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_anchoredElement" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="170" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <restrict>a-zA-Z0-9_</restrict>
+                    </Input>
+                    <themeIconButton name="btn_changeAnchoredElement">
+                        <Anchors>
+                            <Anchor relativeTo="inp_anchoredElement" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="-2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="25" y="25"/>
+                        </Size>
+                        <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_pen.png</iconUri>
+                    </themeIconButton>
+                    <themeIconButton name="btn_cancelChangeAnchoredElement">
+                        <Anchors>
+                            <Anchor relativeTo="inp_anchoredElement" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="-2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="25" y="25"/>
+                        </Size>
+                        <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_cross.png</iconUri>
+                        <visible>false</visible>
+                    </themeIconButton>
+
+                    <Label name="lbl_subhintAnchor">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_anchoredElement" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.anchor]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <Label name="lbl_shOffsetXY">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_subhintAnchor" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.offsetXY]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_shOffsetXY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_offsetX">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_shOffsetXY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>3</maxChars>
+                        <restrict>0-9\-\</restrict>
+                    </Input>
+
+                    <themeIconButton name="btn_upArrowShOffsetX">
+                        <Anchors>
+                            <Anchor relativeTo="inp_offsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="9" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>-90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <themeIconButton name="btn_downArrowShOffsetX">
+                        <Anchors>
+                            <Anchor relativeTo="btn_upArrowShOffsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <Label name="lbl_offsetXYSeparator">
+                        <Anchors>
+                            <Anchor relativeTo="inp_offsetX" relativePoint="TOPRIGHT">
+                                <AbsDimension x="32" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="15" y="22" />
+                        </Size>
+                        <text>/</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_offsetXYSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="3" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_offsetY">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_offsetXYSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="13" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>3</maxChars>
+                        <restrict>0-9\-\</restrict>
+                    </Input>
+
+                    <themeIconButton name="btn_upArrowShOffsetY">
+                        <Anchors>
+                            <Anchor relativeTo="inp_offsetY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="9" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>-90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <themeIconButton name="btn_downArrowShOffsetY">
+                        <Anchors>
+                            <Anchor relativeTo="btn_upArrowShOffsetY" relativePoint="TOPRIGHT">
+                                <AbsDimension x="6" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="10" y="16" />
+                        </Size>
+                        <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                        <rotation>90</rotation>
+                        <smooth>true</smooth>
+                    </themeIconButton>
+
+                    <Label name="lbl_highlight">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_shOffsetXY" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.highlight]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_highlight" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_highlight">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_highlight" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="170" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <restrict>a-zA-Z0-9_</restrict>
+                    </Input>
+
+                    <Label name="lbl_widthHeight">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_highlight" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.width] / [ui.uiTutorial.height]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeight" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_width">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeight" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>2</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+
+                    <Label name="lbl_widthHeightSeparator">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeight" relativePoint="TOPRIGHT">
+                                <AbsDimension x="100" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="15" y="22" />
+                        </Size>
+                        <text>/</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeightSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="20" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_height">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeightSeparator" relativePoint="TOPRIGHT">
+                                <AbsDimension x="30" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>2</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+
+                    <Label name="lbl_order">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_widthHeight" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="140" y="22" />
+                        </Size>
+                        <text>[ui.uiTutorial.order]</text>
+                        <cssClass>mediumleft</cssClass>
+                        <css>[local.css]normal2.css</css>
+                    </Label>
+
+                    <TextureBitmap>
+                        <Anchors>
+                            <Anchor relativeTo="lbl_order" relativePoint="TOPRIGHT">
+                                <AbsDimension x="5" y="-10" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="50" y="42" />
+                        </Size>
+                        <themeDataId>bg_small_border_dark</themeDataId>
+                    </TextureBitmap>
+
+                    <Input name="inp_order">
+                        <Anchors>
+                            <Anchor relativeTo="lbl_order" relativePoint="TOPRIGHT">
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="30" y="22" />
+                        </Size>
+                        <css>[local.css]normal2.css</css>
+                        <maxChars>2</maxChars>
+                        <restrict>0-9</restrict>
+                    </Input>
+                </Content>
+            </block>
+
+            <Container name="ctr_btn">
+                <Anchors>
+                    <Anchor >
+                        <AbsDimension x="0" y="630" />
+                    </Anchor>
+                </Anchors>
+                <themeLabelCheckBox name="btn_previsualiseSubhint">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="120" y="15" />
+                        </Anchor>
+                    </Anchors>
+                    <labelWidth>100</labelWidth>
+                    <text>[ui.uiTutorial.previsualise]</text>
+                    <selected>false</selected>
+                </themeLabelCheckBox>
+                <themeLabelCheckBox name="btn_guidedPreview">
+                    <Anchors>
+                        <Anchor  relativeTo="btn_previsualiseSubhint" point="TOPLEFT" relativePoint="TOPRIGHT">
+                            <AbsDimension x="10" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <labelWidth>100</labelWidth>
+                    <text>[ui.uiTutorial.guidedMode]</text>
+                    <selected>false</selected>
+                </themeLabelCheckBox>
+                <simpleButton name="btn_deleteSubhint">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="10" y="50" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="215" y="30"/>
+                    </Size>
+                    <label>[ui.uiTutorial.deleteSubhint]</label>
+                </simpleButton>
+                <simpleButton name="btn_validateSubhint">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="235" y="50" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="215" y="30"/>
+                    </Size>
+                    <label>[ui.uiTutorial.validate]</label>
+                </simpleButton>
+            </Container>
+
+            <comboBoxWithBackground name="cb_shPos" strata="TOP" width="200" height="38">
+                <Anchors>
+                    <Anchor relativeTo="blk_subhint" relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-82" y="85"/>
+                    </Anchor>
+                </Anchors>
+            </comboBoxWithBackground>
+            <comboBoxWithBackground name="cb_ttPos" strata="TOP" width="257" height="38">
+                <Anchors>
+                    <Anchor relativeTo="blk_tooltip" relativePoint="TOPRIGHT" point="TOPRIGHT">
+                        <AbsDimension x="-25" y="148"/>
+                    </Anchor>
+                </Anchors>
+            </comboBoxWithBackground>
+
+        </Content>
+    </window>
+
+</Definition>

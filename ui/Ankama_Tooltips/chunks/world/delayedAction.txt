@@ -1,0 +1,23 @@
+﻿<Texture strata="LOW" name="delayedActionBackground">
+	<uri>[local.assets]delayedItemUse</uri>
+	<Size>
+		<AbsDimension x="50" y="50" />
+	</Size>
+</Texture>
+
+<Texture strata="LOW">
+	<uri>#uri</uri>
+	<Anchors>
+		<Anchor>
+			<AbsDimension x="8" y="0" />
+		</Anchor>
+	</Anchors>
+	<Size>
+		<AbsDimension x="32" y="32" />
+	</Size>
+	<visible>#oVisible</visible>
+</Texture>
+
+<Size>
+	<AbsDimension x="50" y="50" />
+</Size>

@@ -1,0 +1,113 @@
+<KeyboardBind locale="frFR" description="[ui.keyboard.frFR]">
+	<bind shortcut="autoComplete">(tab)</bind>
+	<bind shortcut="autoComplete" ctrl="true">(rightArrow)</bind>
+	<bind shortcut="validUi">(enter)</bind>
+	<bind shortcut="closeUi">(escape)</bind>
+	<bind shortcut="shiftCloseUi" shift="true">(escape)</bind>
+	<bind shortcut="toggleConsole" ctrl="true">²</bind>
+	<bind shortcut="toggleFullscreen" ctrl="true">f</bind>
+	<bind shortcut="upArrow">(upArrow)</bind>
+	<bind shortcut="downArrow">(downArrow)</bind>
+	<bind shortcut="rightArrow">(rightArrow)</bind>
+	<bind shortcut="leftArrow">(leftArrow)</bind>
+	<bind shortcut="ctrlDown" ctrl="true">(downArrow)</bind>
+	<bind shortcut="ctrlUp" ctrl="true">(upArrow)</bind>
+	<bind shortcut="shiftUp" shift="true" >(upArrow)</bind>
+	<bind shortcut="shiftUp">(pageUp)</bind>
+	<bind shortcut="shiftDown" shift="true" >(downArrow)</bind>
+	<bind shortcut="shiftDown">(pageDown)</bind>
+	<bind shortcut="shiftValid" shift="true">(enter)</bind>
+	<bind shortcut="altValid" alt="true">(enter)</bind>
+	<bind shortcut="ctrlValid" ctrl="true">(enter)</bind>
+	<bind shortcut="cac">²</bind>
+	<bind shortcut="historySearch" ctrl="true">r</bind>
+	
+	<bind shortcut="s1"><![CDATA[&]]></bind>
+	<bind shortcut="s2">é</bind>
+	<bind shortcut="s3">"</bind>
+	<bind shortcut="s4">'</bind>
+	<bind shortcut="s5">(</bind>
+	<bind shortcut="s6">-</bind>
+	<bind shortcut="s7">è</bind>
+	<bind shortcut="s8">_</bind>
+	<bind shortcut="s9">ç</bind>
+	<bind shortcut="s10">à</bind>
+	<bind shortcut="s11" ctrl="true"><![CDATA[&]]></bind>
+	<bind shortcut="s12" ctrl="true">é</bind>
+	<bind shortcut="s13" ctrl="true">"</bind>
+	<bind shortcut="s14" ctrl="true">'</bind>
+	<bind shortcut="s15" ctrl="true">(</bind>
+	<bind shortcut="s16" ctrl="true">-</bind>
+	<bind shortcut="s17" ctrl="true">è</bind>
+	<bind shortcut="s18" ctrl="true">_</bind>
+	<bind shortcut="s19" ctrl="true">ç</bind>
+	<bind shortcut="s20" ctrl="true">à</bind>	
+	
+	<bind shortcut="nextChatTab" ctrl="true">(pageDown)</bind>
+	<bind shortcut="previousChatTab" ctrl="true">(pageUp)</bind>
+	<bind shortcut="toggleChannelFight" ctrl="true">b</bind>
+	<bind shortcut="toggleChannelFight" ctrl="true">i</bind>
+	
+	<bind shortcut="extendChat">+</bind>
+	<bind shortcut="extendChat2" alt="true">+</bind>
+	<bind shortcut="shrinkChat" alt="true">-</bind>
+	<bind shortcut="skipTurn">(F1)</bind>
+	<bind shortcut="skipTurn" ctrl="true">(end)</bind>	
+	<bind shortcut="pageItem1" alt="true"><![CDATA[&]]></bind>
+	<bind shortcut="pageItem2" alt="true">é</bind>
+	<bind shortcut="pageItem3" alt="true">"</bind>
+	<bind shortcut="pageItem4" alt="true">'</bind>
+	<bind shortcut="pageItem5" alt="true">(</bind>
+	<bind shortcut="bannerPreviousTab">&lt;</bind>
+	<bind shortcut="bannerNextTab" shift="true">&lt;</bind>
+	<bind shortcut="focusChat">(space)</bind>
+	
+	<bind shortcut="openCharacterSheet">c</bind>
+	<bind shortcut="openInventory">i</bind>
+	<bind shortcut="openBookSpell">s</bind>
+	<bind shortcut="openBookQuest">q</bind>
+	<bind shortcut="openSocialAlliance">a</bind>
+	<bind shortcut="openBookJob">j</bind>
+	<bind shortcut="openWorldMap">m</bind>
+	<bind shortcut="openSocialFriends">f</bind>
+	<bind shortcut="openSocialGuild">g</bind>
+	<bind shortcut="openSocialSpouse"></bind>
+	<bind shortcut="openTeamSearch"></bind>
+	<bind shortcut="openMount">d</bind>
+	<bind shortcut="openMountStorage" ctrl="true">d</bind>
+	<bind shortcut="toggleRide" shift="true">d</bind>
+	<bind shortcut="openWebBrowser">r</bind>
+	<bind shortcut="openPvpArena">k</bind>
+	<bind shortcut="openSell">v</bind>
+	<bind shortcut="showAllNames">p</bind>
+	<bind shortcut="optionMenu1">o</bind>
+    <bind shortcut="openAlmanax">x</bind>
+    <bind shortcut="openAchievement">u</bind>
+    <bind shortcut="openTitle">n</bind>
+    <bind shortcut="openBestiary">b</bind>
+	<bind shortcut="openIdols">w</bind>
+	<bind shortcut="openBookAlignment"></bind>
+	<bind shortcut="openHavenbag">h</bind>
+    <bind shortcut="openBuild">e</bind>
+	<bind shortcut="openBreach">t</bind>
+
+	<bind shortcut="showGrid" shift="true"><![CDATA[&]]></bind>
+	<bind shortcut="transparancyMode" shift="true">é</bind>
+	<bind shortcut="foldAll" shift="true">"</bind>
+	<bind shortcut="showTacticMode" shift="true">'</bind>
+	<bind shortcut="toggleDematerialization" shift="true">(</bind>
+	<bind shortcut="cellSelectionOnly" shift="true">_</bind>
+	<bind shortcut="showCell" ctrl="true">s</bind>
+	<bind shortcut="muteSound" ctrl="true">m</bind>
+	<bind shortcut="flagCurrentMap" ctrl="true">p</bind>
+	
+	<bind shortcut="showEntitiesTooltips">z</bind>
+	<bind shortcut="compareItems">(shift)</bind>
+	<bind shortcut="showTheoreticalEffects">(ctrl)</bind>	
+	<bind shortcut="showMountsInFight" alt="true">m</bind>
+	
+	<bind shortcut="captureScreen">(F2)</bind>
+	<bind shortcut="captureScreenWithoutUI" shift="true">(F2)</bind>
+	<bind shortcut="highlightInteractiveElements">y</bind>
+	<bind shortcut="showFightPositions">l</bind>
+</KeyboardBind>

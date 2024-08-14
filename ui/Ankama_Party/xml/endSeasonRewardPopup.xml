@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false" modal="true">
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="leagueIllus" value="[config.content.path]gfx/illusUi/LeagueIllus/" />
+		<Constant name="leaguePictos" value="[config.gfx.path]arena/" />
+	</Constants>
+
+	<Container name="mainCtr">
+
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		<mouseEnabled>true</mouseEnabled>
+
+		<windowWithoutTitleBar name="popup">
+			<Size>
+				<AbsDimension x="669" y="475"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<bgColor>0</bgColor>
+			<Content>
+
+				<Texture name="tx_illu">
+					<Size>
+						<AbsDimension x="630" y="250" />
+					</Size>
+				</Texture>
+
+				<Label name="lbl_division">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP" relativeTo="tx_illu">
+							<AbsDimension x="0" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="200" y="20" />
+					</Size>
+					<cssClass>whitemediumboldcenter</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+
+				<Label name="lbl_title">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="265" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="629" y="20" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]title.css</css>
+				</Label>
+
+				<Label name="lbl_content">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="15" y="290" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="599" y="80" />
+					</Size>
+					<multiline>true</multiline>
+					<wordWrap>true</wordWrap>
+					<verticalAlign>center</verticalAlign>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+				</Label>
+
+				<simpleButton name="btn_openTitleOrnament">
+					<Anchors>
+						<Anchor point="TOP" relativePoint="BOTTOM">
+							<AbsDimension x="0" y="-57" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="170" y="32" />
+					</Size>
+					<label>[ui.common.titles]</label>
+				</simpleButton>
+			</Content>
+		</windowWithoutTitleBar>
+
+	</Container>
+</Definition>

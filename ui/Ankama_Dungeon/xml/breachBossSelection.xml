@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd" >
+<Definition labelDebug="false" debug="false">
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="spells_uri" value="[config.content.path]gfx/spells/all.swf|sort_" />
+        <Constant name="monsterSprite_uri" value="[config.gfx.path.monsters]" />
+
+		<Constant name="heightFewBosses" value="475" type="int" />
+		<Constant name="heightManyBosses" value="870" type="int" />
+		<Constant name="widthTwoBosses" value="555" type="int" />
+		<Constant name="widthManyBosses" value="805" type="int" />
+
+		<Constant name="gridHeightFewBosses" value="398" type="int" />
+		<Constant name="gridHeightManyBosses" value="796" type="int" />
+		<Constant name="gridWidthTwoBosses" value="510" type="int" />
+		<Constant name="gridWidthManyBosses" value="760" type="int" />
+
+		<Constant name="budgetRectCenterX" value="42" type="int" />
+		<Constant name="fragmentRectCenterX" value="42" type="int" />
+		<Constant name="labelsPosTopY" value="11" type="int" />
+		<Constant name="iconsPosTopY" value="12" type="int" />
+	</Constants>
+
+	<window name="ctr_window">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="460" y="30" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="805" y="870" />
+		</Size>
+		<titleLabelName>lbl_title</titleLabelName>
+		<movable>true</movable>
+		<hintAvailable>true</hintAvailable>
+
+		<Content>
+			<Grid name="gd_bosses">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="5" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="760" y="796" />
+				</Size>
+				<rendererName>InlineXmlGridRenderer</rendererName>
+				<rendererArgs>updateBosses</rendererArgs>
+                <scrollDisplay>none</scrollDisplay>
+				<slotWidth>250</slotWidth>
+				<slotHeight>398</slotHeight>
+
+				<block name="blk_bossChoice">
+					<Size>
+						<AbsDimension x="250" y="395" />
+					</Size>
+					<Content>
+						<Container name="ctr_bossNumber">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="105" y="-9" />
+								</Anchor>
+							</Anchors>
+							<Texture>
+								<Size>
+									<AbsDimension x="40" y="50" />
+								</Size>
+								<uri>[local.texture]background/bg_emblem.png</uri>
+							</Texture>
+							<Texture name="tx_bossNumber">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="8" y="15" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="25" y="25" />
+								</Size>
+							</Texture>
+						</Container>
+						<Label name="lbl_bossName">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="28" y="50" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="194" y="22" />
+							</Size>
+							<multiline>true</multiline>
+							<wordWrap>true</wordWrap>
+							<verticalAlign>center</verticalAlign>
+							<css>[local.css]normal2.css</css>
+							<cssClass>extrawhiteboldcenter</cssClass>
+						</Label>
+                        <Texture name="tx_slot">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="210" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="30" y="30" />
+                            </Size>
+                        </Texture>
+
+                        <!-- slots de boss -->
+						<Texture name="tx_bossAlone">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="90" y="90" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="70" y="70" />
+							</Size>
+							<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+						</Texture>
+						<EntityDisplayer name="ed_bossAlone">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="80" y="80" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="90" y="90" />
+							</Size>
+							<direction>3</direction>
+						</EntityDisplayer>
+
+						<Texture name="tx_boss1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="45" y="90" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="70" y="70" />
+							</Size>
+							<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+						</Texture>
+						<EntityDisplayer name="ed_boss1">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="35" y="80" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="90" y="90" />
+							</Size>
+							<direction>3</direction>
+						</EntityDisplayer>
+
+						<Texture name="tx_boss2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="135" y="90" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="70" y="70" />
+							</Size>
+							<uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+						</Texture>
+						<EntityDisplayer name="ed_boss2">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="125" y="80" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="90" y="90" />
+							</Size>
+							<direction>3</direction>
+						</EntityDisplayer>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="173" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="180" y="22" />
+							</Size>
+							<text>[ui.common.rewards][ui.common.colon]</text>
+							<css>[local.css]small2.css</css>
+							<cssClass>boldleft</cssClass>
+						</Label>
+
+						<Container name="ctr_budget">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="10" y="195" />
+								</Anchor>
+							</Anchors>
+							<TextureBitmap>
+								<Size>
+									<AbsDimension x="104" y="45" />
+								</Size>
+								<themeDataId>bg_small_border_dark</themeDataId>
+								<smooth>true</smooth>
+							</TextureBitmap>
+							<Label name="lbl_budget">
+								<Size>
+									<AbsDimension x="65" y="22" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>whiteboldcenter</cssClass>
+							</Label>
+							<TextureBitmap name="tx_budgetIcon">
+								<Size>
+									<AbsDimension x="20" y="20" />
+								</Size>
+								<uri>[local.texture]icon_spiral.png</uri>
+								<smooth>true</smooth>
+							</TextureBitmap>
+						</Container>
+
+						<Container name="ctr_fragments">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="110" y="195" />
+								</Anchor>
+							</Anchors>
+							<TextureBitmap>
+								<Size>
+									<AbsDimension x="104" y="45" />
+								</Size>
+								<themeDataId>bg_small_border_dark</themeDataId>
+								<smooth>true</smooth>
+							</TextureBitmap>
+							<Label name="lbl_fragments">
+								<Size>
+									<AbsDimension x="65" y="22" />
+								</Size>
+								<css>[local.css]normal2.css</css>
+								<cssClass>whiteboldcenter</cssClass>
+							</Label>
+							<TextureBitmap name="tx_fragmentsIcon">
+								<Size>
+									<AbsDimension x="20" y="20" />
+								</Size>
+								<uri>[local.texture]icon_fragment.png</uri>
+								<smooth>true</smooth>
+							</TextureBitmap>
+						</Container>
+
+						<Texture name="tx_idolInfos">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="214" y="206" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="22" y="22" />
+							</Size>
+							<uri>[local.texture]tx_IncompatibleIdols.png</uri>
+							<smooth>true</smooth>
+						</Texture>
+
+						<Label>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="15" y="247" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="180" y="22" />
+							</Size>
+							<text>[ui.breach.allowsPurchase][ui.common.colon]</text>
+							<css>[local.css]small2.css</css>
+							<cssClass>boldleft</cssClass>
+						</Label>
+
+						<block>
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="5" y="273" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="240" y="117" />
+							</Size>
+							<Content>
+								<Grid name="gd_bonuses">
+									<Anchors>
+										<Anchor>
+											<AbsDimension y="5" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="235" y="105" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updatePossiblePurchase,[colors.grid.line]</rendererArgs>
+									<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+									<slotWidth>235</slotWidth>
+									<slotHeight>35</slotHeight>
+
+									<Container name="ctr_bonus">
+                                        <Size>
+                                            <AbsDimension x="235" y="35" />
+                                        </Size>
+										<Label name="lbl_bonusName">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="10" y="6" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="175" y="22" />
+											</Size>
+											<css>[local.css]small2.css</css>
+											<cssClass>boldleft</cssClass>
+										</Label>
+										<TextureBitmap name="tx_bonusCurrency">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="203" y="9" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="20" y="20" />
+											</Size>
+											<smooth>true</smooth>
+										</TextureBitmap>
+									</Container>
+								</Grid>
+							</Content>
+						</block>
+					</Content>
+				</block>
+			</Grid>
+		</Content>
+	</window>
+</Definition>

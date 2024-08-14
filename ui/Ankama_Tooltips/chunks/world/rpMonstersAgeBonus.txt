@@ -1,0 +1,148 @@
+<Container name="ctr_back" strata="LOW">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="-4" y="-4" />
+        </Anchor>
+    </Anchors>
+
+    <shadowColor>[colors.ui.shadow]</shadowColor>
+    <bgCornerRadius>10</bgCornerRadius>
+    <bgColor>[colors.tooltip.bg]</bgColor>
+    <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+</Container>
+
+<Container name="ctr_main">
+    <Container name="ctr_header">
+        <Label name="lbl_level">
+            <Anchors>
+                <Anchor relativeTo="ctr_main" relativePoint="TOP" point="TOP" />
+            </Anchors>
+            <cssClass>center</cssClass>
+            <css>[local.css]tooltip_title.css</css>
+            <fixedWidth>false</fixedWidth>
+        </Label>
+		<TextureBitmap name="tx_sword">
+			<Anchors>
+				<Anchor>
+					<AbsDimension y="3"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="20" />
+			</Size>
+			<themeDataId>tx_red_sword</themeDataId>
+			<smooth>true</smooth>
+			<visible>false</visible>
+		</TextureBitmap>
+    </Container>
+
+	<Container name="ctr_malusDropArena">
+        <Anchors>
+    		<Anchor relativeTo="ctr_header" relativePoint="BOTTOMLEFT" />
+    	</Anchors>
+		
+        <Container name="ctr_groupOptimal">
+			
+            <Label name="lbl_groupOptimal">
+                <Anchors>
+                    <Anchor relativePoint="TOP" point="TOP">
+						<AbsDimension x="0" y="-3" />
+					</Anchor>
+                </Anchors>
+                <css>[local.css]tooltip_monster.css</css>
+                <fixedWidth>false</fixedWidth>
+            </Label>
+        </Container>
+
+        <Container name="ctr_malusDrop">
+			<Anchors>
+                <Anchor>
+					<AbsDimension x="0" y="15" />
+				</Anchor>
+            </Anchors>
+			
+            <Label name="lbl_malusDrop">
+                <Anchors>
+                    <Anchor relativePoint="TOP" point="TOP" />
+                </Anchors>
+                <css>[local.css]tooltip_monster.css</css>
+                <cssClass>malus</cssClass>
+                <fixedWidth>false</fixedWidth>
+            </Label>
+        </Container>
+    </Container>
+
+    <Container name="ctr_separatorMalus">
+        <Anchors>
+          	<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT"/>
+        </Anchors>
+        <Size>
+    		<AbsDimension x="100" y="1" />
+    	</Size>
+    	<bgColor>[colors.tooltip.separator]</bgColor>
+    </Container>
+
+	<Container name="ctr_wave">
+		<Anchors>
+        	<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT"/>
+        </Anchors>
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+			</Anchors>
+			<Texture name="tx_wave">
+				<Size>
+					<AbsDimension x="25" y="20" />
+				</Size>
+				<uri>[local.assets]tx_Pictowave</uri>
+			</Texture>
+		</Container>
+		<Label name="lbl_nbWaves">
+			<css>[local.css]tooltip_monster.css</css>
+		</Label>
+	</Container>
+	
+	<Container name="ctr_xp">
+	    <Anchors>
+        	<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT"/>
+        </Anchors>
+		<Label name="lbl_monsterXp">
+			<css>[local.css]tooltip_monster.css</css>
+			<multiline>true</multiline>
+		</Label>
+	</Container>
+
+	<Container name="ctr_separatorXp">
+	    <Anchors>
+         	<Anchor relativeTo="ctr_xp" relativePoint="BOTTOMLEFT" />
+        </Anchors>
+        <Size>
+    		<AbsDimension x="100" y="1" />
+    	</Size>
+    	<bgColor>[colors.tooltip.separator]</bgColor>
+    </Container>
+
+    <Container>
+        <Anchors>
+            <Anchor relativeTo="ctr_xp" relativePoint="BOTTOMLEFT" />
+        </Anchors>
+
+        <Label name="lbl_monsterList">
+            <css>[local.css]tooltip_monster.css</css>
+            <multiline>true</multiline>
+        </Label>
+
+        <Label name="lbl_disabledMonsterList">
+            <Anchors>
+                <Anchor relativeTo="lbl_monsterList" relativePoint="BOTTOMLEFT">
+                    <AbsDimension x="0" y="-25" />
+                </Anchor>
+            </Anchors>
+            <css>[local.css]tooltip_monster_alternate.css</css>
+            <multiline>true</multiline>
+        </Label>
+
+    </Container>
+</Container>

@@ -1,0 +1,44 @@
+<inputField>
+	
+	<!-- Parametres du template  -->
+	<Param name="name">$TEMPLATE_INSTANCE_ID</Param>
+	<Param name="width">100</Param>
+	<Param name="Anchors" />
+	<Param name="themeDataId">bg_small_border_light</Param>
+	<Param name="isInstance">false</Param>
+
+	<Var name="inputWidth">#width - 20</Var>
+	<Var name="bgName">'tx_inputBg_'+'#name'</Var>
+	<Var name="ctrName">'ctr_'+'#name'</Var>
+	
+	
+	<Container name="$ctrName">
+		<Anchors>
+			#Anchors
+		</Anchors>
+		<isInstance>#isInstance</isInstance>
+			
+		<TextureBitmap name="$bgName">
+			<Size>
+				<AbsDimension x="#width" y="39" />
+			</Size>
+			<themeDataId>#themeDataId</themeDataId>
+			<smooth>true</smooth>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<Input name="#name">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="11" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="$inputWidth" y="15" />
+			</Size>
+			<css>[local.css]small2.css</css>
+			<isInstance>#isInstance</isInstance>
+		</Input>
+	</Container>
+	
+</inputField>

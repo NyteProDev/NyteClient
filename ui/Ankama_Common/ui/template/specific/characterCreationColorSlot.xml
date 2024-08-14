@@ -1,0 +1,104 @@
+<characterCreationColorSlot>
+	<Param name="name"></Param>
+
+	<Param name="Anchors">
+		<Anchor>
+			<AbsDimension x="0" y="0" />
+		</Anchor>
+	</Param>
+
+	<Param name="Size">
+		<AbsDimension x="42" y="42" />
+	</Param>
+
+	<Var name="ctn_color">'ctn'+'#name'</Var>
+	<Var name="tx_colorbg">'tx_colorBg'+'#name'</Var>
+	<Var name="tx_color">'tx_color'+'#name'</Var>
+	<Var name="tx_colorDisabled">'tx_colorDisabled'+'#name'</Var>
+	<Var name="btn_color">'btn_color'+'#name'</Var>
+	<Var name="btn_reinitColor">'btn_reinitColor'+'#name'</Var>
+
+	<Container name="$ctn_color">
+		<Anchors>
+			#Anchors
+		</Anchors>
+		<Size>
+			#Size
+		</Size>
+		
+
+		<themeIconButton name="$btn_color">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<radioMode>true</radioMode>
+			<radioGroup>colorGroup</radioGroup>
+			<bgThemeDataId>btn_color_choice</bgThemeDataId>
+			<Hooks>
+				<onRelease />
+				<onColorChange />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</themeIconButton>
+
+		<Texture name="$tx_color">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="5" y="8" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-5" y="-6" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]onboarding/bgColorChoice.png</uri>
+			<!-- <bgColor>0xffffff</bgColor> -->
+		</Texture>
+
+		<Texture>
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="1" y="1" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-1" y="-1" />
+				</Anchor>
+			</Anchors>
+			<uri>[local.texture]onboarding/filterColorChoice.png</uri>
+		</Texture>
+
+		<Texture name="$tx_colorDisabled">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+				
+			</Anchors>
+			<uri>[local.assets]tx_slotDisabledCover</uri>
+			<visible>false</visible>
+		</Texture>
+
+		<themeIconButton name="$btn_reinitColor">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="20" y="20" />
+			</Size>
+			<Hooks>
+				<onRelease />
+			</Hooks>
+			<uri>[local.assets]CreaPerso_btn_ColorDefault</uri>
+			<bgThemeDataId>btn_close_small</bgThemeDataId>
+		</themeIconButton>
+
+	</Container>
+</characterCreationColorSlot>

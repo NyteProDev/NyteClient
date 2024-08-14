@@ -1,0 +1,77 @@
+<levelUpRewards>
+    <Param name="Anchors"/>
+    
+    <Grid name="gd_rewards">
+        <rendererName>InlineXmlGridRenderer</rendererName>
+        <rendererArgs>updateReward</rendererArgs>
+        <slotWidth>78</slotWidth>
+        <slotHeight>78</slotHeight>
+        <hPadding>30</hPadding>
+        <horizontalScrollbarCss>[local.css]scrollBar.css</horizontalScrollbarCss>
+
+        <Anchors>
+            #Anchors
+        </Anchors>
+        <Size>
+            <AbsDimension x="78" y="78" />
+        </Size>
+        
+        <Container>
+            <Size>
+                <AbsDimension x="78" y="78" />
+            </Size>
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-4" y="-4"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="108" y="105"/>
+                </Size>
+                <uri>[local.texture]levelup/item_bg.png</uri>
+                <smooth>true</smooth>
+            </TextureBitmap>
+            <TextureBitmap name="tx_icon">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="11" y="8"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="78" y="78"/>
+                </Size>
+                <smooth>true</smooth>
+                <Hooks>
+                    <onRollOver/>
+                    <onRollOut/>
+                </Hooks>
+            </TextureBitmap>
+            <TextureBitmap name="tx_plus">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="9" y="55"/>
+                    </Anchor>
+                </Anchors>
+                <smooth>true</smooth>
+            </TextureBitmap>
+            <themeIconButton name="btn_action">
+                <visible>false</visible>
+                <Hooks>
+                    <onRelease/>
+                    <onRollOver/>
+                    <onRollOut/>
+                </Hooks>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="68" y="66" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="27" y="27" />
+                </Size>
+                <iconUri>[local.texture]btnIcon/btnIcon_arrow_up.png</iconUri>
+            </themeIconButton>
+        </Container>
+    </Grid>
+</levelUpRewards>

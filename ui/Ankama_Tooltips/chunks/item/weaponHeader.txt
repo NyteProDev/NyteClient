@@ -1,0 +1,37 @@
+<Container>
+	<!-- Nom de l'objet -->
+	<Label name="title">
+		<text>#name</text>
+		<Size>
+			<AbsDimension x="412" />
+		</Size>
+		<fixedHeight>false</fixedHeight>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="-2" y="0" />
+			</Anchor>
+		</Anchors>
+		<cssClass>#cssClass</cssClass>
+		<css>[local.css]tooltip_title.css</css>
+	</Label>
+	
+	<!-- Niveau -->
+	<Label name="apracost">
+		<text>[ui.common.short.level] #level</text>
+		<Anchors>
+			<Anchor relativePoint="TOPRIGHT" point="TOPRIGHT">
+				<AbsDimension x="0" y="0" />
+			</Anchor>
+		</Anchors>
+		<!--<Anchors>
+			<Anchor>
+				<AbsDimension x="176" y="0" />
+			</Anchor>
+		</Anchors>-->
+		<Size>
+			<AbsDimension x="100" y="20" />
+		</Size>
+		<cssClass>right</cssClass>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+</Container>

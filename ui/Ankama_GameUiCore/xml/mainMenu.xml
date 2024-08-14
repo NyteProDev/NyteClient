@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+	<window name="mainCtr" noHelpButton="true">
+		
+		<title>[ui.common.mainMenu]</title>
+		
+		<closeButtonName>btnClose</closeButtonName>
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="400" y="415" />
+		</Size>
+		
+		<Content>
+				
+			<simpleButton name="btnOptions">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="13" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>[ui.common.options]</label>
+			</simpleButton>
+			
+					
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension  y="215" />
+					</Anchor>
+				</Anchors>
+			
+				<block>
+					<Size>
+						<AbsDimension x="360" y="80" />
+					</Size>
+				</block>
+		
+				
+		
+				<simpleButton label="[ui.header.subscribe]" name="btn_subscribe">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="41" y="800" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="256" y="28" />
+					</Size>
+					<visible>false</visible>
+				</simpleButton>
+						
+					<Texture name="tx_safe">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="-200" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="20" y="20" />
+					</Size>
+					<uri>[local.texture]inventory_xeloria.png</uri>
+				</Texture>
+				
+			</Container>
+		
+				<Label name="lbl_abo">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="20" y="200030" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="320" y="16" />
+					</Size>
+					<cssClass>center</cssClass>
+					<css>[local.css]normal2.css</css>
+					<visible>true</visible>
+				</Label>
+			<simpleButton name="btnCancel">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="200" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>[ui.common.returnToGame]</label>
+			</simpleButton>
+			
+			<simpleButton name="btn_xeloria_one">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="260" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>Site Xeloria</label>
+			</simpleButton>
+			
+	        
+			
+			<Container>
+				<Anchors>
+					<Anchor>
+						<AbsDimension  y="50" />
+					</Anchor>
+				</Anchors>
+			
+				<block>
+					<Size>
+						<AbsDimension x="360" y="153" />
+					</Size>
+				</block>
+		
+		
+				<simpleButton name="btnDisconnect">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="41" y="80" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="276" y="28" />
+					</Size>
+					<label>[ui.common.disconnect]</label>
+				</simpleButton>
+				
+				<simpleButton name="btnQuitGame">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="41" y="115" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="276" y="28" />
+					</Size>
+					<label>[ui.common.quitGame]</label>
+				</simpleButton>
+				<simpleButton name="btn_xeloria_two">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="250" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>Discord Xeloria</label>
+			</simpleButton>
+				
+				
+				<comboBoxWithBackground name="cb_servers" width="287" height="39" strata="MEDIUM">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="36" y="39" />
+						</Anchor>
+					</Anchors>
+				</comboBoxWithBackground>
+				<simpleButton name="btnChangeServer">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="41" y="46" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="250" y="28" />
+					</Size>
+					<label>[ui.charsel.changeServer]</label>
+				</simpleButton>
+					
+				<comboBoxWithBackground name="cb_characters" width="287" height="39" strata="MEDIUM">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="36" y="5" />
+						</Anchor>
+					</Anchors>
+					<maxHeight>250</maxHeight>
+				</comboBoxWithBackground>
+				<simpleButton name="btnChangeCharacter">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="41" y="11" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="250" y="28" />
+					</Size>
+					<label>[ui.common.changeCharacter]</label>
+				</simpleButton>
+				
+				<Texture name="tx_hourglass">
+					<Anchors>
+						<Anchor relativeTo="cb_characters" relativePoint="RIGHT" point="LEFT">
+							<AbsDimension x="5" y="-2" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="23.6" y="26.9" />
+					</Size>
+					<uri>[local.assets]Notifications_tx_sandglass</uri>
+					<visible>false</visible>
+				</Texture>
+			</Container>
+		</Content>
+	</window>
+</Definition>
+

@@ -1,0 +1,10 @@
+<Label name"lbl_text">
+	<Size>
+		<AbsDimension x="#width" />
+	</Size>
+	<text>#content</text>
+	<cssClass>#classCss</cssClass>
+	<css>#css</css>
+	<wordWrap>true</wordWrap>
+	<fixedWidth>false</fixedWidth>
+</Label>

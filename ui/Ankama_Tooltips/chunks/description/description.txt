@@ -1,0 +1,9 @@
+<Label name="lbl_description">
+	<Size>
+		<AbsDimension x="412" />
+	</Size>
+	<fixedHeight>false</fixedHeight>
+	<text>#description</text>
+	<css>[local.css]tooltip_default.css</css>
+	<cssClass>description</cssClass>
+</Label>

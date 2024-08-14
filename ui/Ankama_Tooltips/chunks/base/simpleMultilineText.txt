@@ -1,0 +1,15 @@
+<!-- info sur une ligne complete -->
+<Label>
+	<text>#text</text>
+	<Anchors>
+		<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT" />
+	</Anchors>
+	<Size>
+		<AbsDimension x="412"/>
+	</Size>
+	<fixedHeight>false</fixedHeight>
+	<cssClass>#cssClass</cssClass>
+	<css>[local.css]tooltip_default.css</css>
+	<multiline>true</multiline>
+	<wordWrap>true</wordWrap>
+</Label>

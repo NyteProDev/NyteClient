@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+	   	<Constant name="css" value="[config.ui.skin]css/" />
+	   	<Constant name="common" value="[config.ui.skin]common/" />
+	   	<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<Constant name="hints_uri" value="[config.content.path]gfx/icons/hints/" />
+	</Constants>
+	
+	<window>
+		<title>[ui.osmoz.vipShop]</title>
+		<movable>true</movable>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				
+			</Anchor>
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="1035" y="527" />
+		</Size>
+		<iconUri>[local.texture]windowIcon/icon__0046_cartes.png</iconUri>
+		
+		<Content>
+		
+			<block name="blockOne" dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="330" y="460" />
+				</Size>
+				<Content>
+				
+					<ScrollContainer>
+						<Size>
+							<AbsDimension x="590" y="512" />
+						</Size>
+						<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+						<TextureBitmap>
+							<Size>
+								<AbsDimension x="325" y="400"/>
+							</Size>
+							<uri>mod://Ankama_GameUiCore/vip/RuneExperience.png</uri>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</ScrollContainer>
+					
+				</Content>
+			</block>
+			
+			<block name="blockTwo" dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="330" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="330" y="460" />
+				</Size>
+				<Content>
+				
+					<ScrollContainer>
+						<Size>
+							<AbsDimension x="590" y="512" />
+						</Size>
+						<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+						<TextureBitmap>
+							<Size>
+								<AbsDimension x="325" y="400"/>
+							</Size>
+							<uri>mod://Ankama_GameUiCore/vip/RuneFarmeur.png</uri>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</ScrollContainer>
+					
+				</Content>
+			</block>
+				
+			<block name="blockThree" dark="true">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="660" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="330" y="460" />
+				</Size>
+				<Content>
+				
+					<ScrollContainer>
+						<Size>
+							<AbsDimension x="590" y="512" />
+						</Size>
+						<scrollbarCss>[local.css]scrollBar.css</scrollbarCss>
+						<TextureBitmap>
+							<Size>
+								<AbsDimension x="325" y="400"/>
+							</Size>
+							<uri>mod://Ankama_GameUiCore/vip/RuneChanceux.png</uri>
+							<smooth>true</smooth>
+						</TextureBitmap>
+					</ScrollContainer>
+					
+				</Content>
+			</block>
+				
+			<simpleButton label="[ui.osmoz.rankOneBuy]" name="btn_buyRankOne">
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="-325" y="-14" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="35" />
+				</Size>
+			</simpleButton>
+				
+			<simpleButton label="[ui.osmoz.rankTwoBuy]" name="btn_buyRankTwo">
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="0" y="-14" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="35" />
+				</Size>
+			</simpleButton>	
+			
+			<simpleButton label="[ui.osmoz.rankThreeBuy]" name="btn_buyRankThree">
+				<Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM">
+						<AbsDimension x="325" y="-14" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="250" y="35" />
+				</Size>
+			</simpleButton>
+		</Content>
+		
+	</window>
+
+</Definition>

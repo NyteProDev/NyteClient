@@ -1,0 +1,81 @@
+<configCheckbox>
+	
+	<!-- Parametres du template -->
+	<Param name="name" />
+	<Param name="text">no text</Param>
+	<Param name="uri">[local.assets]tx_light_checkbox</Param>
+	<Param name="offset">0</Param>
+	<Param name="labelWidth">690</Param>
+	<Param name="Hooks" />
+	
+	<!-- Variables internes au template -->
+	<Var name="textureName">'btn_texture_' + '#name'</Var>
+	
+	
+	<Button name="#name">
+		<Common>
+			<checkBox>true</checkBox>
+			<Anchors>
+				<AbsDimension x="#offset" y="5" />
+			</Anchors>
+			
+			<Texture name="$textureName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="5" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="13" y="13" />
+				</Size>
+				<uri>#uri</uri>
+			</Texture>
+			<Hooks>#Hooks</Hooks>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="17" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="#labelWidth" y="16" />
+				</Size>
+				<text>#text</text>
+				<css>[local.css]normal2.css</css>
+			</Label>
+			
+		</Common>
+		
+		<State type="OVER">
+			<SetProperties target="$textureName">
+				<gotoAndStop>over</gotoAndStop>
+			</SetProperties>
+		</State>		
+		<State type="PRESSED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="DISABLED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>disabled</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="SELECTED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="SELECTED_OVER">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected_over</gotoAndStop>
+			</SetProperties>
+		</State>
+		<State type="SELECTED_PRESSED">
+			<SetProperties target="$textureName">
+				<gotoAndStop>selected_pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+	</Button>
+	
+</configCheckbox>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml"/>
+    <Import url="mod://Ankama_Roleplay/xml/template/levelUpWindow.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+        <Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="levelUp" value="[config.ui.skin]texture/levelup/"/>
+    </Constants>
+
+    <levelUpWindow centerY="90" separatorY="-125">
+        <Size>
+            <AbsDimension x="680" y="375"/>
+        </Size>
+        <Content>
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="640" y="200"/>
+                </Size>
+                <themeDataId>block_background</themeDataId>
+            </TextureBitmap>
+            <Label name="lbl_spell">
+                <Anchors>
+                    <Anchor relativePoint="TOP" point="TOP">
+                        <AbsDimension x="0" y="40"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="628" y="20"/>
+                </Size>
+                <cssClass>spellobtained</cssClass>
+                <css>[local.css]normal2.css</css>
+                <hyperlinkEnabled>true</hyperlinkEnabled>
+            </Label>
+            <Texture>
+                <Anchors>
+                    <Anchor relativePoint="CENTER" point="CENTER">
+                        <AbsDimension x="1" y="-31" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="144" y="143" />
+                </Size>
+                <uri>[local.texture]background/bg_spell.png</uri>
+                <autoGrid>true</autoGrid>
+            </Texture>
+            <Slot name="spellSlot" strata="TOP">
+                <Anchors>
+                    <Anchor relativePoint="CENTER" point="CENTER">
+                        <AbsDimension x="1" y="-31"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="90" y="90"/>
+                </Size>
+                <isButton>false</isButton>
+            </Slot>
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="-2" y="201" />
+                    </Anchor>
+                </Anchors>
+                <scaleY>-1</scaleY>
+                <uri>[local.common]corner_decoration_small.png</uri>
+            </Texture>
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="637" y="201" />
+                    </Anchor>
+                </Anchors>
+                <scaleY>-1</scaleY>
+                <scaleX>-1</scaleX>
+                <uri>[local.common]corner_decoration_small.png</uri>
+            </Texture>
+        </Content>
+    </levelUpWindow>
+</Definition>

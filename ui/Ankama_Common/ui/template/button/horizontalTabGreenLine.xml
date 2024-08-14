@@ -1,0 +1,153 @@
+<horizontalTabGreenLine>
+	<!-- Param du template -->	
+	<Param name="Anchors" />
+	<Param name="name" />
+	<Param name="text" />
+	<Param name="Size" ><AbsDimension x="180" y="35" /></Param>
+	<Param name="bgId" >htab_background</Param>
+	
+	<!-- Variables internes au template -->	
+	<Var name="btn_texture">'tx_' + '#name'</Var>
+	<Var name="btn_texture_arrow">'tx_arrow_' + '#name'</Var>
+	<Var name="btn_label">'lbl_' + '#name'</Var>
+	
+	
+	<Var name="tabBgDisabledNormal">'#bgId' + '_disabled_normal'</Var>
+	<Var name="tabBgDisabledOver">'#bgId' + '_disabled_over'</Var>
+	<Var name="tabBgDisabledPressed">'#bgId' + '_disabled_pressed'</Var>	
+	<Var name="tabBgSelectedNormal">'#bgId' + '_selected_normal'</Var>
+	<Var name="tabBgSelectedOver">'#bgId' + '_selected_over'</Var>
+	<Var name="tabBgSelectedPressed">'#bgId' + '_selected_pressed'</Var>
+		
+	
+	<!-- button without background , with green line for selected-->
+	<Button name="#name">
+	    <Common>
+	        <radioGroup>tabHGroup</radioGroup>
+	        <radioMode>true</radioMode>
+	        <Anchors>
+	        	#Anchors
+	        </Anchors>
+	        <Size>
+	        	#Size
+	        </Size>
+	
+			<Texture name="$btn_texture">		
+				<Anchors>
+		        	<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+		        		<AbsDimension x="0" y="0" />
+		        	</Anchor>
+		        </Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="3" />
+				</Size>
+				<alpha>0</alpha>
+				<uri>[local.common]green_line.png</uri>
+			</Texture>
+			
+			<Texture name="$btn_texture_arrow">
+				<Anchors>
+		        	<Anchor relativePoint="BOTTOM" point="BOTTOM">
+		        		<AbsDimension x="0" y="-3" />
+		        	</Anchor>
+		        </Anchors>
+				<Size>
+					<AbsDimension x="13" y="7" />
+				</Size>
+				<uri>[local.common]green_arrow.png</uri>
+				<alpha>0</alpha>
+			</Texture>
+
+			<Label name="$btn_label">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="-2" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="16" />
+				</Size>
+				<cssClass>boldcenter</cssClass>
+				<css>[local.css]normal2.css</css>
+				<text>#text</text>
+			</Label>
+	        <Hooks>
+	            <onRelease />
+	        </Hooks>
+	    </Common>
+	    <State type="OVER">
+			<SetProperties target="$btn_texture">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>greenboldcenter</cssClass>
+			</SetProperties>
+		</State>
+		
+		<State type="PRESSED">
+			<SetProperties target="$btn_texture">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>greenboldcenter</cssClass>
+			</SetProperties>
+		</State>
+		
+		<State type="DISABLED">
+			<SetProperties target="$btn_texture">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>0</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>disabledboldcenter</cssClass>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED">
+			<SetProperties target="$btn_texture">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>greenboldcenter</cssClass>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED_OVER">
+			<SetProperties target="$btn_texture">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>greenboldcenter</cssClass>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED_PRESSED">
+			<SetProperties target="$btn_texture">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_texture_arrow">
+				<alpha>1</alpha>
+			</SetProperties>
+			<SetProperties target="$btn_label">
+				<cssClass>greenboldcenter</cssClass>
+			</SetProperties>
+		</State>
+	</Button>
+	
+</horizontalTabGreenLine>

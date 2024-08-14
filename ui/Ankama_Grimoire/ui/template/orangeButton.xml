@@ -1,0 +1,79 @@
+<orangeButton>
+	
+	<!-- Parametres du template  -->
+	<Param name="label" />
+	<Param name="value" />
+	<Param name="radioGroup" />
+	<Param name="radioMode" />
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="Hooks" />
+	
+	<!-- Variables internes au template   -->
+	<Var name="textureName">'btn_texture_' + '#name'</Var>
+	<Var name="labelName">'name_' + '#name'</Var>
+	<Var name="labelValue">'value_' + '#name'</Var>
+	
+	
+	<Button name="#name">
+		<Common>
+			<checkBox>false</checkBox>
+			<radioMode>true</radioMode>
+			<radioGroup>ranksGroup</radioGroup>
+			
+			<Anchors>#Anchors</Anchors>
+			<Texture strata="LOW" name="$textureName">
+				<Size>
+					<AbsDimension x="476" y="25" />
+				</Size>
+			</Texture>
+			
+			<Label name="$labelName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="30" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="456" y="25" />
+				</Size>
+				<text>#label</text>
+				<css>[config.ui.skin]css/normal.css</css>
+				<verticalAlign>center</verticalAlign>
+			</Label>
+			
+			<Label name="$labelValue">
+				<Size>
+					<AbsDimension x="466" y="25" />
+				</Size>
+				<text>#value</text>
+				<cssClass>right</cssClass>
+				<css>[config.ui.skin]css/normal.css</css>
+				<verticalAlign>center</verticalAlign>
+			</Label>
+			
+			<Hooks>
+				<onRelease />
+				<onRollOver />
+				<onRollOut />
+			</Hooks>
+		</Common>
+					
+		<State type="OVER">
+			<SetProperties target="$textureName">
+				<bgColor>[colors.grid.over]</bgColor>
+			</SetProperties>
+		</State>			
+		<State type="SELECTED">
+			<SetProperties target="$textureName">
+				<bgColor>[colors.grid.selected]</bgColor>
+			</SetProperties>
+		</State>			
+		<State type="SELECTED_OVER">
+			<SetProperties target="$textureName">
+				<bgColor>[colors.grid.selected]</bgColor>
+			</SetProperties>
+		</State>
+	</Button>
+	
+</orangeButton>

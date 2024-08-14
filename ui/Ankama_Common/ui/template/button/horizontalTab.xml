@@ -1,0 +1,65 @@
+<horizontalTab>
+	<!-- Param du template -->	
+	<Param name="Anchors" />
+	<Param name="name" />
+	<Param name="text" />
+	<Param name="Size" ><AbsDimension x="180" y="28" /></Param>
+	<Param name="uri" >[local.assets]tx_onglet</Param>
+	
+	<!-- Variables internes au template -->	
+	<Var name="btn_texture">'tx_' + '#name'</Var>
+	<Var name="btn_label">'lbl_' + '#name'</Var>
+	
+	
+	<Button name="#name">
+	    <Common>
+	        <radioGroup>tabHGroup</radioGroup>
+	        <radioMode>true</radioMode>
+	        <Anchors>
+	        	#Anchors
+	        </Anchors>
+	
+			<Texture name="$btn_texture">
+				<Size>
+					#Size
+				</Size>
+				<uri>#uri</uri>
+			</Texture>
+
+			<Label name="$btn_label">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					#Size
+				</Size>
+				<verticalAlign>center</verticalAlign>
+				<cssClass>mediumcenter</cssClass>
+				<css>[local.css]small2.css</css>
+				<text>#text</text>
+			</Label>
+	        <Hooks>
+	            <onRelease />
+	        </Hooks>
+	    </Common>
+	    <State type="OVER">
+			<SetProperties target="$btn_texture">
+				<gotoAndStop>over</gotoAndStop>
+			</SetProperties>
+		</State>
+		
+		<State type="PRESSED">
+			<SetProperties target="$btn_texture">
+				<gotoAndStop>pressed</gotoAndStop>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED">
+			<SetProperties target="$btn_texture">
+				<gotoAndStop>selected</gotoAndStop>
+			</SetProperties>
+		</State>
+	</Button>
+</horizontalTab>

@@ -1,0 +1,7 @@
+<Texture name="tx_illu">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="5" y="5" />
+        </Anchor>
+    </Anchors>
+</Texture>

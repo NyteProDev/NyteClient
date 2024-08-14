@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false" debug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+    <Import url="[config.mod.template.button]searchInput.xml" />
+    <Import url="[config.mod.template.button]themeIconButton.xml" />
+
+    <Constants>
+        <Constant name="gfx" value="[config.gfx.path]"/>
+        <Constant name="picto_uri" value="[config.gfx.path]characteristics/characteristics.swf|" />
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+    </Constants>
+
+    <Container name="mainCtr">
+        <Anchors>
+            <Anchor>
+                <AbsDimension x="0" y="0" />
+            </Anchor>
+        </Anchors>
+        <hintAvailable>true</hintAvailable>
+        <block>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="5" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="320" y="720" />
+            </Size>
+            <Content>
+                <Grid name="gd_filters">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="310" y="680" />
+                    </Size>
+                    <rendererName>MultiGridRenderer</rendererName>
+                    <rendererArgs>updateCategory,getCatLineType,getCatDataLength</rendererArgs>
+                    <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                    <slotWidth>310</slotWidth>
+                    <slotHeight>30</slotHeight>
+                    <autoSelectMode>0</autoSelectMode>
+                    <hiddenRow>50</hiddenRow>
+                    <Container name="ctr_searchBar">
+                        <searchInput name="ctr_search" width="280" btnCloseName="btn_resetSearch">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="10" />
+                                </Anchor>
+                            </Anchors>
+                        </searchInput>
+                    </Container>
+                    <!-- Type d'objet -->
+                    <Container name="ctr_ItemType">
+                        <Grid name="gd_itemType">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="3" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="280" y="120" />
+                            </Size>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateItemType</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                            <slotWidth>53</slotWidth>
+                            <slotHeight>53</slotHeight>
+                            <Container>
+                                <themeIconButton name="btn_itemType">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="50" y="50" />
+                                    </Size>
+                                    <bgThemeDataId>btn_type_encyclopedia</bgThemeDataId>
+                                    <iconThemeDataId>btnIcon_type_encyclopedia</iconThemeDataId>
+                                </themeIconButton>
+                            </Container>
+                        </Grid>
+                    </Container>
+                    <Container name="ctr_filterCategory">
+                        <Size>
+                            <AbsDimension x="300" y="20" />
+                        </Size>
+                        <Button name="btn_cat">
+                            <Common>
+                                <radioMode>true</radioMode>
+
+                                <Texture name="tx_cat">
+                                    <Size>
+                                        <AbsDimension x="310" y="30" />
+                                    </Size>
+                                    <uri>[local.common]list_menu_background.png</uri>
+                                </Texture>
+
+                                <Label name="lbl_catName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="15" y="4" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="280" y="22" />
+                                    </Size>
+                                    <css>[local.css]small2.css</css>
+                                </Label>
+
+                                <Texture name="tx_catplusminus">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="270" y="5" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="20" y="20" />
+                                    </Size>
+                                    <visible>true</visible>
+                                </Texture>
+
+                            </Common>
+                        </Button>
+                    </Container>
+
+                    <Container name="ctr_filterItem">
+                        <Size>
+                            <AbsDimension x="300" y="30" />
+                        </Size>
+                        <themeLabelCheckBox name="btn_selectFilter">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="10" y="3" />
+                                </Anchor>
+                            </Anchors>
+                            <text>bonus</text>
+                            <labelWidth>200</labelWidth>
+                            <selected>false</selected>
+                        </themeLabelCheckBox>
+                        <Texture name="tx_picto">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="272" y="7" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="15" y="15" />
+                            </Size>
+                        </Texture>
+                    </Container>
+                    <Container name="ctr_filterLevel">
+                        <Size>
+                            <AbsDimension x="310" y="60" />
+                        </Size>
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="30" y="20" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>[ui.chat.from] </text>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="80" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="50" />
+                            </Size>
+                            <themeDataId>bg_small_border_dark</themeDataId>
+                            <smooth>true</smooth>
+                        </TextureBitmap>
+                        <Input name="inp_minLevel">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="75" y="20" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]normal2.css</css>
+                            <maxChars>3</maxChars>
+                        </Input>
+                        <Label>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="135" y="20" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>[ui.chat.to]</text>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+                        <TextureBitmap>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="180" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="60" y="50" />
+                            </Size>
+                            <themeDataId>bg_small_border_dark</themeDataId>
+                            <smooth>true</smooth>
+                        </TextureBitmap>
+                        <Input name="inp_maxLevel">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="175" y="20" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <cssClass>right</cssClass>
+                            <css>[local.css]normal2.css</css>
+                            <maxChars>3</maxChars>
+                        </Input>
+                    </Container>
+                </Grid>
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="310" y="30" />
+                    </Size>
+                    <uri>[local.common]bg_dark.png</uri>
+                </Texture>
+                <Button name="btn_resetFilters">
+                    <Common>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="30" y="685" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="250" y="20" />
+                        </Size>
+                        <Texture name="tx_resetFilters">
+                            <Size>
+                                <AbsDimension x="250" y="20" />
+                            </Size>
+                            <uri>[local.assets]tx_invisible</uri>
+                        </Texture>
+                        <Label name="lbl_resetFilters">
+                            <Size>
+                                <AbsDimension x="250" y="20" />
+                            </Size>
+                            <text>[ui.common.resetFilters]</text>
+                            <css>[local.css]small2.css</css>
+                            <cssClass>lightgreycenter</cssClass>
+                        </Label>
+                        <Hooks>
+                            <onRelease/>
+                        </Hooks>
+                    </Common>
+                </Button>
+            </Content>
+        </block>
+        <block name="blk_itemList">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="322" y="5" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="910" y="720" />
+            </Size>
+            <Content>
+                <Container name="sortInfo">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Texture>
+                        <Size>
+                            <AbsDimension x="910" y="40" />
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <Button name="btn_tabName">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="45" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabName">
+                                <Size>
+                                    <AbsDimension x="250" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="250" y="20" />
+                                </Size>
+                                <text>[ui.common.name]</text>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                    <Button name="btn_tabType">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="320" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabType">
+                                <Size>
+                                    <AbsDimension x="150" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabType">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="20" />
+                                </Size>
+                                <text>[ui.common.category]</text>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                    <Button name="btn_tabLevel">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="660" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabLevel">
+                                <Size>
+                                    <AbsDimension x="50" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabLevel">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="50" y="20" />
+                                </Size>
+                                <text>[ui.common.level]</text>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                    <Button name="btn_tabPrice">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="710" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabPrice">
+                                <Size>
+                                    <AbsDimension x="150" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabPrice">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="120" y="20" />
+                                </Size>
+                                <text>[ui.item.averageprice]</text>
+                                <css>[local.css]small2.css</css>
+                                <cssClass>right</cssClass>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                </Container>
+
+
+                <Grid name="gd_list">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="40" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="900" y="640" />
+                    </Size>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateItemLine,[colors.grid.line]</rendererArgs>
+                    <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                    <slotWidth>900</slotWidth>
+                    <slotHeight>40</slotHeight>
+                    <autoSelectMode>0</autoSelectMode>
+
+                    <Container name="itemCtr">
+                        <Size>
+                            <AbsDimension x="900" y="40" />
+                        </Size>
+                        <Texture name="tx_itemBg">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="5" y="1" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="37" y="37" />
+                            </Size>
+                            <uri>[local.texture]slot/emptySlot.png</uri>
+                        </Texture>
+                        <Texture name="tx_itemIcon">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="5" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="35" y="35" />
+                            </Size>
+                        </Texture>
+
+                        <Label name="lbl_name">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="45" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="260" y="16" />
+                            </Size>
+                            <text>Test grid</text>
+                            <css>[local.css]small2.css</css>
+                            <cssClass>greenleft</cssClass>
+                            <useStyleSheet>false</useStyleSheet>
+                            <hyperlinkEnabled>true</hyperlinkEnabled>
+                        </Label>
+                        <Container name="ctr_type">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="320" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="40" />
+                            </Size>
+                            <Label name="lbl_type">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="10" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="190" y="16" />
+                                </Size>
+                                <css>[local.css]small2.css</css>
+                                <cssClass>italicgrey</cssClass>
+                            </Label>
+                        </Container>
+                        <Container name="ctr_obtaining">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="530" y="3" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="30" />
+                            </Size>
+                            <Texture name="tx_obtaining_0">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="5" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="20" y="20" />
+                                </Size>
+                                <handCursor>true</handCursor>
+                            </Texture>
+                            <Texture name="tx_obtaining_1">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="30" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="20" y="20" />
+                                </Size>
+                                <handCursor>true</handCursor>
+                            </Texture>
+                            <Texture name="tx_obtaining_2">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="55" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="20" y="20" />
+                                </Size>
+                                <handCursor>true</handCursor>
+                            </Texture>
+                            <Texture name="tx_obtaining_3">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="80" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="20" y="20" />
+                                </Size>
+                                <handCursor>true</handCursor>
+                            </Texture>
+                        </Container>
+                        <Label name="lbl_level">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="660" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="16" />
+                            </Size>
+                            <css>[local.css]small2.css</css>
+                            <cssClass>center</cssClass>
+                        </Label>
+                        <Label name="lbl_price">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="710" y="10" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="120" y="16" />
+                            </Size>
+                            <css>[local.css]small2.css</css>
+                            <cssClass>right</cssClass>
+                        </Label>
+                        <Texture name="iconKama">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="830" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="30" y="30" />
+                            </Size>
+                            <uri>[local.texture]icon_kama_shadow.png</uri>
+                        </Texture>
+                    </Container>
+                </Grid>
+                <Texture>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="0" y="-1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="900" y="30" />
+                    </Size>
+                    <uri>[local.common]bg_dark.png</uri>
+                </Texture>
+                <Label name="nbOfItems">
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="-10" y="-5" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="500" y="20" />
+                    </Size>
+                    <css>[local.css]small2.css</css>
+                    <cssClass>right</cssClass>
+                </Label>
+            </Content>
+        </block>
+    </Container>
+
+</Definition>

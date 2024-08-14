@@ -1,0 +1,60 @@
+<Container>
+	<Anchors>
+		<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT" />
+	</Anchors>
+	
+	
+	<!-- Icone coût PA -->
+	<Texture>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="3" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="14" y="14" />
+		</Size>
+		<uri>[config.content.path]gfx/characteristics/spellAreas.swf|tx_star</uri>
+	</Texture>
+	
+	<!-- Coût en PA -->
+	<Label>
+		<text>[ui.common.ap][ui.common.colon]#apCost</text>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="30" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="150" y="20" />
+		</Size>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+	
+	<!-- Icone portée -->
+	<Texture>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="140" y="3" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="14" y="14" />
+		</Size>
+		<uri>[config.content.path]gfx/characteristics/spellAreas.swf|tx_eye</uri>
+	</Texture>
+	
+	<!-- portée -->
+	<Label>
+		<text>[ui.common.range][ui.common.colon]#range</text>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="160" y="0" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="150" y="20" />
+		</Size>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+</Container>

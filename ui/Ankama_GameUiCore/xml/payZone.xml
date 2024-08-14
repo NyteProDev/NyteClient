@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="uri_payzone" value="[local.assets]btn_alertNonSubscriberMode" />
+		<Constant name="uri_guest" value="[local.assets]btn_alertGuestMode" />
+	</Constants>
+
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+	<Container name="mainCtr" strata="TOP">
+        <Anchors>
+            <Anchor >
+				<AbsDimension x="46" y="78" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+
+		<iconButton name="btn_topLeft">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="17" y="31" />
+				</Anchor>
+			</Anchors>
+			<uri>uri_payzone</uri>
+		</iconButton>
+
+	</Container>
+</Definition>

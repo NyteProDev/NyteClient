@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" labelDebug="false" debug="false">
+	
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]radio.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="picto_uri" value="[config.content.path]gfx/characteristics/characteristics.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+	</Constants>
+
+	<Container name="mainCtr">
+        <Anchors>
+            <Anchor relativePoint="CENTER" point="CENTER">
+                <AbsDimension x="0" y="-60" />
+            </Anchor>
+        </Anchors>
+		<visible>false</visible>
+		<mouseEnabled>true</mouseEnabled>
+
+		<window name="ctr_window">
+			<Size>
+				<AbsDimension x="400" y="0" />
+			</Size>
+			<hintAvailable>true</hintAvailable>
+			
+			
+			<Content>
+				<Container name="ctr_block">
+					<visible>true</visible>
+
+					<block name="block" contentStrata="MEDIUM">
+                        <Size>
+                            <AbsDimension x="362" y="0" />
+                        </Size>
+						<Content>
+							<Container name="ctr_content">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="30" y="10" />
+									</Anchor>
+								</Anchors>
+                                <Size>
+                                    <AbsDimension x="295" y="50" />
+                                </Size>
+
+                                <Label>
+									<Size>
+										<AbsDimension x="295" y="20" />
+									</Size>
+									<cssClass>bold</cssClass>
+									<css>[local.css]normal2.css</css>
+									<text>[ui.stats.statIncreases]</text>
+								</Label>
+								
+								<Grid name="gd_statVariables">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="30" y="30" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="265" y="100" />
+									</Size>
+									<rendererName>InlineXmlGridRenderer</rendererName>
+									<rendererArgs>updateStatVariable</rendererArgs>
+									<slotWidth>265</slotWidth>
+									<slotHeight>25</slotHeight>
+									<Container>
+										<Texture name="tx_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="0" y="5" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="17" y="17" />
+											</Size>
+										</Texture>
+										<Label name="lbl_variable">
+											<Anchors>
+												<Anchor>
+													<AbsDimension x="21" y="3" />
+												</Anchor>
+											</Anchors>
+											<Size>
+												<AbsDimension x="260" y="21" />
+											</Size>
+											<cssClass>medium</cssClass>
+											<css>[local.css]small2.css</css>
+											<Hooks>
+												<onRollOver/>
+												<onRollOut/>
+											</Hooks>
+										</Label>
+									</Container>
+								</Grid>
+
+                                <Container name="ctr_spells">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="0" y="120" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="310" y="135" />
+                                    </Size>
+
+                                    <Label>
+                                        <Size>
+                                            <AbsDimension x="295" y="20" />
+                                        </Size>
+                                        <cssClass>bold</cssClass>
+                                        <css>[local.css]normal2.css</css>
+                                        <text>[ui.stats.statSpells]</text>
+                                    </Label>
+
+                                    <Grid name="gd_statSpells">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="0" y="35" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="300" y="100" />
+                                        </Size>
+                                        <slotWidth>44</slotWidth>
+                                        <slotHeight>44</slotHeight>
+                                        <rendererName>SlotGridRenderer</rendererName>
+                                        <rendererArgs>
+                                            [local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,[local.texture]slot/selected.png,[local.texture]slot/acceptDrop.png,[local.texture]slot/refuseDrop.png,,[local.css]normal2.css,false,,,isSpellActive
+                                        </rendererArgs>
+                                        <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                                        <autoSelectMode>0</autoSelectMode>
+                                        <Hooks>
+                                            <onItemRollOver/>
+                                            <onItemRollOut/>
+                                            <onItemRightClick />
+                                        </Hooks>
+                                    </Grid>
+                                </Container>
+								
+								<Label name="lbl_availablePoints">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="270" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="295" y="20" />
+									</Size>
+									<cssClass>center</cssClass>
+									<css>[local.css]normal2.css</css>
+								</Label>
+								
+								<Container name="ctr_capitalChoice">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="-30" y="270" />
+										</Anchor>
+									</Anchors>
+                                    <Size>
+                                        <AbsDimension x="355" y="119" />
+                                    </Size>
+
+                                    <Label>
+										<Size>
+											<AbsDimension x="352" y="50" />
+										</Size>
+										<cssClass>center</cssClass>
+										<css>[local.css]normal2.css</css>
+										<wordWrap>true</wordWrap>
+										<multiline>true</multiline>
+										<fixedHeightForMultiline>true</fixedHeightForMultiline>
+										<verticalAlign>center</verticalAlign>
+										<text>[ui.stats.capitalChoice]</text>
+									</Label>
+									
+									<Container name="ctr_radioStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="355" y="26" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>[colors.radio.over]</bgColor>
+									</Container>
+									
+									<radio name="btn_radioStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="20" y="67" />
+											</Anchor>
+										</Anchors>
+										<radioGroup>capitalChoiceGroup</radioGroup>
+									</radio>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="42" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="235" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+										<text>[ui.charaSheet.boostPoints][ui.common.colon]</text>
+									</Label>
+									
+									<Label name="lbl_capitalStat">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="280" y="64" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="20" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									
+									
+									<Container name="ctr_radioScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="355" y="26" />
+										</Size>
+										<handCursor>true</handCursor>
+										<bgColor>[colors.radio.over]</bgColor>
+									</Container>
+									
+									<radio name="btn_radioScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="20" y="96" />
+											</Anchor>
+										</Anchors>
+										<radioGroup>capitalChoiceGroup</radioGroup>
+									</radio>
+									
+									<Label>
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="42" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="235" y="20" />
+										</Size>
+										<css>[local.css]normal2.css</css>
+										<text>[ui.charaSheet.boostAdditionnalPoints][ui.common.colon]</text>
+									</Label>
+									
+									<Label name="lbl_capitalScroll">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="280" y="93" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="60" y="20" />
+										</Size>
+										<cssClass>whiteboldright</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+								</Container>
+								
+								
+								
+								
+								
+								<Container name="ctr_calculation">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="0" y="300" />
+										</Anchor>
+									</Anchors>
+                                    <Size>
+                                        <AbsDimension x="295" y="176" />
+                                    </Size>
+
+
+                                    <Container>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="63" y="0" />
+                                            </Anchor>
+                                        </Anchors>
+
+                                        <themeIconButton name="btn_less">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="0" y="7" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="26" y="26" />
+                                            </Size>
+                                            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_minus.png</iconUri>
+                                            <Hooks>
+                                                <onRelease />
+                                            </Hooks>
+                                        </themeIconButton>
+
+                                        <themeIconButton name="btn_more">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="144" y="7" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="26" y="26" />
+                                            </Size>
+                                            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_plus.png</iconUri>
+                                            <Hooks>
+                                                <onRelease />
+                                            </Hooks>
+                                        </themeIconButton>
+
+
+                                        <TextureBitmap>
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="29" y="0" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="113" y="40" />
+                                            </Size>
+                                            <themeDataId>bg_small_border_dark</themeDataId>
+                                        </TextureBitmap>
+
+                                        <Input name="inp_pointsValue">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="40" y="7" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="88" y="40" />
+                                            </Size>
+                                            <cssClass>right</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                            <maxChars>3</maxChars>
+                                        </Input>
+                                    </Container>
+									
+									<Label name="lbl_currentFloor">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="36" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="295" y="20" />
+										</Size>
+										<cssClass>center</cssClass>
+										<css>[local.css]normal2.css</css>
+									</Label>
+									
+									<Texture name="tx_floor_info">
+										<Anchors>
+											<Anchor>
+												<AbsDimension x="0" y="38" />
+											</Anchor>
+										</Anchors>
+										<Size>
+											<AbsDimension x="20" y="20" />
+										</Size>
+										<autoGrid>true</autoGrid>
+										<Hooks>
+											<onRollOver/>
+											<onRollOut/>
+										</Hooks>
+									</Texture>
+
+                                    <Container>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="30" y="80" />
+                                            </Anchor>
+                                        </Anchors>
+
+                                        <Label name="lbl_statName">
+                                            <Size>
+                                                <AbsDimension x="170" y="21" />
+                                            </Size>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                        <Label name="lbl_statBase">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="175" y="0" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="60" y="21" />
+                                            </Size>
+                                            <cssClass>whiteboldright</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                        <Label name="lbl_statBaseAdd">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="240" y="0" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="55" y="21" />
+                                            </Size>
+                                            <cssClass>green</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+
+                                        <Label>
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="0" y="30" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="170" y="21" />
+                                            </Size>
+                                            <cssClass>statbonus</cssClass>
+                                            <css>[local.css]special.css</css>
+                                            <text>+ [ui.common.equipement]</text>
+                                        </Label>
+
+                                        <Texture>
+                                            <Anchors>
+                                                <Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT">
+                                                    <AbsDimension x="2" y="15" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <uri>[local.common]window_line_white_separator.png</uri>
+                                        </Texture>
+
+                                        <Label name="lbl_statBonus">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="175" y="30" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="60" y="21" />
+                                            </Size>
+                                            <cssClass>whiteboldright</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                            <Hooks>
+                                                <onRollOver/>
+                                                <onRollOut/>
+                                            </Hooks>
+                                        </Label>
+
+                                        <Label>
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="0" y="75" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="170" y="21" />
+                                            </Size>
+                                            <css>[local.css]normal2.css</css>
+                                            <text>[ui.common.total]</text>
+                                        </Label>
+
+                                        <Label name="lbl_statTotal">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="175" y="75" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="60" y="21" />
+                                            </Size>
+                                            <cssClass>greenright</cssClass>
+                                            <css>[local.css]normal2.css</css>
+                                        </Label>
+                                    </Container>
+									
+								</Container>
+
+                            </Container>
+
+                            <Container name="ctr_footer">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="496" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="360" y="55" />
+                                </Size>
+
+                                <Texture>
+                                    <uri>[config.ui.skin]common/corner_decoration.png</uri>
+                                </Texture>
+
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="356" y="0" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <uri>[config.ui.skin]common/corner_decoration.png</uri>
+                                    <scaleX>-1</scaleX>
+                                </Texture>
+
+                                <simpleButton label="[ui.common.validation]" name="btn_valid">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="110" y="8" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="140" y="35" />
+                                    </Size>
+                                </simpleButton>
+                            </Container>
+						</Content>
+					</block>
+				</Container>
+			</Content>
+		</window>
+	</Container>
+</Definition>
+
+

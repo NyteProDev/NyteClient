@@ -1,0 +1,148 @@
+<levelUpWindow>
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    <Import url="mod://Ankama_Roleplay/xml/template/levelUpRewards.xml" />
+    
+    <Param name="Size"/>
+    <Param name="centerY"/>
+    <Param name="Content"></Param>
+    <Param name="title"></Param>
+    <Param name="separatorY"></Param>
+    
+    <Container>
+        <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+                <AbsDimension y="#centerY" />
+            </Anchor>
+        </Anchors>
+		<Size>
+			#Size
+		</Size>
+        <windowWithoutTitleBar name="levelupWindow" bgThemeDataId="block_background_dark">
+            <Size>
+                #Size
+            </Size>
+            <bgAlpha>1</bgAlpha>
+            <noCloseButton>true</noCloseButton>
+            <mouseEnabled>true</mouseEnabled>
+        
+            <Content>
+                #Content
+                    
+                <Label name="lbl_title">
+                    <Anchors>
+                        <Anchor relativePoint="TOP" point="TOP">
+                            <AbsDimension x="0" y="20"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="628" y="20"/>
+                    </Size>
+                    <cssClass>boldcenter</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+                    
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                            <AbsDimension x="0" y="#separatorY"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension y="3" />
+                        <RelDimension x="1" />
+                    </Size>
+                    <uri>[local.common]window_separator_black_horizontal.png</uri>
+                </TextureBitmap>
+                
+                <levelUpRewards>
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                            <AbsDimension x="3" y="-45"/>
+                        </Anchor>
+                    </Anchors>
+                </levelUpRewards>
+                
+            </Content>
+            
+            <OverFrameContent>
+        
+                <!--Le socle du personnage-->
+                <Texture name="tx_player_bg">
+                    <Anchors>
+                        <Anchor relativePoint="TOP" point="BOTTOM">
+                            <AbsDimension x="0" y="6"/>
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]background/background_levelup_character.png</uri>
+                </Texture>
+        
+        
+                <!-- Le personnage en haut -->
+                <EntityDisplayer name="ed_player">
+                    <Anchors>
+                        <Anchor relativePoint="TOP" point="BOTTOM">
+                            <AbsDimension x="0" y="-40"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="160" y="350"/>
+                    </Size>
+                </EntityDisplayer>
+        
+                <!--La bannière-->
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor relativePoint="TOP" point="BOTTOM">
+                            <AbsDimension x="0" y="48"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="600" y="136" />
+                    </Size>
+                    <themeDataId>levelup_banner</themeDataId>
+                    <smooth>true</smooth>
+                </TextureBitmap>
+        
+                <!-- Label "Niveau X !" -->
+                <Label name="lbl_newLevel">
+                    <Anchors>
+                        <Anchor relativePoint="TOP" point="TOP">
+                            <AbsDimension x="0" y="-62"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="300"/>
+                    </Size>
+                    <cssClass>levelup</cssClass>
+                    <css>[local.css]title.css</css>
+                    <forceUppercase>true</forceUppercase>
+                </Label>
+        
+                <TextureBitmap name="tx_bg_button">
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="TOP">
+                            <AbsDimension x="0" y="-19"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="150" />
+                    </Size>
+                    <themeDataId>background_border_button</themeDataId>
+                </TextureBitmap>
+    
+                <simpleButton name="btn_close_main">
+                    <Anchors>
+                        <Anchor relativePoint="BOTTOM" point="TOP">
+                            <AbsDimension x="0" y="-12" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="100" y="32" />
+                    </Size>
+                    <label>[ui.common.ok]</label>
+                </simpleButton>
+        
+            </OverFrameContent>
+        </windowWithoutTitleBar>
+    </Container>
+</levelUpWindow>

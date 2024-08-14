@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition giveFocus="false" transmitFocus="false">
+	
+	<Constants>
+		<Constant name="aaoff" value="mod://Ankama_GameUiCore/hardcore/aaoff.png" />
+		<Constant name="aaon" value="mod://Ankama_GameUiCore/hardcore/aaon.png" />
+	</Constants>
+	
+	<Container name="mainCtr" strata="-1">>
+		
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER" >
+			</Anchor>
+		</Anchors>
+		
+		<Texture name="tx_overlay2" strata="-1">
+			<uri>[local.aaoff]</uri>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="-50" />
+				</Anchor>
+			</Anchors>
+		</Texture>
+		
+	</Container>
+	
+</Definition>

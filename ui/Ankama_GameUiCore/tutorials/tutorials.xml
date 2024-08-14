@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<tutorials>
+
+    <tutorial>
+        <id>1</id>
+        <name>Premier pas sur Smallys</name>
+        <icon>415.png</icon>
+        <image>1.png</image>
+    </tutorial>
+    
+    <tutorial>
+        <id>2</id>
+        <name>Les Monnaies</name>
+        <icon>856.png</icon>
+        <image>2.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>3</id>
+        <name>Les PNJs</name>
+        <icon>100.png</icon>
+        <image>3.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>4</id>
+        <name>L'aventure</name>
+        <icon>413.png</icon>
+        <image>4.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>5</id>
+        <name>L'XP</name>
+        <icon>888.png</icon>
+        <image>5.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>6</id>
+        <name>Les Dofus à drop</name>
+        <icon>422.png</icon>
+        <image>6.png</image>
+    </tutorial>
+    
+	<tutorial>
+        <id>7</id>
+        <name>Prestiges / Level Pretiges</name>
+        <icon>965.png</icon>
+        <image>7.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>9</id>
+        <name>Les Evolutions de Dofus</name>
+        <icon>60.png</icon>
+        <image>9.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>10</id>
+        <name>Les Songes</name>
+        <icon>443.png</icon>
+        <image>10.png</image>
+    </tutorial>
+
+    <tutorial>
+        <id>11</id>
+        <name>Hardcore Mode</name>
+        <icon>40.png</icon>
+        <image>11.png</image>
+    </tutorial>
+	
+	<tutorial>
+        <id>12</id>
+        <name>Métiers</name>
+        <icon>305.png</icon>
+        <image>12.png</image>
+    </tutorial>
+	
+</tutorials>

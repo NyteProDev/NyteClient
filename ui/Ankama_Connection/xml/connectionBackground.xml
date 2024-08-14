@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition fullscreen="true">
+	
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	
+	<Constants>
+		<Constant name="illus" value="[config.gfx.path]illusUi/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Size>
+			<RelDimension x="1" y="1" />
+		</Size>
+
+        <!--VideoPlayer strata="LOW" name="videoPlayer">
+			<Size>
+				<AbsDimension x="1280" y="1024" />
+			</Size>
+            <autoPlay>true</autoPlay>
+            <autoLoop>true</autoLoop>
+            <smoothing>true</smoothing>
+		</VideoPlayer-->
+
+		<Texture name="tx_bg"> 
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="CENTER" />
+			</Anchors>
+			<uri>[local.illus]login_background.jpg</uri>
+		</Texture>
+		
+		<themeIconButton strata="LOW" name="btn_changeBg">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="9" y="50"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="26" y="26"/>
+			</Size>
+			<iconUri>[local.texture]btnIcon/btnIcon_fork.png</iconUri>
+			<visible>false</visible>
+		</themeIconButton>
+	</Container>
+</Definition>

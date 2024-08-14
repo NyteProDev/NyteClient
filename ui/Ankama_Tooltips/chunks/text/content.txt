@@ -1,0 +1,8 @@
+<Label>
+	<autoResize>false</autoResize>
+	<fixedWidth>false</fixedWidth>
+	<text>#content</text>
+	<cssClass>#classCss</cssClass>
+	<css>#css</css>
+	<parseText>#parseText</parseText>
+</Label>

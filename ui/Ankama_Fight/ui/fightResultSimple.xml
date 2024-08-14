@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" labelDebug="false">
+    <Import url="[config.mod.template.button]themeIconButton.xml"/>
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+        <Constant name="css" value="[config.ui.skin]css/"/>
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+        <Constant name="texture" value="[config.ui.skin]texture/"/>
+        <Constant name="common" value="[config.ui.skin]common/"/>
+
+        <Constant name="result_victory" value="[local.texture]background/background_levelup_banner.png"/>
+        <Constant name="result_defeat" value="[local.texture]background/background_defeat_banner.png"/>
+
+        <Constant name="lbl_xp_defeat_x" value="38" type="int"/>
+        <Constant name="victory_breach_width" value="485" type="int" />
+        <Constant name="victory_breach_object_width" value="50" type="int"/>
+        <Constant name="defeat_width" value="400" type="int"/>
+        <Constant name="defeat_x" value="110" type="int"/>
+        <Constant name="defeat_css" value="defeat" type="String"/>
+        <Constant name="iconSpiral_width_height" value="20" type="int"/>
+    </Constants>
+
+
+    <Container name="ctr_main">
+        <Anchors>
+            <Anchor relativePoint="CENTER" point="CENTER">
+                <AbsDimension x="0" y="270"/>
+            </Anchor>
+        </Anchors>
+        <mouseEnabled>true</mouseEnabled>
+
+        <!-- Window background -->
+        <TextureBitmap name="tx_windowsBg">
+            <Anchors>
+                <Anchor relativeTo="tx_windowFrame" relativePoint="TOPLEFT">
+                    <AbsDimension x="22" y="18"/>
+                </Anchor>
+                <Anchor relativeTo="tx_windowFrame" relativePoint="BOTTOMRIGHT">
+                    <AbsDimension x="-22" y="-22"/>
+                </Anchor>
+            </Anchors>
+            <themeDataId>window_background</themeDataId>
+        </TextureBitmap>
+
+
+        <!-- XP/Kama/Loot -->
+        <Container name="ctr_results">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="90" y="46"/>
+                </Anchor>
+            </Anchors>
+
+            <Container name="ctr_resultsLeftAnchor">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0"/>
+                    </Anchor>
+                </Anchors>
+            </Container>
+
+            <!-- XP -->
+            <Container name="ctr_xp">
+                <Anchors>
+                    <Anchor relativeTo="ctr_resultsLeftAnchor" relativePoint="TOPRIGHT" point="TOPLEFT">
+                        <AbsDimension x="0" y="0"/>
+                    </Anchor>
+                </Anchors>
+
+                <TextureBitmap name="tx_xpBg">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_xp" relativePoint="TOPLEFT">
+                            <AbsDimension x="-18" y="-11"/>
+                        </Anchor>
+                        <Anchor relativeTo="lbl_xp" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="48" y="9"/>
+                        </Anchor>
+                    </Anchors>
+                    <themeDataId>bg_small_border_dark</themeDataId>
+                </TextureBitmap>
+
+                <Label name="lbl_xp">
+                    <Size>
+                        <AbsDimension x="110" y="26"/>
+                    </Size>
+                    <cssClass>whiteboldright</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <text>0</text>
+                </Label>
+
+                <Texture name="tx_xpIcon">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_xp" relativePoint="RIGHT" point="LEFT">
+                            <AbsDimension x="2" y="-1"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="31" y="31"/>
+                    </Size>
+                    <uri>[local.texture]icon_xp_blue.png</uri>
+                </Texture>
+            </Container>
+
+            <!-- Kama -->
+            <Container name="ctr_kama">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="178" y="0"/>
+                    </Anchor>
+                </Anchors>
+
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor relativeTo="lbl_kama" relativePoint="TOPLEFT">
+                            <AbsDimension x="-18" y="-11"/>
+                        </Anchor>
+                        <Anchor relativeTo="lbl_kama" relativePoint="BOTTOMRIGHT">
+                            <AbsDimension x="36" y="9"/>
+                        </Anchor>
+                    </Anchors>
+                    <themeDataId>bg_small_border_dark</themeDataId>
+                </TextureBitmap>
+
+                <Label name="lbl_kama">
+                    <Size>
+                        <AbsDimension x="70" y="26"/>
+                    </Size>
+                    <cssClass>whiteboldright</cssClass>
+                    <css>[local.css]normal2.css</css>
+                    <text>0</text>
+                </Label>
+
+                <Texture name="tx_kamaIcon">
+                    <Anchors>
+                        <Anchor relativeTo="lbl_kama" relativePoint="RIGHT" point="LEFT">
+                            <AbsDimension x="2" y="-1"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="18" y="16"/>
+                    </Size>
+                    <uri>[local.texture]icon_kama.png</uri>
+                </Texture>
+            </Container>
+
+            <!-- Loot -->
+            <Grid name="gd_objects">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="310" y="-13" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="198" y="48" />
+                </Size>
+                <rendererName>SlotGridRenderer</rendererName>
+                <rendererArgs>[local.texture]slot/slot_dark_background_empty.png,[local.texture]slot/over.png,,,,,[local.css]normal2.css,false</rendererArgs>
+                <slotWidth>48</slotWidth>
+                <slotHeight>48</slotHeight>
+                <hPadding>1</hPadding>
+                <scrollDisplay>none</scrollDisplay>
+                <autoSelectMode>0</autoSelectMode>
+            </Grid>
+            <TextureBitmap name="tx_previous">
+                <Anchors>
+                    <Anchor relativeTo="btn_previous" >
+                        <AbsDimension x="-18" y="-46" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="24" y="70" />
+                </Size>
+                <themeDataId>bg_small_border_dark</themeDataId>
+                <visible>false</visible>
+            </TextureBitmap>
+            <themeIconButton name="btn_previous">
+                <Anchors>
+                    <Anchor relativeTo="gd_objects" relativePoint="TOPLEFT" point="TOPRIGHT">
+                        <AbsDimension x="8" y="35" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="11" y="22" />
+                </Size>
+                <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                <smooth>true</smooth>
+                <rotation>180</rotation>
+                <visible>false</visible>
+            </themeIconButton>
+            <TextureBitmap name="tx_next">
+                <Anchors>
+                    <Anchor relativeTo="btn_next" >
+                        <AbsDimension x="-7" y="-24" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="24" y="70" />
+                </Size>
+                <themeDataId>bg_small_border_dark</themeDataId>
+                <visible>false</visible>
+            </TextureBitmap>
+            <themeIconButton name="btn_next">
+                <Anchors>
+                    <Anchor relativeTo="gd_objects" relativePoint="TOPRIGHT" point="TOPLEFT">
+                        <AbsDimension x="2" y="13" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="11" y="22" />
+                </Size>
+                <bgThemeDataId>btn_arrow_pagination</bgThemeDataId>
+                <smooth>true</smooth>
+                <visible>false</visible>
+            </themeIconButton>
+        </Container>
+
+        <!-- Window frame -->
+        <TextureBitmap name="tx_windowFrame">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="644" y="120" />
+            </Size>
+            <themeDataId>popup_border_frame</themeDataId>
+            <smooth>true</smooth>
+        </TextureBitmap>
+
+        <!-- Window menu buttons -->
+        <Container name="ctr_topRightMenu">
+            <Anchors>
+                <Anchor point="BOTTOMLEFT" relativePoint="TOPRIGHT" relativeTo="tx_windowFrame">
+                    <AbsDimension x="-78" y="38"/>
+                </Anchor>
+            </Anchors>
+
+            <TextureBitmap name="tx_topRightMenu">
+                <uri>[local.common]block_corner_external.png</uri>
+                <smooth>true</smooth>
+            </TextureBitmap>
+            <themeIconButton name="btn_maximize">
+                <Anchors>
+                    <Anchor relativeTo="tx_topRightMenu" >
+                        <AbsDimension x="10" y="6" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="22" y="18" />
+                </Size>
+                <bgThemeDataId>button_maximize</bgThemeDataId>
+                <smooth>true</smooth>
+            </themeIconButton>
+            <themeIconButton name="btn_close">
+                <Anchors>
+                    <Anchor relativeTo="tx_topRightMenu">
+                        <AbsDimension x="32" y="6" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="24" y="20" />
+                </Size>
+                <bgThemeDataId>button_close</bgThemeDataId>
+                <smooth>true</smooth>
+            </themeIconButton>
+        </Container>
+
+        <!-- Window title -->
+        <TextureBitmap name="tx_result">
+            <Anchors>
+                <Anchor relativeTo="tx_windowFrame" relativePoint="TOP" point="CENTER">
+                    <AbsDimension x="0" y="6"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="240" y="60"/>
+            </Size>
+        </TextureBitmap>
+        <Label name="lbl_result">
+            <Anchors>
+                <Anchor relativeTo="tx_result" relativePoint="CENTER" point="CENTER">
+                    <AbsDimension x="0" y="-8"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="200" y="30"/>
+            </Size>
+            <cssClass>victory</cssClass>
+            <css>[local.css]title.css</css>
+            <forceUppercase>true</forceUppercase>
+        </Label>
+
+        <!-- Challenges -->
+        <Container name="ctr_challenges">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="23" y="34"/>
+                </Anchor>
+            </Anchors>
+
+            <TextureBitmap>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="-4"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="26" y="54"/>
+                </Size>
+                <uri>[local.common]grey_black_slot.png</uri>
+            </TextureBitmap>
+
+            <!-- Challenge 1 -->
+            <Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="0"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="22" y="22"/>
+                </Size>
+
+                <Texture name="tx_challenge1">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                </Texture>
+                <Texture name="tx_challenge_result1">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                    <bgAlpha>0.5</bgAlpha>
+                </Texture>
+            </Container>
+
+            <!-- Challenge 2 -->
+            <Container>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="24"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="22" y="22"/>
+                </Size>
+
+                <Texture name="tx_challenge2">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                </Texture>
+                <Texture name="tx_challenge_result2">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                    <bgAlpha>0.5</bgAlpha>
+                </Texture>
+            </Container>
+        </Container>
+
+    </Container>
+</Definition>

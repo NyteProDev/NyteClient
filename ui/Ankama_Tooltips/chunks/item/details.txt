@@ -1,0 +1,29 @@
+
+
+	<!-- Poids -->
+	<Label>
+		<text>#weight</text>
+		<Anchors>
+			<Anchor relativeTo="apracost" point="TOPLEFT" relativePoint="BOTTOMLEFT" />
+		</Anchors>
+		<Size>
+			<AbsDimension x="100" y="20" />
+		</Size>
+		<cssClass>right</cssClass>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+	
+	<Label>
+		<text>[ui.common.category][ui.common.colon]#cat</text>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="title">
+				
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="250" />
+		</Size>
+		<fixedHeight>false</fixedHeight>
+		<css>[local.css]tooltip_default.css</css>
+	</Label>
+	

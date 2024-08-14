@@ -1,0 +1,90 @@
+<Definition>
+  <Import url="[config.mod.template]button/simpleButton.xml"/>
+  <Import url="[config.mod.template]button/iconButton.xml"/>
+  <Constants>
+    <Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+    <Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+    <Constant name="css" value="[config.ui.skin]css/"/>
+  </Constants>
+  <Container name="mainCtr">
+    <Size>
+      <AbsDimension x="722" y="46"/>
+    </Size>
+    <mouseEnabled>true</mouseEnabled>
+    <Texture name="tx_bg">
+      <Size>
+        <RelDimension x="1" y="1"/>
+      </Size>
+      <bgColor>0x5CB15C</bgColor>
+      <visible>false</visible>
+    </Texture>
+    <Texture name="tx_selected">
+      <Size>
+        <AbsDimension x="16" y="46"/>
+      </Size>
+      <bgColor>[colors.grid.selected]</bgColor>
+      <visible>false</visible>
+    </Texture>
+    <iconButton name="btn_delete">
+      <Anchors>
+        <Anchor>
+          <AbsDimension x="687" y="8"/>
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsDimension x="30" y="30"/>
+      </Size>
+      <uri>[local.assets]btn_fermer</uri>
+    </iconButton>
+    <Label name="lbl_lastUpdate">
+      <css>[local.css]normal.css</css>
+      <cssClass>right</cssClass>
+      <Anchors>
+        <Anchor>
+          <AbsDimension x="370" y="10"/>
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsDimension x="160" y="21"/>
+      </Size>
+    </Label>
+    <Label name="lbl_name">
+      <css>[local.css]normal.css</css>
+      <cssClass>bold</cssClass>
+      <Anchors>
+        <Anchor>
+          <AbsDimension x="26" y="10"/>
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsDimension x="410" y="21"/>
+      </Size>
+    </Label>
+    <simpleButton name="btn_update" label="[ui.common.update]">
+      <css>[local.css]button.css</css>
+      <Anchors>
+        <Anchor>
+          <AbsDimension x="550" y="8"/>
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsDimension x="130" y="30"/>
+      </Size>
+      <uri>[local.assets]btn_orange</uri>
+      <cssClass>small</cssClass>
+    </simpleButton>
+    <simpleButton name="btn_install" label="[ui.common.install]">
+      <css>[local.css]button.css</css>
+      <Anchors>
+        <Anchor>
+          <AbsDimension x="550" y="8"/>
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsDimension x="167" y="30"/>
+      </Size>
+      <uri>[local.assets]btn_orange</uri>
+      <cssClass>small</cssClass>
+    </simpleButton>
+  </Container>
+</Definition>

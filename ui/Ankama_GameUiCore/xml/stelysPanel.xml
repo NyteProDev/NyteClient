@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="true">
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+   	</Constants>
+
+	<window name="mainCtr">
+		
+		<title>[ui.stelys.panel.title]</title>
+		<movable>true</movable>
+		
+		<closeButtonName>btnClose</closeButtonName>
+		
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER" />
+		</Anchors>
+		
+		<Size>
+			<AbsDimension x="400" y="200" />
+		</Size>
+		
+		<Content>
+			
+			<simpleButton name="btnAccount">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="13" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>[ui.stelys.account.title]</label>
+			</simpleButton>
+			
+			<simpleButton name="btnAura">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="48" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>[ui.stelys.aura.title]</label>
+			</simpleButton>
+
+			<simpleButton name="btnFusion">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="41" y="83" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="276" y="28" />
+				</Size>
+				<label>[ui.stelys.fusion.title]</label>
+			</simpleButton>
+			
+			<!-- <simpleButton name="btnTitle"> -->
+				<!-- <Anchors> -->
+					<!-- <Anchor> -->
+						<!-- <AbsDimension x="41" y="118" /> -->
+					<!-- </Anchor> -->
+				<!-- </Anchors> -->
+				<!-- <Size> -->
+					<!-- <AbsDimension x="276" y="28" /> -->
+				<!-- </Size> -->
+				<!-- <label>[ui.stelys.custom.title]</label> -->
+			<!-- </simpleButton> -->
+
+		</Content>
+	</window>
+</Definition>

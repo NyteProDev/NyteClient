@@ -1,0 +1,14 @@
+<Definition useCache="false">	
+	<Container name="mainCtr">
+		<Label name="lbl_content">
+			<Size>
+				<AbsDimension x="386"/>
+			</Size>
+			<css>[config.ui.skin]css/tooltip_item.css</css>
+			<useCustomFormat>true</useCustomFormat>
+			<wordWrap>true</wordWrap>
+			<fixedWidth>false</fixedWidth>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+		</Label>
+	</Container>
+</Definition>

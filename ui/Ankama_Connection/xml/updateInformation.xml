@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition useCache="false" modal="false" debug="false" labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+
+    <Constants>
+        <Constant name="illusUi" value="[config.gfx.path]illusUi/" />
+
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="illus" value="[config.ui.skin]illus/" />
+    </Constants>
+
+    <Container>
+        <Size>
+            <RelDimension x="1" y="1" />
+        </Size>
+
+        <Texture name="tx_bg">
+            <Anchors>
+                <Anchor point="CENTER" relativePoint="CENTER" />
+            </Anchors>
+            <uri>[local.illus]nouveautes_maj/2-45/bg_maj-2-45.jpg</uri>
+        </Texture>
+        <mouseEnabled>true</mouseEnabled>
+
+        <comboBoxWithBackground name="cb_maj" width="200" height="39" strata="TOP">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="95" y="10" />
+                </Anchor>
+            </Anchors>
+        </comboBoxWithBackground>
+
+        <Container name="ctr_template">
+        </Container>
+        <simpleButton label="[ui.common.play]" name="btn_play">
+            <Anchors>
+                <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                    <AbsDimension x="0" y="-230" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="302" y="93" />
+            </Size>
+            <bgThemeDataId>button_largeBorder</bgThemeDataId>
+            <smooth>true</smooth>
+            <cssClass>darkcenter</cssClass>
+            <css>[local.css]title.css</css>
+            <forceUppercase>true</forceUppercase>
+            <useDefaultFont>true</useDefaultFont>
+            <Hooks>
+                <onRelease />
+            </Hooks>
+        </simpleButton>
+    </Container>
+
+
+</Definition>
