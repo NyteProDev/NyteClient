@@ -1,8 +1,0 @@
-<Texture>
-	<Anchors>
-		<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT">
-			<AbsDimension x="46" y="#posY" />
-		</Anchor>
-	</Anchors>
-	<uri>[local.assets]tooltip_tx_separator</uri>
-</Texture>

@@ -1,6 +1,0 @@
-#labelContent
-#textureContent
-#buttonContent
-
-
-

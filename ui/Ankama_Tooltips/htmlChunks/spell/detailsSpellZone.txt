@@ -1,1 +1,0 @@
-<spellZone>[ui.common.spellArea][ui.common.colon] <span class='value'>#spellZone</span></spellZone>
