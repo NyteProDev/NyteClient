@@ -1,1 +1,0 @@
-<p class='#leftCss'>#leftText</p><p class='#rightCss'>#rightText</p>

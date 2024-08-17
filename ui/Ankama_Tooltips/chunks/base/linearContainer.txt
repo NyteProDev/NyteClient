@@ -1,6 +1,0 @@
-<Container>
-	<Anchors>
-		<Anchor relativeTo="$LAST" relativePoint="RIGHT" point="LEFT" />
-	</Anchors>
-	#content
-</Container>

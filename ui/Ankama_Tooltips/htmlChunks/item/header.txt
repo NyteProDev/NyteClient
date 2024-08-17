@@ -1,1 +1,0 @@
-<p class='#cssName'>#name</p><p class='#cssLvl'>[ui.common.level]  #level</p>

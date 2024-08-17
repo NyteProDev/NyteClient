@@ -1,1 +1,0 @@
-<span class="contentmargin"><p>[ui.common.category]  <span class='value'>#category</span></p><p>[ui.common.quantity]  <span class='value'>#quantity</span></p><p>[ui.common.realWeight]  <span class='value'>#weight</span></p></span>

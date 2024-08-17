@@ -1,1 +1,0 @@
-<p class='headertitle'>#name</p><p class='headerp'>#rank</p>

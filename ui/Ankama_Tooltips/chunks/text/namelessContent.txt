@@ -1,7 +1,0 @@
-<Label>
-	<autoResize>false</autoResize>
-	<text>#content</text>
-	<cssClass>#classCss</cssClass>
-	<css>#css</css>
-	<fixedWidth>false</fixedWidth>
-</Label>

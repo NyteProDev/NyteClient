@@ -1,1 +1,0 @@
-<p>#text <span class='value'>#value</span></p>
