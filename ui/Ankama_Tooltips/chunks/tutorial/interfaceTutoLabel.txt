@@ -1,0 +1,12 @@
+<Label name="lbl_info">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="15" y="14" />
+        </Anchor>
+    </Anchors>
+    <fixedWidth>false</fixedWidth>
+    <fixedHeight>false</fixedHeight>
+    <css>[local.css]uiTuto.css</css>
+    <multiline>true</multiline>
+    <wordWrap>true</wordWrap>
+</Label>

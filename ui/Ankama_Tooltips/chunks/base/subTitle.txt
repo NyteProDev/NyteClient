@@ -1,0 +1,19 @@
+<!-- info sur une ligne complete -->
+<Container>
+	<Anchors>
+		<Anchor relativeTo="$LAST" relativePoint="BOTTOMLEFT" />
+	</Anchors>
+	
+	<Size>
+		<AbsDimension x="#length" />
+	</Size>
+	
+	<Label>
+		<text>#text</text>
+		<Size>
+			<AbsDimension x="#length" y="15" />
+		</Size>
+		<css>[local.css]tooltip_default.css</css>
+		<cssClass>subtitle</cssClass>
+	</Label>
+</Container>

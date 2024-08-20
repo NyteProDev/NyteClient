@@ -1,0 +1,21 @@
+<Label name="lbl_content">
+	<autoResize>false</autoResize>
+	<fixedWidth>true</fixedWidth>
+	<css>[local.css]tooltip_default.css</css>
+	<cssClass>text</cssClass>
+	<multiline>true</multiline>
+	<wordWrap>true</wordWrap>
+	<useCustomFormat>true</useCustomFormat>
+</Label>
+
+	
+<Container name="tx_back" strata="LOW">
+	<Anchors>
+		<Anchor>
+			<AbsDimension x="-4" y="-4" />
+		</Anchor>
+	</Anchors>
+	<shadowColor>[colors.ui.shadow]</shadowColor>
+	<bgColor>[colors.tooltip.bg]</bgColor>
+	<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+</Container>

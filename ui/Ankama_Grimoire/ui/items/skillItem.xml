@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+   <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       <Constant name="css" value="[config.ui.skin]css/" />
+   </Constants>
+
+	<Container name="mainCtr">
+		<Size>
+			<AbsDimension x="498" y="60" />
+		</Size>
+
+		<!-- Texture slotTarget-->
+
+		<Slot name="slotTarget">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="444" y="7" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="44" y="44" />
+			</Size>			
+		</Slot>
+
+		<!-- Texture slotTool-->
+
+		<Slot name="slotTool">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="4" y="8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="44" y="44" />
+			</Size>
+		</Slot>
+		
+		<!-- Label lblInfo-->
+		
+		<Label name="lblInfo">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="273" y="20" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="159" y="21" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]normal.css</css>
+		</Label>
+
+		<!-- Label lblTarget-->
+
+		<Label name="lblTarget">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="58" y="28" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="240" y="21" />
+			</Size>
+			<cssClass>left</cssClass>
+			<css>[local.css]normal.css</css>
+		</Label>
+
+		<!-- Label lblSkill-->
+
+		<Label name="lblSkill">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="54" y="6" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="240" y="21" />
+			</Size>
+			<cssClass>bold</cssClass>
+			<css>[local.css]normal.css</css>
+		</Label>
+	</Container>
+</Definition>

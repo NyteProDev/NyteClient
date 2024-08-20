@@ -1,0 +1,1 @@
+<p class='#customli'>#li<span class='#cssClass'>#text</span></p>

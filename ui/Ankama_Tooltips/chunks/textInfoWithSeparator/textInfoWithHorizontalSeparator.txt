@@ -1,0 +1,17 @@
+<Container name="ctr_infos">
+	<Label name="lbl_text">
+		<fixedWidth>false</fixedWidth>
+        <multiline>true</multiline>
+        <wordWrap>true</wordWrap>
+        <useStyleSheet>true</useStyleSheet>
+        <css>[local.css]normal2.css</css>
+	</Label>
+	<TextureBitmap name="tx_separator">
+        <uri>[config.ui.skin]common/window_separator_grey_horizontal.png</uri>
+	</TextureBitmap>
+	<Label name="lbl_additionalInfo">
+		<fixedWidth>false</fixedWidth>
+		<css>[local.css]small2.css</css>
+		<cssClass>center</cssClass>
+	</Label>
+</Container>

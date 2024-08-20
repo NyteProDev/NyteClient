@@ -1,0 +1,52 @@
+<Definition useCache="false">	
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Container name="mainCtr">		
+		<Container name="backgroundCtr">
+			<Size>
+				<AbsDimension x="422" />
+			</Size>
+			<bgCornerRadius>8</bgCornerRadius>
+			<bgColor>[colors.tooltip.bg]</bgColor>
+			<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+			<borderColor>[colors.tooltip.border]</borderColor>
+		</Container>
+		
+		<Label name="lbl_content">
+			<Anchors>
+				<Anchor >
+					<AbsDimension x="18" y="18" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="386"/>
+			</Size>
+			<css>[config.ui.skin]css/tooltip_item.css</css>
+			<useCustomFormat>true</useCustomFormat>
+			<wordWrap>true</wordWrap>
+			<fixedWidth>false</fixedWidth>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+		</Label>
+		
+		<themeIconButton name="btnClose">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-12" y="12" />
+				</Anchor>
+			</Anchors>
+            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_cross.png</iconUri>
+			<smooth>true</smooth>
+			<visible>false</visible>
+	    </themeIconButton>
+	    
+	    <themeIconButton name="btnMenu">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-12" y="52" />
+				</Anchor>
+			</Anchors>
+            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_gear.png</iconUri>
+			<smooth>true</smooth>
+			<visible>false</visible>
+	    </themeIconButton>
+	</Container>
+</Definition>

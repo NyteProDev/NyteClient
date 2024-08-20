@@ -1,0 +1,22 @@
+<Label name="lbl_text">
+    <Anchors>
+        <Anchor relativePoint="TOPLEFT">
+            <AbsDimension x="5" y="7" />
+        </Anchor>
+    </Anchors>
+    <fixedWidth>false</fixedWidth>
+    <fixedHeight>false</fixedHeight>
+    <css>[local.css]normal2.css</css>
+    <multiline>true</multiline>
+    <wordWrap>true</wordWrap>
+</Label>
+<Texture name="tx_icon">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="5" y="5" />
+        </Anchor>
+    </Anchors>
+    <Size>
+    	<AbsDimension x="20" y="20" />
+    </Size>
+</Texture>

@@ -1,0 +1,1 @@
+<p>[ui.common.cost]  <span class='value'>#apCost [ui.common.ap]</span></p><p>[ui.common.range]  <span class='value'>#range</span></p>

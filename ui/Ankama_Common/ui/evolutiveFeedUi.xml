@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition modal="false" labelDebug="false">
+
+	<Import url="[config.mod.template.button]iconButton.xml"/>
+	<Import url="[config.mod.template.button]themeIconButton.xml"/>
+	<Import url="[config.mod.template.button]simpleButton.xml"/>
+	<Import url="[config.mod.template]window.xml"/>
+	<Import url="[config.mod.template]block.xml"/>
+    <Import url="[config.mod.template]specific/equipmentSlot.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+
+        <Constant name="y_bottom_no_food" value="25" type="int" />
+        <Constant name="height_window_no_food" value="320" type="int" />
+        <Constant name="height_block_no_food" value="45" type="int" />
+
+	</Constants>
+
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor relativePoint="CENTER" point="CENTER">
+				<AbsDimension x="0" y="-70"/>
+			</Anchor>
+		</Anchors>
+
+		<mouseEnabled>true</mouseEnabled>
+		<shadowColor>[colors.ui.shadow]</shadowColor>
+
+		<window name="ctr_feed" closeButtonName="btn_close">
+			<Size>
+				<AbsDimension x="550" y="358"/>
+			</Size>
+			<title>[ui.evolutive.pet.feed]</title>
+            <iconUri>[local.texture]windowIcon/icon__0043_familiers.png</iconUri>
+			<movable>true</movable>
+			<hintAvailable>true</hintAvailable>
+			<Content>
+
+                <Label name="lbl_choseQuantity">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="10"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="480" y="20"/>
+                    </Size>
+                    <cssClass>center</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+
+                <block name="ctr_food">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="15" y="35"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="480" y="80" />
+                    </Size>
+
+                    <Content>
+                        <Container>
+                            <Size>
+                                <AbsDimension x="460" y="32"/>
+                            </Size>
+
+                            <TextureBitmap>
+                                <Size>
+                                    <AbsDimension x="470" y="32" />
+                                </Size>
+                                <uri>[local.common]bg_dark.png</uri>
+                            </TextureBitmap>
+
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="50" y="3" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="150" y="16" />
+                                </Size>
+                                <text>[ui.common.name]</text>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+
+                            <Label>
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="288" y="3" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="120" y="16" />
+                                </Size>
+                                <cssClass>right</cssClass>
+                                <css>[local.css]normal2.css</css>
+                                <text>[ui.common.quantity]</text>
+                            </Label>
+
+                        </Container>
+
+                        <Grid name="gd_food">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="1" y="33" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="468" y="40" />
+                            </Size>
+                            <autoSelectMode>0</autoSelectMode>
+                            <slotWidth>468</slotWidth>
+                            <slotHeight>40</slotHeight>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateFoodItemLine,[colors.grid.line]</rendererArgs>
+                            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+                            <Container name="ctr_foodLine">
+                                <Size>
+                                    <AbsDimension x="468" y="40" />
+                                </Size>
+
+                                <Texture>
+                                    <Size>
+                                        <AbsDimension x="458" y="40" />
+                                    </Size>
+                                    <bgColor>0</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Texture>
+
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="4" y="1" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="38" y="38" />
+                                    </Size>
+                                    <uri>[local.assets]tx_slot</uri>
+                                    <autoGrid>true</autoGrid>
+                                </Texture>
+
+                                <Slot name="slot_item">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="4" y="1" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="38" y="38" />
+                                    </Size>
+                                    <hideTopLabel>true</hideTopLabel>
+                                    <css>[local.css]normal2.css</css>
+                                    <forcedBackGroundIconUri>[config.ui.skin]texture/slot/slot_dark_background_empty.png</forcedBackGroundIconUri>
+                                    <allowDrag>false</allowDrag>
+                                    <isButton>false</isButton>
+                                    <highlightTexture>[local.assets]tx_invisible</highlightTexture>
+                                </Slot>
+
+                                <Label name="lbl_itemName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="50" y="7" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="255" y="16" />
+                                    </Size>
+                                    <css>[local.css]normal2.css</css>
+                                </Label>
+
+                                <Container>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="310" y="1" />
+                                        </Anchor>
+                                    </Anchors>
+
+                                    <TextureBitmap>
+                                        <Size>
+                                            <AbsDimension x="110" y="39" />
+                                        </Size>
+                                        <themeDataId>bg_small_border_dark</themeDataId>
+                                    </TextureBitmap>
+
+                                    <Input name="inp_itemQuantity">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="15" y="9" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="80" y="16" />
+                                        </Size>
+                                        <cssClass>right</cssClass>
+                                        <css>[local.css]normal2.css</css>
+                                        <maxChars>9</maxChars>
+                                    </Input>
+                                </Container>
+
+                                <themeIconButton name ="btn_itemRemove">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="425" y="9" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="22" y="21" />
+                                    </Size>
+                                    <iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+                                </themeIconButton>
+
+                            </Container>
+                        </Grid>
+                    </Content>
+                </block>
+
+                <Container name="ctr_bottom">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="15" y="60"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="480" y="220" />
+                    </Size>
+
+                    <Container>
+
+                        <Button name="btn_ctrDrop">
+                            <Common>
+                                <TextureBitmap name="tx_bg">
+                                    <Size>
+                                        <AbsDimension x="480" y="80" />
+                                    </Size>
+                                    <themeDataId>button_green_border_normal</themeDataId>
+                                </TextureBitmap>
+
+                                <Container name="ctr_drop">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="15" y="18"/>
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="450" y="40" />
+                                    </Size>
+
+                                    <Label>
+                                        <Size>
+                                            <AbsDimension x="450" y="20" />
+                                        </Size>
+                                        <cssClass>greenboldcenter</cssClass>
+                                        <css>[local.css]normal2.css</css>
+                                        <text>[ui.evolutive.pet.addResources]</text>
+                                    </Label>
+                                    <Label>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="0" y="18"/>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="450" y="20" />
+                                        </Size>
+                                        <cssClass>center</cssClass>
+                                        <css>[local.css]normal2.css</css>
+                                        <text>[ui.evolutive.pet.addResourcesPartTwo]</text>
+                                    </Label>
+                                </Container>
+
+                                <Container name="ctr_dropError">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="15" y="13"/>
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="450" y="60" />
+                                    </Size>
+                                    <visible>false</visible>
+
+                                    <Label name="lbl_dropError">
+
+                                        <Size>
+                                            <AbsDimension x="450" y="60" />
+                                        </Size>
+                                        <verticalAlign>center</verticalAlign>
+                                        <cssClass>center</cssClass>
+                                        <css>[local.css]normal2.css</css>
+                                        <multiline>true</multiline>
+                                        <wordWrap>true</wordWrap>
+                                        <hyperlinkEnabled>true</hyperlinkEnabled>
+                                        <useStyleSheet>true</useStyleSheet>
+                                    </Label>
+                                </Container>
+
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="tx_bg">
+                                    <themeDataId>button_green_border_over</themeDataId>
+                                </SetProperties>
+                            </State>
+                        </Button>
+
+
+                        <TextureBitmap name="tx_dropBorderOver">
+                            <Size>
+                                <AbsDimension x="480" y="80" />
+                            </Size>
+                            <visible>false</visible>
+                            <themeDataId>over_green</themeDataId>
+                        </TextureBitmap>
+
+                        <TextureBitmap name="tx_dropBorderSelected">
+                            <Size>
+                                <AbsDimension x="480" y="80" />
+                            </Size>
+                            <visible>false</visible>
+                            <themeDataId>selection_green</themeDataId>
+                        </TextureBitmap>
+
+                        <TextureBitmap name="tx_dropBorderError">
+                            <Size>
+                                <AbsDimension x="480" y="80" />
+                            </Size>
+                            <visible>false</visible>
+                            <themeDataId>refuse_red</themeDataId>
+                        </TextureBitmap>
+
+                        <Container name="ctr_invisibleDropLock">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="-10" y="-10"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="500" y="100" />
+                            </Size>
+                            <bgColor>0</bgColor>
+                            <bgAlpha>0</bgAlpha>
+                            <mouseEnabled>true</mouseEnabled>
+                        </Container>
+
+                    </Container>
+
+                    <Container>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="90"/>
+                            </Anchor>
+                        </Anchors>
+
+                        <equipmentSlot name="slot_itemToFeed" width="64" height="64">
+                            <allowDrag>false</allowDrag>
+                            <isButton>false</isButton>
+                            <highlightTexture>[local.assets]tx_invisible</highlightTexture>
+                        </equipmentSlot>
+
+                        <Label name="lbl_petLevel">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="-5" y="64"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="74" y="16"/>
+                            </Size>
+                            <cssClass>center</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <Label name="lbl_xpResult">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="75" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="200" y="20"/>
+                            </Size>
+                            <cssClass>whitebold</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <Label name="lbl_levelResult">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="280" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="205" y="20"/>
+                            </Size>
+                            <cssClass>whitebold</cssClass>
+                            <css>[local.css]normal2.css</css>
+                        </Label>
+
+                        <Grid name="gd_statResult">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="75" y="25" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="406" y="54" />
+                            </Size>
+                            <slotWidth>203</slotWidth>
+                            <slotHeight>18</slotHeight>
+                            <rendererName>LabelGridRenderer</rendererName>
+                            <rendererArgs>[local.css]normal2.css</rendererArgs>
+                        </Grid>
+
+                    </Container>
+
+                    <simpleButton label="[ui.common.validation]" name="btn_feedOk">
+                        <Anchors>
+                            <Anchor point="BOTTOM" relativePoint="BOTTOM">
+                                <AbsDimension y="-9"/>
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="90" y="35"/>
+                        </Size>
+                    </simpleButton>
+
+                </Container>
+
+			</Content>
+		</window>
+
+	</Container>
+</Definition>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition usePropertiesCache="false" debug="false" labelDebug="false">
+    <Import url="[config.mod.template]window.xml" />
+    <Import url="[config.mod.template.button]simpleButton.xml" />
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml" />
+
+    <Constants>
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture_uri" value="[config.ui.skin]texture/" />
+        <Constant name="bitmap_uri" value="[config.ui.skin]bitmap/" />
+    </Constants>
+
+    <windowWithoutTitleBar name="subhintList">
+        <Size>
+            <AbsDimension x="400" y="500" />
+        </Size>
+        <mouseEnabled>true</mouseEnabled>
+        <bgAlpha>1</bgAlpha>
+
+        <Content>
+            <comboBoxWithBackground name="cb_uiChoice" strata="TOP" width="275" height="38">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="5" y="10"/>
+                    </Anchor>
+                </Anchors>
+            </comboBoxWithBackground>
+            <themeIconButton name="btn_refresh">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="285" y="17" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="25" y="25" />
+                </Size>
+                <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_reset.png</iconUri>
+                <iconAnchors>
+                    <Anchor relativePoint="TOPLEFT">
+                        <AbsDimension x="2" y="2" />
+                    </Anchor>
+                    <Anchor relativePoint="BOTTOMRIGHT">
+                        <AbsDimension x="-2" y="-2" />
+                    </Anchor>
+                </iconAnchors>
+            </themeIconButton>
+            <Container name="ctr_info">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="5" y="48"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="345" y="30" />
+                </Size>
+
+                <Texture>
+                    <Size>
+                        <AbsDimension x="345" y="30" />
+                    </Size>
+                    <uri>[local.common]bg_dark.png</uri>
+                </Texture>
+
+                <Button name="btn_tabOrder">
+                    <Common>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="5" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Texture name="btn_tabOrder_tx">
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <uri>[local.assets]tx_invisible</uri>
+                        </Texture>
+                        <Label name="lbl_tabOrder">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="50" y="20" />
+                            </Size>
+                            <text>Ordre</text>
+                            <cssClass>bold</cssClass>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+                        <Hooks>
+                            <onRelease />
+                        </Hooks>
+                    </Common>
+                </Button>
+
+                <Button name="btn_tabElem">
+                    <Common>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="60" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Texture name="btn_tabElem_tx">
+                            <Size>
+                                <AbsDimension x="150" y="20" />
+                            </Size>
+                            <uri>[local.assets]tx_invisible</uri>
+                        </Texture>
+                        <Label name="lbl_tabElem">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="20" />
+                            </Size>
+                            <text>Element</text>
+                            <cssClass>bold</cssClass>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+                        <Hooks>
+                            <onRelease />
+                        </Hooks>
+                    </Common>
+                </Button>
+
+                <Button name="btn_tabParent">
+                    <Common>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="210" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Texture name="btn_tabDest_tx">
+                            <Size>
+                                <AbsDimension x="115" y="20" />
+                            </Size>
+                            <uri>[local.assets]tx_invisible</uri>
+                        </Texture>
+                        <Label name="lbl_tabParent">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="115" y="20" />
+                            </Size>
+                            <text>Parent</text>
+                            <cssClass>bold</cssClass>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+                        <Hooks>
+                            <onRelease />
+                        </Hooks>
+                    </Common>
+                </Button>
+
+            </Container>
+
+            <block name="ctr_list">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="78"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="355" y="345"/>
+                </Size>
+                <Content>
+                    <Grid name ="gd_subhints">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="2" y="2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="340" y="332" />
+                        </Size>
+                        <rendererName>InlineXmlGridRenderer</rendererName>
+                        <rendererArgs>updateSubhintLine,[colors.grid.line],,,[colors.grid.selected]</rendererArgs>
+                        <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                        <slotWidth>340</slotWidth>
+                        <slotHeight>30</slotHeight>
+                        <autoSelectMode>0</autoSelectMode>
+
+                        <Container>
+                            <Button name="btn_gridSubhint">
+                                <Common>
+                                    <Size>
+                                        <AbsDimension x="340" y="30" />
+                                    </Size>
+                                    <Label name="lbl_order">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="20" y="5" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="20" y="20" />
+                                        </Size>
+                                        <cssClass>bold</cssClass>
+                                        <css>[local.css]small2.css</css>
+                                    </Label>
+                                    <Label name="lbl_anchoredElement">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="60" y="5" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="150" y="20" />
+                                        </Size>
+                                        <cssClass>greenleft</cssClass>
+                                        <css>[local.css]small2.css</css>
+                                    </Label>
+                                    <Label name="lbl_parentName">
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="210" y="5" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="115" y="20" />
+                                        </Size>
+                                        <css>[local.css]small2.css</css>
+                                    </Label>
+                                </Common>
+                                <State type="OVER">
+                                    <SetProperties target="btn_gridSubhint">
+                                        <bgColor>[colors.grid.over]</bgColor>
+                                    </SetProperties>
+                                </State>
+
+                                <State type="SELECTED">
+                                    <SetProperties target="btn_gridSubhint">
+                                        <bgColor>[colors.grid.selected]</bgColor>
+                                    </SetProperties>
+                                </State>
+
+                                <State type="SELECTED_OVER">
+                                    <SetProperties target="btn_gridSubhint">
+                                        <bgColor>[colors.grid.selected]</bgColor>
+                                    </SetProperties>
+                                </State>
+                            </Button>
+                        </Container>
+                    </Grid>
+                </Content>
+            </block>
+
+            <Container name="ctr_moveSubhint">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="420"/>
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="355" y="40"/>
+                </Size>
+                <themeIconButton name="btn_moveUp">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="140" y="30" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="25" y="33" />
+                    </Size>
+                    <bgThemeDataId>btn_big_arrow</bgThemeDataId>
+                    <rotation>-90</rotation>
+                    <smooth>true</smooth>
+                    <disabled>true</disabled>
+                </themeIconButton>
+                <themeIconButton name="btn_moveDown">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="215" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="25" y="33" />
+                    </Size>
+                    <bgThemeDataId>btn_big_arrow</bgThemeDataId>
+                    <rotation>90</rotation>
+                    <smooth>true</smooth>
+                    <disabled>true</disabled>
+                </themeIconButton>
+            </Container>
+        </Content>
+    </windowWithoutTitleBar>
+</Definition>

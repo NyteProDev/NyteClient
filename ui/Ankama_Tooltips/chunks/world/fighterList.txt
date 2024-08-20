@@ -1,0 +1,34 @@
+<Container name="levelCtr">		
+	<Label name="lbl_level">
+		<text>#level</text>
+		<fixedWidth>false</fixedWidth>
+		<cssClass>center</cssClass>
+		<css>[local.css]tooltip_title.css</css>
+	</Label>
+</Container>
+
+<Container name="waveCtr">
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="2" />
+			</Anchor>
+		</Anchors>
+		<Texture name="tx_wave">
+			<Size>
+				<AbsDimension x="25" y="20" />
+			</Size>
+			<uri>[local.assets]tx_Pictowave</uri>
+		</Texture>
+	</Container>
+	<Label name="lbl_nbWaves">
+		<css>[local.css]tooltip_monster.css</css>
+	</Label>
+</Container>
+
+<Label name="lbl_fightersList">
+	<text>#fighters</text>
+	<css>[local.css]tooltip_monster.css</css>
+	<fixedWidth>false</fixedWidth>
+	<multiline>true</multiline>
+</Label>

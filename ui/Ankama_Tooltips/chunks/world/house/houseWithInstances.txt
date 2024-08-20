@@ -1,0 +1,42 @@
+<Container name="infosCtr">
+
+	<!-- Label "Petite maison de Bonta" -->
+	<Label name="lbl_type">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="5" y="0" />
+			</Anchor>
+		</Anchors>
+		<fixedWidth>false</fixedWidth>
+		<css>[local.css]tooltip_title.css</css>
+	</Label>
+	
+	<Container>
+		<Label name="lbl_instancesList">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="15" y="5" />
+				</Anchor>
+			</Anchors>
+			<text></text>
+			<fixedWidth>false</fixedWidth>
+			<css>[local.css]normal2.css</css>
+			<useCustomFormat>true</useCustomFormat>
+		</Label>
+	</Container>
+
+	<Container strata="LOW">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="-5" y="-5" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="5" y="5" />
+				</Anchor>
+			</Anchors>
+			<shadowColor>[colors.ui.shadow]</shadowColor>
+			<bgCornerRadius>10</bgCornerRadius>
+			<bgColor>[colors.tooltip.bg]</bgColor>
+			<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+	</Container>
+</Container>

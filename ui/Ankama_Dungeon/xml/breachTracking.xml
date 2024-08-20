@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition fullscreen="true" usePropertiesCache="false" debug="false" labelDebug="false" setOnTopOnClick="false">
+
+    <Import url="[config.mod.template.button]iconButton.xml" />
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+
+    <Constants>
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="picto_uri" value="[config.gfx.path]characteristics/characteristics.swf|" />
+
+        <Constant name="heightGridSlot" value="25" type="int" />
+    </Constants>
+
+    <Container name="mainCtrMinimize" strata="TOP">
+        <Anchors>
+            <Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+                <AbsDimension x="0" y="400" />
+            </Anchor>
+        </Anchors>
+        <mouseEnabled>true</mouseEnabled>
+        <Button name="btn_breachTrackingMaximized">
+            <Common>
+                <TextureBitmap>
+                    <uri>[local.texture]btnIcon/bg_button_circle.png</uri>
+                </TextureBitmap>
+                <Texture name="tx_button">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1" y="4" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="35" y="35" />
+                    </Size>
+                    <uri>[local.common]button_green_circle.png</uri>
+                </Texture>
+                <TextureBitmap>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="9" y="13" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="18" y="18" />
+                    </Size>
+                    <uri>[local.texture]btnIcon_spiral.png</uri>
+                    <smooth>true</smooth>
+                </TextureBitmap>
+                <Hooks>
+                    <onPress/>
+                    <onMouseUp/>
+                </Hooks>
+            </Common>
+            <State type="OVER">
+                <SetProperties target="tx_button">
+                    <uri>[local.common]button_green_circle_hover.png</uri>
+                </SetProperties>
+            </State>
+            <State type="PRESSED">
+                <SetProperties target="tx_button">
+                    <uri>[local.common]button_green_circle_pressed.png</uri>
+                </SetProperties>
+            </State>
+        </Button>
+        <dragController>true</dragController>
+        <useDragMagnetism>true</useDragMagnetism>
+        <dragTarget>mainCtrMinimize</dragTarget>
+    </Container>
+
+    <Container name="mainCtr" strata="TOP">
+        <Anchors>
+            <Anchor relativePoint="TOPLEFT" point="TOPLEFT">
+                <AbsDimension x="0" y="400" />
+            </Anchor>
+        </Anchors>
+        <mouseEnabled>true</mouseEnabled>
+
+        <TextureBitmap name="tx_buttonMinimizeBgLeft">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="-2" y="-1" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="250" y="30" />
+            </Size>
+            <themeDataId>floating_window_bar</themeDataId>
+            <dragController>true</dragController>
+            <dragBoundsContainer>mainCtr</dragBoundsContainer>
+            <useDragMagnetism>true</useDragMagnetism>
+            <dragTarget>mainCtr</dragTarget>
+        </TextureBitmap>
+
+        <Label name="lbl_title">
+            <Anchors>
+                <Anchor relativeTo="tx_buttonMinimizeBgLeft" relativePoint="TOP" point="TOP">
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="250" y="22" />
+            </Size>
+            <text>[ui.breach.title]</text>
+            <cssClass>smallcenter</cssClass>
+            <css>[local.css]title.css</css>
+        </Label>
+
+        <Button name="btn_minimize">
+            <Common>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="216" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="120" y="17" />
+                </Size>
+                <Texture name="tx_buttonMinimize">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="5" y="5" />
+                        </Anchor>
+                    </Anchors>
+                    <uri>[local.texture]hud/icon_minus_floating_menu.png</uri>
+                </Texture>
+
+                <Hooks>
+                    <onRelease />
+                </Hooks>
+            </Common>
+        </Button>
+        <themeIconButton name="btn_options">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="195" y="0" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="26" y="26" />
+            </Size>
+            <bgScaleX>0</bgScaleX>
+            <iconUri>[local.texture]hud/icon_option_floating_menu.png</iconUri>
+            <Hooks>
+                <onRelease/>
+            </Hooks>
+        </themeIconButton>
+
+        <Container name="ctr_breachInfo">
+
+            <Grid name="gd_breachTracking">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="27" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="245" y="300"/>
+                </Size>
+                <rendererName>MultiGridRenderer</rendererName>
+                <rendererArgs>updateCategory,getCatLineType</rendererArgs>
+                <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+                <slotWidth>245</slotWidth>
+                <slotHeight>25</slotHeight>
+                <Container name="ctr_cat">
+                    <Size>
+                        <AbsDimension x="245" y="20" />
+                    </Size>
+                    <Button name="btn_cat">
+                        <Common>
+                            <radioMode>true</radioMode>
+
+                            <Container>
+                                <Size>
+                                    <AbsDimension x="245" y="25" />
+                                </Size>
+                                <bgColor>[colors.ui.shadow.dark]</bgColor>
+                            </Container>
+
+                            <Texture name="tx_cat">
+                                <Size>
+                                    <AbsDimension x="245" y="25" />
+                                </Size>
+                                <uri>[local.common]list_menu_background.png</uri>
+                            </Texture>
+
+                            <Label name="lbl_catName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="15" y="2" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="180" y="22" />
+                                </Size>
+                                <css>[local.css]small2.css</css>
+                            </Label>
+                            <Texture name="tx_catPlusminus">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="220" y="2" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="20" y="20" />
+                                </Size>
+                                <visible>true</visible>
+                            </Texture>
+
+                        </Common>
+                    </Button>
+                    <Texture name="tx_saved">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="195" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="15" y="15" />
+                        </Size>
+                        <uri>[local.texture]icon_flag_yellow.png</uri>
+                        <visible>false</visible>
+                    </Texture>
+                </Container>
+                <Container name="ctr_groupInfo">
+                    <Size>
+                        <AbsDimension x="245" y="75" />
+                    </Size>
+                    <bgColor>[colors.ui.shadow.dark]</bgColor>
+                    <bgAlpha>0.6</bgAlpha>
+
+                    <Label name="lbl_ownerName">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="200" y="22" />
+                        </Size>
+                        <css>[local.css]small2.css</css>
+                    </Label>
+
+                    <Container name="ctr_budget">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="135" y="25" />
+                        </Size>
+                        <Label name="lbl_budget">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="120" y="22" />
+                            </Size>
+                            <cssClass>whiteleft</cssClass>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+                        <Texture name="tx_budget">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="105" y="5" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="17" y="17" />
+                            </Size>
+                            <uri>[local.texture]icon_spiral.png</uri>
+                            <visible>true</visible>
+                        </Texture>
+                    </Container>
+
+                    <Container name="ctr_invitAllMembers">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="25" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="245" y="25" />
+                        </Size>
+                        <Label name="lbl_invitAllMembers">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="15" y="2" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="225" y="22" />
+                            </Size>
+                            <text>{invitGroup::[ui.breach.invitAllMembers]}</text>
+                            <cssClass>greenleft</cssClass>
+                            <css>[local.css]small2.css</css>
+                            <hyperlinkEnabled>true</hyperlinkEnabled>
+                            <useStyleSheet>true</useStyleSheet>
+                        </Label>
+                    </Container>
+                </Container>
+                <Container name="ctr_bonus">
+                    <Size>
+                        <AbsDimension x="245" y="25" />
+                    </Size>
+                    <bgColor>[colors.ui.shadow.dark]</bgColor>
+                    <bgAlpha>0.6</bgAlpha>
+                    <Label name="lbl_bonus">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="240" y="22" />
+                        </Size>
+                        <cssClass>whiteleft</cssClass>
+                        <css>[local.css]small2.css</css>
+                    </Label>
+                    <Texture name="tx_bonus">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="220" y="2" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="20" y="20" />
+                        </Size>
+                    </Texture>
+                </Container>
+                <Container name="ctr_roomInfo">
+                    <Size>
+                        <AbsDimension x="245" y="100" />
+                    </Size>
+                    <bgColor>[colors.ui.shadow.dark]</bgColor>
+                    <bgAlpha>0.6</bgAlpha>
+
+                    <Texture name="tx_slotBoss">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="70" />
+                        </Size>
+                        <uri>[local.texture]slot/slot_dark_background_empty.png</uri>
+                    </Texture>
+                    <EntityDisplayer name="ed_boss">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="15" y="15" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="70" y="70" />
+                        </Size>
+                        <direction>1</direction>
+                    </EntityDisplayer>
+                    <Label name="lbl_bossName">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="95" y="37" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="145" y="22" />
+                        </Size>
+                        <multiline>true</multiline>
+                        <wordWrap>true</wordWrap>
+                        <cssClass>whiteleft</cssClass>
+                        <css>[local.css]small2.css</css>
+                    </Label>
+                </Container>
+                <Container name="ctr_leave">
+                    <Size>
+                        <AbsDimension x="245" y="25" />
+                    </Size>
+                    <bgColor>[colors.ui.shadow.dark]</bgColor>
+                    <bgAlpha>0.9</bgAlpha>
+
+                    <Label name="lbl_leave">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="1" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="225" y="22" />
+                        </Size>
+                        <text>{leaveBreach::[ui.breach.leaveBreach]}</text>
+                        <cssClass>greenright</cssClass>
+                        <css>[local.css]small2.css</css>
+                        <hyperlinkEnabled>true</hyperlinkEnabled>
+                        <useStyleSheet>true</useStyleSheet>
+                    </Label>
+                </Container>
+            </Grid>
+
+        </Container>
+
+    </Container>
+</Definition>

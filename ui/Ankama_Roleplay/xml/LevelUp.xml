@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition modal="true" labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml"/>
+	<Import url="mod://Ankama_Roleplay/xml/template/levelUpWindow.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|"/>
+		<Constant name="css" value="[config.ui.skin]css/"/>
+		<Constant name="texture" value="[config.ui.skin]texture/"/>
+		<Constant name="common" value="[config.ui.skin]common/"/>
+        <Constant name="levelUp" value="[config.ui.skin]texture/levelup/"/>
+	</Constants>
+    
+    <levelUpWindow centerY="160" separatorY="-125">
+        <Size>
+            <AbsDimension x="680" y="230"/>
+        </Size>
+    </levelUpWindow>
+</Definition>

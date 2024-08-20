@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition fullscreen="true">
+	<Constants>
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+    </Constants>
+	
+	<Container name="mainCtr">
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="200" />
+			</Anchor>
+		</Anchors>
+		<Button name="btn_questList">
+			<Common>
+				<TextureBitmap>
+					<uri>[local.texture]btnIcon/bg_button_circle.png</uri>
+				</TextureBitmap>
+				<Texture name="tx_button">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="1" y="4" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="35" y="35" />
+					</Size>
+					<uri>[local.common]button_green_circle.png</uri>
+				</Texture>
+				<TextureBitmap>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="9" y="13" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="18" y="18" />
+					</Size>
+					<uri>[local.texture]btnIcon/btnIcon_quest.png</uri>
+					<smooth>true</smooth>
+				</TextureBitmap>
+				<Hooks>
+					<onPress/>
+					<onMouseUp/>
+				</Hooks>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="tx_button">
+					<uri>[local.common]button_green_circle_hover.png</uri>
+				</SetProperties>
+			</State>
+			<State type="PRESSED">
+				<SetProperties target="tx_button">
+					<uri>[local.common]button_green_circle_pressed.png</uri>
+				</SetProperties>
+			</State>
+		</Button>
+		<dragController>true</dragController>
+		<dragTarget>mainCtr</dragTarget>
+		<useDragMagnetism>true</useDragMagnetism>
+	</Container>
+</Definition>

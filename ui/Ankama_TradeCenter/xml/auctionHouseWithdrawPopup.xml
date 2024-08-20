@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false" debug="false" modal="true" usePropertiesCache="false">
+    <Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]windowWithoutTitleBar.xml"/>
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+
+    <Constants>
+        <Constant name="common" value="[config.ui.skin]common/" />
+        <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+        <Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="btn.css" value="[config.ui.skin]css/button.css" />
+        <Constant name="btn.file" value="[local.assets]btn_orange" />
+        <Constant name="popWidth" value="550" />
+        <Constant name="blkItemListWithoutItem" value="40" />
+        <Constant name="popupHeightWithoutItem" value="230" />
+        <Constant name="lblPositionWithoutItem" value="110" />
+
+    </Constants>
+
+    <Container name="popCtr">
+        <Anchors>
+            <Anchor relativePoint="CENTER" point="CENTER" />
+        </Anchors>
+
+        <Size>
+            <AbsDimension x="[local.popWidth]" y="250" />
+        </Size>
+
+        <mouseEnabled>true</mouseEnabled>
+        <shadowColor>[colors.ui.shadow]</shadowColor>
+
+        <Container>
+            <Size>
+                <RelDimension x="1" y="1"/>
+            </Size>
+            <Anchors>
+                <Anchor relativePoint="CENTER" point="CENTER" />
+            </Anchors>
+
+            <windowWithoutTitleBar name="popup">
+                <Size>
+                    <RelDimension x="1" y="1"/>
+                </Size>
+            </windowWithoutTitleBar>
+
+            <Label name="lbl_subtitle">
+                <Anchors>
+                    <Anchor relativeTo="lbl_title_popup">
+                        <AbsDimension x="32" y="40" />
+                    </Anchor>
+                    <Anchor relativePoint="BOTTOMRIGHT">
+                        <AbsDimension x="-32" y="-55" />
+                    </Anchor>
+                </Anchors>
+                <css>[local.css]normal2.css</css>
+                <cssClass>center</cssClass>
+                <fixedHeight>false</fixedHeight>
+            </Label>
+            <block name="blk_itemList">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="35" y="100" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="480" y="200" />
+                </Size>
+                <Content>
+                    <Texture>
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="0" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="470" y="30" />
+                        </Size>
+                        <uri>[local.common]bg_dark.png</uri>
+                    </Texture>
+                    <Button name="btn_tabName">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="45" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabName">
+                                <Size>
+                                    <AbsDimension x="215" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="215" y="20" />
+                                </Size>
+                                <text>[ui.common.name]</text>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                    <Button name="btn_tabStack">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="260" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabStack">
+                                <Size>
+                                    <AbsDimension x="50" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabStack">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="50" y="20" />
+                                </Size>
+                                <text>[ui.bidhouse.lot]</text>
+                                <css>[local.css]normal2.css</css>
+                                <cssClass>center</cssClass>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+                    <Button name="btn_tabPrice">
+                        <Common>
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="325" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Texture name="tx_btn_tabPrice">
+                                <Size>
+                                    <AbsDimension x="95" y="30" />
+                                </Size>
+                                <uri>[local.assets]tx_invisible</uri>
+                            </Texture>
+                            <Label name="lbl_tabPrice">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="0" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="95" y="20" />
+                                </Size>
+                                <text>[ui.common.price]</text>
+                                <css>[local.css]normal2.css</css>
+                                <cssClass>right</cssClass>
+                            </Label>
+                            <Hooks>
+                                <onRelease />
+                            </Hooks>
+                        </Common>
+                    </Button>
+
+                    <Grid name="gd_itemList">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="0" y="30" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="470" y="160" />
+                        </Size>
+                        <slotWidth>470</slotWidth>
+                        <slotHeight>40</slotHeight>
+                        <rendererName>InlineXmlGridRenderer</rendererName>
+                        <rendererArgs>updateItem,[colors.grid.line]</rendererArgs>
+                        <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+
+                        <Container name="ctr_item">
+                            <Texture name="tx_itemBg">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="5" y="1" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="37" y="37" />
+                                </Size>
+                                <uri>[local.texture]slot/emptySlot.png</uri>
+                            </Texture>
+                            <Texture name="tx_itemIcon">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="5" y="2" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="35" y="35" />
+                                </Size>
+                            </Texture>
+                            <Label name="lbl_itemName">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="45" y="8" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="215" y="16" />
+                                </Size>
+                                <cssClass>left</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label name="lbl_itemQuantity">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="270" y="8" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="50" y="16" />
+                                </Size>
+                                <cssClass>center</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Label name="lbl_itemPrice">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="300" y="8" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="100" y="16" />
+                                </Size>
+                                <cssClass>right</cssClass>
+                                <css>[local.css]normal2.css</css>
+                            </Label>
+                            <Texture name="iconKama">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="395" y="5" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="30" y="30" />
+                                </Size>
+                                <uri>[local.texture]icon_kama_shadow.png</uri>
+                            </Texture>
+                            <themeIconButton name ="btn_itemRemove">
+                                <Anchors>
+                                    <Anchor>
+                                        <AbsDimension x="430" y="9" />
+                                    </Anchor>
+                                </Anchors>
+                                <Size>
+                                    <AbsDimension x="22" y="21" />
+                                </Size>
+                                <iconUri>[local.texture]btnIcon/btnIcon_cross.png</iconUri>
+                            </themeIconButton>
+                        </Container>
+                    </Grid>
+                </Content>
+            </block>
+
+            <Container name="ctr_labelInfo">
+                <Label name="lbl_totalItems">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="35"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="200" y="16" />
+                    </Size>
+                    <cssClass>left</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+                <Label name="lbl_totalPrice">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="325"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="170" y="16" />
+                    </Size>
+                    <cssClass>right</cssClass>
+                    <css>[local.css]normal2.css</css>
+                </Label>
+                <Texture>
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="490" y="-4"/>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="30" y="30" />
+                    </Size>
+                    <uri>[local.texture]icon_kama_shadow.png</uri>
+                </Texture>
+            </Container>
+
+
+            <Container name="ctr_buttons">
+                <Anchors>
+                    <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                        <AbsDimension x="0" y="-45" />
+                    </Anchor>
+                </Anchors>
+                <simpleButton label="[ui.common.yes]" name="btn_yes">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="150" y="32" />
+                    </Size>
+                </simpleButton>
+                <Texture>
+                    <Anchors>
+                        <Anchor relativeTo="btn_yes">
+                            <AbsDimension x="5" y="1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="30" y="30" />
+                    </Size>
+                    <uri>[local.texture]icon_true.png</uri>
+                </Texture>
+                <simpleButton label="[ui.common.no]" name="btn_no">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="200" y="0" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="150" y="32" />
+                    </Size>
+                </simpleButton>
+                <Texture>
+                    <Anchors>
+                        <Anchor relativeTo="btn_no">
+                            <AbsDimension x="5" y="1" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="30" y="30" />
+                    </Size>
+                    <uri>[local.texture]icon_false.png</uri>
+                </Texture>
+            </Container>
+        </Container>
+    </Container>
+</Definition>

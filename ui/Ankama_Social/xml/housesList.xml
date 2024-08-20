@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+    <Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]window.xml" />
+    
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="houses_uri" value="[config.content.path]gfx/houses/" />
+   	</Constants>
+
+	<Container name="ctr_main">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-40" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="640" y="750" />
+		</Size>
+		<mouseEnabled>true</mouseEnabled>
+
+		
+		<window name="ctr_window" title="[ui.common.housesWord]">
+			<Size>
+				<AbsDimension x="640" y="750" />
+			</Size>
+			<iconUri>[local.texture]windowIcon/icon__0035_Maison.png</iconUri>
+			<movable>true</movable>
+			<hintAvailable>true</hintAvailable>
+		 	<Content> 		
+				<block name="ctr_block">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="10" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="600" y="665" />
+					</Size>
+				</block>
+		
+		
+				<Container>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="8" y="15" />
+						</Anchor>
+					</Anchors>
+
+					<Texture name="tx_bgLight">
+						<Size>
+							<AbsDimension x="585" y="617" />
+						</Size>
+						<uri>[local.common]bg_light.png</uri>
+					</Texture>
+
+					<Grid name="gd_houses">
+						<Size>
+							<AbsDimension x="585" y="620" />
+						</Size>
+						<rendererName>InlineXmlGridRenderer</rendererName>
+						<rendererArgs>updateHouseLine,[colors.grid.line]</rendererArgs>
+						<slotWidth>585</slotWidth>
+						<slotHeight>310</slotHeight>
+						<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+						<verticalScrollSpeed>0.333333</verticalScrollSpeed>
+
+						<Container>
+							<Size>
+								<AbsDimension x="585" y="310" />
+							</Size>
+
+							<Texture>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="-25" y="10" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="250" y="250" />
+								</Size>
+								<uri>[local.common]light_bg_inventory.png</uri>
+								<visible>true</visible>
+							</Texture>
+
+							<TextureBitmap>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="14" y="16"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="188" y="275" />
+								</Size>
+								<themeDataId>bg_small_border_dark</themeDataId>
+							</TextureBitmap>
+
+							<Texture name="tx_illu">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="20" y="22" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="172" y="261" />
+								</Size>
+							</Texture>
+
+							<Label name="lbl_house">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="20" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="355" y="20" />
+								</Size>
+								<cssClass>white</cssClass>
+								<css>[local.css]normal2.css</css>
+							</Label>
+
+							<Label name="lbl_loc">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="55" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="355" y="16" />
+								</Size>
+								<cssClass>p</cssClass>
+								<css>[local.css]small2.css</css>
+							</Label>
+
+							<Label name="lbl_coord">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="80" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="355" y="16" />
+								</Size>
+								<cssClass>p</cssClass>
+								<css>[local.css]small2.css</css>
+								<hyperlinkEnabled>true</hyperlinkEnabled>
+								<useStyleSheet>true</useStyleSheet>
+							</Label>
+
+							<Container>
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="263" />
+									</Anchor>
+								</Anchors>
+
+								<Texture name="tx_isLocked">
+									<Size>
+										<AbsDimension x="22" y="22" />
+									</Size>
+									<uri>[local.texture]icon_lock.png</uri>
+								</Texture>
+
+								<Texture name="tx_isOnSale">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="30" y="4" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="18" y="16" />
+									</Size>
+									<uri>[local.texture]icon_kama_gris.png</uri>
+								</Texture>
+							</Container>
+
+							<Label name="lbl_guildShare">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="125"/>
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="355" y="20"/>
+								</Size>
+								<cssClass>green</cssClass>
+								<css>[local.css]small2.css</css>
+								<text>[ui.house.accessGuildShare]</text>
+								<handCursor>true</handCursor>
+							</Label>
+
+							<Container name="ctr_emblem">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="216" y="160" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="76" y="76" />
+								</Size>
+								<Texture name="tx_emblemBack">
+									<Size>
+										<AbsDimension x="76" y="76" />
+									</Size>
+								</Texture>
+								<Texture name="tx_emblemUp">
+									<Anchors>
+										<Anchor>
+											<AbsDimension x="15" y="15" />
+										</Anchor>
+									</Anchors>
+									<Size>
+										<AbsDimension x="46" y="46" />
+									</Size>
+								</Texture>
+							</Container>
+
+							<simpleButton name="btn_join">
+								<Anchors>
+									<Anchor>
+										<AbsDimension x="430" y="252" />
+									</Anchor>
+								</Anchors>
+								<Size>
+									<AbsDimension x="130" y="32" />
+								</Size>
+								<label>[ui.common.join]</label>
+							</simpleButton>
+						</Container>
+					</Grid>
+
+					<Container name="ctr_bottom">
+						<Anchors>
+							<Anchor>
+								<AbsDimension x="0" y="655" />
+							</Anchor>
+						</Anchors>
+						<Texture>
+							<Size>
+								<AbsDimension x="585" y="36" />
+							</Size>
+							<scaleY>-1</scaleY>
+							<uri>[local.common]bg_dark.png</uri>
+						</Texture>
+
+						<Label name="lbl_housesCount">
+							<Anchors>
+								<Anchor>
+									<AbsDimension x="135" y="-27" />
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="440" y="16" />
+							</Size>
+							<cssClass>right</cssClass>
+							<css>[local.css]small2.css</css>
+						</Label>
+					</Container>
+
+				</Container>
+			</Content>
+		</window>
+		
+	</Container>
+</Definition>
+

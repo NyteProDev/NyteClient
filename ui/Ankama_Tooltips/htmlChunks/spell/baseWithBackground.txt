@@ -1,0 +1,68 @@
+<Definition useCache="false">
+	<Constants>
+		<Constant name="spellZoneIconY" value="128" type="int" />
+		<Constant name="spellZoneIconNoCriticalY" value="110" type="int" />
+		<Constant name="spellZoneIconY-smallScreen" value="142" type="int" />
+		<Constant name="spellZoneIconNoCriticalY-smallScreen" value="121" type="int" />
+	</Constants>
+	
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	
+	<Container name="mainCtr">		
+		<Container name="backgroundCtr">
+			<Size>
+				<AbsDimension x="422" />
+			</Size>
+			<bgCornerRadius>8</bgCornerRadius>
+			<bgColor>[colors.tooltip.bg]</bgColor>
+			<bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+			<borderColor>[colors.tooltip.border]</borderColor>
+		</Container>
+		
+		<Texture name="tx_icon">
+			<Anchors>
+				<Anchor >
+					<AbsDimension x="14" y="14" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="40" y="40" />
+			</Size>
+		</Texture>
+		
+		<Texture name="tx_spellZoneIcon">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="14" y="[local.spellZoneIconY]" />
+				</Anchor>
+			</Anchors>
+		</Texture>
+		
+		<Label name="lbl_content">
+			<Anchors>
+				<Anchor >
+					<AbsDimension x="14" y="14" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="394"/>
+			</Size>
+			<css>[config.ui.skin]css/tooltip_spell.css</css>
+			<useCustomFormat>true</useCustomFormat>
+			<wordWrap>true</wordWrap>
+			<fixedWidth>false</fixedWidth>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+		</Label>
+		
+		<themeIconButton name="btnClose">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-12" y="12" />
+				</Anchor>
+			</Anchors>
+            <iconUri>[config.ui.skin]texture/btnIcon/btnIcon_cross.png</iconUri>
+			<smooth>true</smooth>
+			<visible>false</visible>
+	    </themeIconButton>
+	</Container>
+</Definition>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Constants>
+		<Constant name="commons" value="mod://Ankama_Common/graphics/" />
+		<Constant name="css" value="mod://Ankama_Common/css/" />
+		
+		<Constant name="items" value="[config.gfx.path]items/" />
+	</Constants>
+	
+	<Container name="mainCtr">
+		<Size>
+			<AbsDimension x="37" y="31" />
+		</Size>
+		<Button name="btn">
+			<Common>
+				<Texture name="icon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="3" y="0" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="31" y="31" />
+					</Size>
+				</Texture>
+				<Label name="lblNum">
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" />
+					</Anchors>
+					<Size>
+						<AbsDimension x="22" y="16" />
+					</Size>
+					<css>[local.css]23.css</css>
+				</Label>
+				<Hooks>
+					<onRollOver />
+					<onRollOut />
+				</Hooks>
+			</Common>
+			<State type="OVER">
+				<SetProperties target="icon">
+					<bgColor>[colors.ui.light]</bgColor>
+					<alpha>.8</alpha>
+				</SetProperties>
+			</State>
+		</Button>
+	</Container>
+</Definition>
+

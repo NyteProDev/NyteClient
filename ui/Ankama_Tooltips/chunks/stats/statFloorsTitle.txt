@@ -1,0 +1,34 @@
+<Container>
+	<Label>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<text>[ui.charaSheet.floor]</text>
+		<cssClass>boldcenter</cssClass>
+		<css>[local.css]normal2.css</css>
+	</Label>
+	<Label>
+		<Anchors>
+			<Anchor relativeTo="$LAST" relativePoint="TOPRIGHT">
+				<AbsDimension x="70" y="0" />
+			</Anchor>
+		</Anchors>
+		<text>#statName</text>
+		<cssClass>bold</cssClass>
+		<css>[local.css]normal2.css</css>
+		<fixedWidth>false</fixedWidth>
+	</Label>
+	<Label>
+		<Anchors>
+			<Anchor relativeTo="$LAST" relativePoint="TOPRIGHT">
+				<AbsDimension x="70" y="0" />
+			</Anchor>
+		</Anchors>
+		<text>[ui.common.cost]</text>
+		<cssClass>bold</cssClass>
+		<css>[local.css]normal2.css</css>
+		<fixedWidth>false</fixedWidth>
+	</Label>
+</Container>

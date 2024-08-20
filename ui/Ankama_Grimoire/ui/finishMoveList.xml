@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+	<Import url="[config.mod.template.button]simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+
+	<Constants>
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="illu1" value="[config.content.path]gfx/illusUi/finishMoves/1.jpg" />
+        <Constant name="illu2" value="[config.content.path]gfx/illusUi/finishMoves/2.jpg" />
+        <Constant name="illu3" value="[config.content.path]gfx/illusUi/finishMoves/3.jpg" />
+        <Constant name="illu4" value="[config.content.path]gfx/illusUi/finishMoves/4.jpg" />
+        <Constant name="illu5" value="[config.content.path]gfx/illusUi/finishMoves/5.jpg" />
+        <Constant name="illu6" value="[config.content.path]gfx/illusUi/finishMoves/6.jpg" />
+        <Constant name="illu7" value="[config.content.path]gfx/illusUi/finishMoves/7.jpg" />
+        <Constant name="illu8" value="[config.content.path]gfx/illusUi/finishMoves/8.jpg" />
+        <Constant name="illu15" value="[config.content.path]gfx/illusUi/finishMoves/9.jpg" />
+        <Constant name="illu10" value="[config.content.path]gfx/illusUi/finishMoves/10.jpg" />
+        <Constant name="illu11" value="[config.content.path]gfx/illusUi/finishMoves/11.jpg" />
+        <Constant name="illu14" value="[config.content.path]gfx/illusUi/finishMoves/12.jpg" />
+        <Constant name="illu18" value="[config.content.path]gfx/illusUi/finishMoves/13.jpg" />
+        <Constant name="illu19" value="[config.content.path]gfx/illusUi/finishMoves/14.jpg" />
+        <Constant name="illu20" value="[config.content.path]gfx/illusUi/finishMoves/15.jpg" />
+        <Constant name="illu21" value="[config.content.path]gfx/illusUi/finishMoves/16.jpg" />
+        <Constant name="illu27" value="[config.content.path]gfx/illusUi/finishMoves/17.jpg" />
+        <Constant name="illu28" value="[config.content.path]gfx/illusUi/finishMoves/18.jpg" />
+        <Constant name="illu30" value="[config.content.path]gfx/illusUi/finishMoves/19.jpg" />
+        <Constant name="illu31" value="[config.content.path]gfx/illusUi/finishMoves/20.jpg" />
+	</Constants>
+
+    <Container>
+        <Anchors>
+            <Anchor>
+                <AbsDimension x="-12" y="-12"/>
+            </Anchor>
+        </Anchors>
+        <Size>
+            <AbsDimension x="776" y="700" />
+        </Size>
+        <hintAvailable>true</hintAvailable>
+
+        <!-- background -->
+        <Texture>
+            <Size>
+                <AbsDimension x="776" y="700" />
+            </Size>
+            <uri>[local.texture]spell/background_fatal_window.png</uri>
+            <visible>false</visible>
+        </Texture>
+
+        <Label name="lbl_info">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="85" y="26"/>
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="610"/>
+            </Size>
+            <text>[ui.grimoire.finishMove.title]</text>
+            <cssClass>italiccenter</cssClass>
+            <css>[local.css]normal2.css</css>
+        </Label>
+
+        <!-- grille des coups fatals -->
+        <Grid name="gd_finishMoves">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="42" y="62" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="709" y="152" />
+            </Size>
+            <rendererName>InlineXmlGridRenderer</rendererName>
+            <rendererArgs>updateFinishMoveLine</rendererArgs>
+            <slotWidth>233</slotWidth>
+            <slotHeight>38</slotHeight>
+            <verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+            <Hooks>
+                <onSelectItem />
+            </Hooks>
+
+            <Container>
+                <Button name="btn_finishMove">
+                    <Common>
+                        <Size>
+                            <AbsDimension x="233" y="38" />
+                        </Size>
+                        <Hooks>
+                            <onRollOver/>
+                            <onRollOut/>
+                        </Hooks>
+
+                        <Texture name="tx_bgFinishMove">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="0" y="0" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="233" y="38" />
+                            </Size>
+                            <uri>[local.texture]spell/btnsmall__fatal_normal.png</uri>
+                        </Texture>
+
+                        <Texture name="tx_checkFinishMove">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="8" y="8" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="22" y="22" />
+                            </Size>
+                            <uri>[local.texture]slot/validationSlot.png</uri>
+                        </Texture>
+
+                        <Label name="lbl_finishMoveName">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="35" y="7" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="195" y="16" />
+                            </Size>
+                            <css>[local.css]small2.css</css>
+                        </Label>
+                    </Common>
+
+                    <State type="OVER">
+                        <SetProperties target="tx_bgFinishMove">
+                            <uri>[local.texture]spell/btnsmall_fatal_over.png</uri>
+                        </SetProperties>
+                    </State>
+
+                    <State type="PRESSED">
+                        <SetProperties target="tx_bgFinishMove">
+                            <uri>[local.texture]spell/btnsmall_fatal_pressed.png</uri>
+                        </SetProperties>
+                    </State>
+
+                    <State type="SELECTED">
+                        <SetProperties target="tx_bgFinishMove">
+                            <uri>[local.texture]spell/btnsmall_fatal_selected.png</uri>
+                        </SetProperties>
+                    </State>
+
+                    <State type="SELECTED_OVER">
+                        <SetProperties target="tx_bgFinishMove">
+                            <uri>[local.texture]spell/btnsmall_fatal_selected_over.png</uri>
+                        </SetProperties>
+                    </State>
+                </Button>
+            </Container>
+        </Grid>
+
+        <Container>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="43" y="216" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="698" y="430" />
+            </Size>
+            <bgColor>0xffffff</bgColor>
+            <bgAlpha>0.1</bgAlpha>
+        </Container>
+        <!-- illu du coup fatal -->
+        <Texture name="tx_illu">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="58" y="230" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="668" y="400" />
+            </Size>
+            <uri>[config.content.path]gfx/illusUi/finishMoves/1.jpg</uri>
+        </Texture>
+
+        <Texture name="tx_warning">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="40" y="651" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="32" y="32" />
+            </Size>
+            <uri>[config.ui.skin]texture/pin_mark_red.png</uri>
+            <visible>false</visible>
+        </Texture>
+
+        <Label name="lbl_warning">
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="77" y="655" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="650" y="22" />
+            </Size>
+            <css>[local.css]normal2.css</css>
+            <cssClass>p</cssClass>
+            <hyperlinkEnabled>true</hyperlinkEnabled>
+            <useStyleSheet>true</useStyleSheet>
+            <useCustomFormat>true</useCustomFormat>
+            <text>[ui.grimoire.finishMove.warning]</text>
+            <visible>false</visible>
+        </Label>
+
+    </Container>
+</Definition>

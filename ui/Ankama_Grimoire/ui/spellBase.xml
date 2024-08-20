@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition labelDebug="false">
+
+	<Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]button/iconButton.xml" />
+    <Import url="[config.mod.template]button/themeHorizontalTab.xml" />
+    <Import url="[config.mod.template]blockDoubleBorder.xml" />
+
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+
+	<window name="mainCtr" title="[ui.grimoire.mySpell]" iconUri="[config.ui.skin]texture/windowIcon/icon__0028_Sorts.png" noHelpButton="false">
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER">
+				<AbsDimension x="0" y="-50" />
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="820" y="820" />
+		</Size>
+		<movable>true</movable>
+		<mouseEnabled>true</mouseEnabled>
+        <hintAvailable>true</hintAvailable>
+
+		<Content>
+
+            <blockDoubleBorder>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="3" y="45" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="776" y="700" />
+                </Size>
+            </blockDoubleBorder>
+
+            <themeHorizontalTab name="btn_tabSpell">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="41" y="6" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="45" />
+                </Size>
+                <text>[ui.common.breedSpell]</text>
+            </themeHorizontalTab>
+            <themeHorizontalTab name="btn_tabSpecialsSpell">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="216" y="6" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="45" />
+                </Size>
+                <text>[ui.spell.specials]</text>
+            </themeHorizontalTab>
+            <themeHorizontalTab name="btn_tabFinishMove">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="391" y="6" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="170" y="45" />
+                </Size>
+                <text>[ui.grimoire.finishMoves]</text>
+            </themeHorizontalTab>
+
+            <Texture name="tx_warningTabSpell">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="181" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="26" y="26" />
+                </Size>
+                <uri>[local.texture]pin_mark_yellow.png</uri>
+                <visible>false</visible>
+            </Texture>
+            <Texture name="tx_warningTabSpecial">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="356" y="0" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="26" y="26" />
+                </Size>
+                <uri>[local.texture]pin_mark_yellow.png</uri>
+                <visible>false</visible>
+            </Texture>
+
+			<Container name="uiCtr">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="15" y="57" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="752" y="673" />
+				</Size>
+            </Container>
+		</Content>
+	</window>
+</Definition>

@@ -1,0 +1,7 @@
+<Label name="lbl_text">
+	<autoResize>false</autoResize>
+	<text>#content</text>
+	<cssClass>#classCss</cssClass>
+	<css>#css</css>
+	<fixedWidth>false</fixedWidth>
+</Label>

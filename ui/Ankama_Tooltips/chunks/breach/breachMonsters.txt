@@ -1,0 +1,64 @@
+<Container name="ctr_back" strata="LOW">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="-4" y="-4" />
+        </Anchor>
+    </Anchors>
+
+    <shadowColor>[colors.ui.shadow]</shadowColor>
+    <bgCornerRadius>10</bgCornerRadius>
+    <bgColor>[colors.tooltip.bg]</bgColor>
+    <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+</Container>
+
+<Container name="ctr_main">
+    <Container name="ctr_header">
+        <Label name="lbl_level">
+            <cssClass>center</cssClass>
+            <css>[local.css]tooltip_title.css</css>
+        </Label>
+    </Container>
+
+	<Container name="ctr_wave">
+		<Anchors>
+        	<Anchor relativeTo="ctr_header" relativePoint="BOTTOMLEFT"/>
+        </Anchors>
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="2" />
+				</Anchor>
+			</Anchors>
+			<Texture name="tx_wave">
+				<Size>
+					<AbsDimension x="25" y="20" />
+				</Size>
+				<uri>[local.assets]tx_Pictowave</uri>
+			</Texture>
+		</Container>
+		<Label name="lbl_nbWaves">
+			<css>[local.css]tooltip_monster.css</css>
+		</Label>
+	</Container>
+
+	<Container name="ctr_xp">
+		<Label name="lbl_monsterXp">
+			<css>[local.css]tooltip_monster.css</css>
+			<multiline>true</multiline>
+		</Label>
+	</Container>
+
+	<Container name="ctr_separatorXp">
+        <Size>
+    		<AbsDimension x="100" y="1" />
+    	</Size>
+    	<bgColor>[colors.tooltip.separator]</bgColor>
+    </Container>
+
+    <Container>
+        <Label name="lbl_monsterList">
+            <css>[local.css]tooltip_monster.css</css>
+            <multiline>true</multiline>
+        </Label>
+    </Container>
+</Container>

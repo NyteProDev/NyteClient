@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template.button]themeIconButton.xml" />
+	<Import url="[config.mod.template.button]iconButton.xml" />
+	<Import url="[config.mod.template]block.xml" />
+    <Import url="[config.mod.template]button/themeLabelCheckBox.xml" />
+    <Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	 
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+	</Constants>
+	
+	<Container>
+		<Size>
+			<AbsDimension x="780" y="700" />
+		</Size>
+        <hintAvailable>true</hintAvailable>
+
+		<Grid name="gd_spell">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="752" y="633" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateSpellLine</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>752</slotWidth>
+			<slotHeight>79</slotHeight>
+
+			<Container>
+				<Size>
+					<AbsDimension x="752" y="79" />
+				</Size>
+				
+				<Texture>
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="0" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="752" y="67" />
+					</Size>
+					<uri>[local.texture]spell/spell_line.png</uri>
+				</Texture>
+
+                <Grid name="gd_spellButtons">
+                    <Size>
+                        <AbsDimension x="752" y="67" />
+                    </Size>
+                    <rendererName>InlineXmlGridRenderer</rendererName>
+                    <rendererArgs>updateSpellButtonsLine</rendererArgs>
+                    <slotWidth>330</slotWidth>
+                    <slotHeight>67</slotHeight>
+                    <Hooks>
+                        <onItemRightClick />
+                    </Hooks>
+
+                    <Container>
+                        <Size>
+                            <AbsDimension x="330" y="67" />
+                        </Size>
+
+                        <Button name="btn_spell">
+                            <Common>
+                                <Size>
+                                    <AbsDimension x="330" y="67" />
+                                </Size>
+                                <radioMode>true</radioMode>
+                                <linkedTo>slot_icon</linkedTo>
+
+                                <Texture name="tx_bgSpell">
+                                    <Size>
+                                        <AbsDimension x="330" y="67" />
+                                    </Size>
+                                    <uri>[local.texture]spell/btn_spell_normal.png</uri>
+                                </Texture>
+
+                                <Container name="ctr_newSpell">
+                                    <visible>false</visible>
+
+                                    <TextureBitmap>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="3" y="3" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="324" y="61" />
+                                        </Size>
+                                        <themeDataId>yellow_slot</themeDataId>
+                                    </TextureBitmap>
+
+                                    <Texture>
+                                        <Anchors>
+                                            <Anchor>
+                                                <AbsDimension x="295" y="-10" />
+                                            </Anchor>
+                                        </Anchors>
+                                        <Size>
+                                            <AbsDimension x="26" y="26" />
+                                        </Size>
+                                        <uri>[local.texture]pin_mark_yellow.png</uri>
+                                    </Texture>
+                                </Container>
+
+                                <Texture>
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="24" y="10" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="48" y="48" />
+                                    </Size>
+                                    <uri>[local.texture]spell/bg_spell_icon.png</uri>
+                                </Texture>
+
+                                <Label name="lbl_spellName">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="84" y="15" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="230" y="37" />
+                                    </Size>
+                                    <cssClass>left</cssClass>
+                                    <css>[local.css]small2.css</css>
+                                    <wordWrap>true</wordWrap>
+                                    <multiline>true</multiline>
+                                    <verticalAlign>center</verticalAlign>
+                                </Label>
+                            </Common>
+
+                            <State type="OVER">
+                                <SetProperties target="tx_bgSpell">
+                                    <uri>[local.texture]spell/btn_spell_over.png</uri>
+                                </SetProperties>
+                            </State>
+
+                            <State type="PRESSED">
+                                <SetProperties target="tx_bgSpell">
+                                    <uri>[local.texture]spell/btn_spell_pressed.png</uri>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED">
+                                <SetProperties target="tx_bgSpell">
+                                    <uri>[local.texture]spell/btn_spell_selected.png</uri>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_OVER">
+                                <SetProperties target="tx_bgSpell">
+                                    <uri>[local.texture]spell/btn_spell_selected_over.png</uri>
+                                </SetProperties>
+                            </State>
+
+                            <State type="SELECTED_PRESSED">
+                                <SetProperties target="tx_bgSpell">
+                                    <uri>[local.texture]spell/btn_spell_selected_pressed.png</uri>
+                                </SetProperties>
+                            </State>
+                        </Button>
+
+                        <Slot name="slot_icon">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="26" y="12" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="44" y="44" />
+                            </Size>
+                            <css>[local.css]normal2.css</css>
+                            <mouseEnabled>false</mouseEnabled>
+                        </Slot>
+
+                        <Texture name="tx_lock">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="294" y="22" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="24" y="24" />
+                            </Size>
+                            <uri>[local.texture]icon_lock.png</uri>
+                            <visible>false</visible>
+                            <alpha>0.4</alpha>
+                        </Texture>
+
+
+                        <Grid name="gd_obtentionLevels">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="95" y="-13" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="132" y="32" />
+                            </Size>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateObtentionLine</rendererArgs>
+                            <scrollDisplay>never</scrollDisplay>
+                            <slotWidth>40</slotWidth>
+                            <slotHeight>32</slotHeight>
+
+                            <Container>
+                                <Size>
+                                    <AbsDimension x="40" y="32" />
+                                </Size>
+
+                                <Button name="btn_obtention">
+                                    <Common>
+                                        <Size>
+                                            <AbsDimension x="40" y="32" />
+                                        </Size>
+
+                                        <Texture name="tx_obtentionBg">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="2" y="0" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="38" y="32" />
+                                            </Size>
+                                            <uri>[local.texture]spell/bg_lvl_spell.png</uri>
+                                            <alpha>1</alpha>
+                                        </Texture>
+
+                                        <Label name="lbl_obtentionLevel">
+                                            <Anchors>
+                                                <Anchor>
+                                                    <AbsDimension x="0" y="6" />
+                                                </Anchor>
+                                            </Anchors>
+                                            <Size>
+                                                <AbsDimension x="40" y="16" />
+                                            </Size>
+                                            <cssClass>center</cssClass>
+                                            <css>[local.css]small2.css</css>
+                                        </Label>
+                                    </Common>
+
+                                    <State type="OVER">
+                                        <SetProperties target="tx_obtentionBg">
+                                            <alpha>0.8</alpha>
+                                        </SetProperties>
+                                    </State>
+
+                                    <State type="SELECTED">
+                                        <SetProperties target="tx_obtentionBg">
+                                            <alpha>0.5</alpha>
+                                        </SetProperties>
+                                    </State>
+
+                                    <State type="SELECTED_OVER">
+                                        <SetProperties target="tx_obtentionBg">
+                                            <alpha>0.8</alpha>
+                                        </SetProperties>
+                                    </State>
+                                </Button>
+                            </Container>
+
+                        </Grid>
+                    </Container>
+                </Grid>
+
+                <Texture name="tx_spellBound">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="367" y="35" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="17" y="8" />
+                    </Size>
+                    <uri>[local.texture]spell/tx_spell_bound.png</uri>
+                    <visible>false</visible>
+                </Texture>
+
+			</Container>
+		</Grid>
+
+        <Container>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="633" />
+                </Anchor>
+            </Anchors>
+            <Size>
+                <AbsDimension x="752" y="40" />
+            </Size>
+
+            <Texture>
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="0" y="40" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="752" y="40" />
+                </Size>
+                <scaleY>-1</scaleY>
+                <uri>[local.common]bg_dark.png</uri>
+            </Texture>
+
+            <themeLabelCheckBox name="btn_showAllObtentionLevels">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="15" y="9" />
+                    </Anchor>
+                </Anchors>
+                <labelWidth>400</labelWidth>
+                <text>[ui.spell.showAllRequiredLevels]</text>
+                <selected>false</selected>
+            </themeLabelCheckBox>
+
+            <comboBoxWithBackground name="cb_spellType" width="260" height="38">
+                <Anchors>
+                    <Anchor>
+                        <AbsDimension x="494" y="2" />
+                    </Anchor>
+                </Anchors>
+                <maxHeight>250</maxHeight>
+            </comboBoxWithBackground>
+
+        </Container>
+	</Container>
+</Definition>
+

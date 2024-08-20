@@ -1,0 +1,43 @@
+<Definition useCache="false">	
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Container name="mainCtr">
+		<TextureBitmap>
+			<Anchors>
+				<Anchor relativeTo="tx_icon" />
+			</Anchors>
+			<Size>
+				<AbsDimension x="40" y="40" />
+			</Size>
+			<uri>[config.ui.skin]texture/slot/slot_dark_background_full.png</uri>
+		</TextureBitmap>
+		<Texture name="tx_icon">
+			<Size>
+				<AbsDimension x="40" y="40" />
+			</Size>
+		</Texture>
+		
+		<Label name="lbl_content">
+			<Size>
+				<AbsDimension x="386"/>
+			</Size>
+			<css>[config.ui.skin]css/tooltip_item.css</css>
+			<useCustomFormat>true</useCustomFormat>
+			<wordWrap>true</wordWrap>
+			<fixedWidth>false</fixedWidth>
+			<hyperlinkEnabled>true</hyperlinkEnabled>
+		</Label>
+		
+		<themeIconButton name="btnClose">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-22" y="22" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="30" y="25" />
+			</Size>
+			<bgThemeDataId>button_close</bgThemeDataId>
+			<smooth>true</smooth>
+	     </themeIconButton>
+	</Container>
+</Definition>

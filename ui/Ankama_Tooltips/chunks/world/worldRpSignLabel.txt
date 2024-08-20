@@ -1,0 +1,12 @@
+<Label name="lbl_text">
+    <Anchors>
+        <Anchor relativePoint="TOPLEFT">
+            <AbsDimension x="5" y="5" />
+        </Anchor>
+    </Anchors>
+    <fixedWidth>false</fixedWidth>
+    <fixedHeight>false</fixedHeight>
+    <css>[local.css]normal2.css</css>
+    <multiline>true</multiline>
+    <wordWrap>true</wordWrap>
+</Label>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <Definition>
+            <Import url="[config.mod.template.button]iconButton.xml" />
+            <Import url="[config.mod.template.button]simpleButton.xml" />
+            <Import url="[config.mod.template]window.xml" />
+            <Import url="[config.mod.template]block.xml" />
+            <Import url="[config.mod.template.button]themeIconButton.xml" />
+            <Constants>
+                <Constant name="assets" value="[config.ui.skin]assets.swf|" />
+                <Constant name="stelys" value="[config.ui.skin]reward_test.swf|" />
+                <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+                <Constant name="css" value="[config.ui.skin]css/" />
+                <Constant name="common" value="[config.ui.skin]common/" />
+                <Constant name="texture" value="[config.ui.skin]texture/" />
+                <Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+                <Constant name="illus" value="[config.ui.skin]illus/" />
+                <Constant name="height_tx_generalBg" value="536" type="int" />
+                <Constant name="height_tx_gridBg" value="412" type="int" />
+                <Constant name="height_grid" value="400" type="int" />
+                <Constant name="y_bottom" value="520" type="int" />
+                <Constant name="height_line" value="100" type="int" />
+            </Constants>
+            <window name="ctr_mainWindow">
+                <Anchors>
+                    <Anchor relativePoint="BOTTOM" point="BOTTOM">
+                        <AbsDimension x="0" y="-240" />
+                    </Anchor>
+                </Anchors>
+                <Size>
+                    <AbsDimension x="664" y="600" />
+                </Size>
+                <title>Daily rewards</title>
+                <movable>true</movable>
+                <dark>true</dark>
+                <hintAvailable>false</hintAvailable>
+                <noHelpButton>true</noHelpButton>
+                <Content>
+                    <Container name="ctr_grid">
+                        <Anchors>
+                            <Anchor>
+                                <AbsDimension x="5" y="5" />
+                            </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="614" y="[local.height_tx_gridBg]" />
+                        </Size>
+                        <Texture name="daily_bg1">
+                            <Anchors>
+                                <Anchor ></Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="614" y="520" />
+                            </Size>
+                            <uri>[local.texture]/stelys/purple_background.png</uri>
+                            <alpha>1</alpha>
+                        </Texture>
+                        <TextArea name="lbl_textinfo">
+                            <Anchors>
+                                <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="" y="" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="614" y="70" />
+                            </Size>
+                            <cssClass>dailywarning</cssClass>
+                            <css>[local.css]title.css</css>
+                            <text>*Si vous ratez un jour, vous devez recommencer du début!</text>
+                            <useDefaultFont>true</useDefaultFont>
+                            <bgColor>0x0F0F0F</bgColor>
+                            <bgAlpha>0</bgAlpha>
+                        </TextArea>
+                        <Label name="lbl_availability">
+                            <Anchors>
+                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+                                    <AbsDimension x="" y="90" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="614" />
+                            </Size>
+                            <cssClass>whiteboldcenter</cssClass>
+                            <css>[local.css]title.css</css>
+                            <text>Next Reward in: 00:00:00</text>
+                            <useDefaultFont>true</useDefaultFont>
+                            <bgColor>0x0F0F0F</bgColor>
+                            <bgAlpha>0</bgAlpha>
+                        </Label>
+                        <Grid name="gd_items">
+                            <Size>
+                                <AbsDimension x="614" y="[local.height_tx_gridBg]" />
+                            </Size>
+                            <rendererName>InlineXmlGridRenderer</rendererName>
+                            <rendererArgs>updateItem</rendererArgs>
+                            <slotWidth>83</slotWidth>
+                            <slotHeight>99</slotHeight>
+                            <scrollDisplay>never</scrollDisplay>
+                            <bgColor>0</bgColor>
+                            <bgAlpha>0</bgAlpha>
+                            <Container name="ctr_item">
+                                <Size>
+                                    <AbsDimension x="94" y="113" />
+                                </Size>
+                                <visible>false</visible>
+                                <Texture name="tx_todayAnim">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="-12" y="-35" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="180" y="180" />
+                                    </Size>
+                                    <uri>[local.stelys]daily_today_anim1</uri>
+                                </Texture>
+                                <Texture name="tx_rewardBg">
+                                    <Size>
+                                        <AbsDimension x="94" y="113" />
+                                    </Size>
+                                    <uri>[local.stelys]frames</uri>
+                                    <gotoAndStop>1</gotoAndStop>
+                                </Texture>
+                                <Texture name="tx_item">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="22" y="26" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="45" y="45" />
+                                    </Size>
+                                </Texture>
+                                <Texture name="tx_sparkles">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="-2" y="30" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="84" y="95" />
+                                    </Size>
+                                    <uri>[local.stelys]daily_gfx1</uri>
+                                    <gotoAndStop>2</gotoAndStop>
+                                </Texture>
+                                <Label name="lbl_day">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="59" y="22" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="20"/>
+                                    </Size>
+                                    <cssClass>dailytextdone</cssClass>
+                                    <css>[local.css]title.css</css>
+                                    <text>1</text>
+                                    <useDefaultFont>true</useDefaultFont>
+                                    <bgColor>0xFFFFF</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Label>
+                                <Label name="lbl_amount">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="23" y="82" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="40" />
+                                    </Size>
+                                    <cssClass>dailytextdone</cssClass>
+                                    <css>[local.css]title.css</css>
+                                    <text>X100</text>
+                                    <useDefaultFont>true</useDefaultFont>
+                                    <bgColor>0x0F0F0F</bgColor>
+                                    <bgAlpha>0</bgAlpha>
+                                </Label>
+                                <Texture name="tx_done">
+                                    <Anchors>
+                                        <Anchor>
+                                            <AbsDimension x="25" y="29" />
+                                        </Anchor>
+                                    </Anchors>
+                                    <Size>
+                                        <AbsDimension x="38" y="37" />
+                                    </Size>
+                                    <uri>[local.texture]/stelys/tx_done_check.png</uri>
+                                    <visible>false</visible>
+                                </Texture>
+                            </Container>
+                        </Grid>
+                    </Container>
+                    <Container name="ctr_bottom">
+                        <Anchors>
+                            <Anchor relativeTo="ctr_grid" point="TOPLEFT" relativePoint="BOTTOMLEFT">
+                                <AbsDimension x="0" y="40" />
+                            </Anchor>
+                        </Anchors>
+                        <Texture>
+                            <Anchors>
+                                <Anchor relativeTo="ctr_grid" point="TOP" relativePoint="TOP">
+                                    <AbsDimension x="-8" y="88" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension  x="200" y="60"  />
+                            </Size>
+                            <uri>[local.texture]/hud/background_timer_btn.png</uri>
+                            <alpha>1</alpha>
+                        </Texture>
+                        <simpleButton label="CLAIM" name="btn_claim">
+                            <Anchors>
+                                <Anchor>
+                                    <AbsDimension x="228" y="105" />
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="150" y="35" />
+                            </Size>
+                        </simpleButton>
+                    </Container>
+                </Content>
+            </window>
+        </Definition>

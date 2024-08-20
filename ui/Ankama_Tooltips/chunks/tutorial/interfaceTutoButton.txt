@@ -1,0 +1,52 @@
+<Container name="ctr_button">
+    <Anchors>
+        <Anchor>
+            <AbsDimension x="5" y="15" />
+        </Anchor>
+    </Anchors>
+    <Size>
+        <AbsDimension x="250" y="20" />
+    </Size>
+    <Button name="btn_skip">
+        <Common>
+            <Anchors>
+                <Anchor>
+                    <AbsDimension x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Label name="lbl_skip">
+                <Size>
+                    <AbsDimension x="150" y="0" />
+                </Size>
+                <text>[ui.uiTutorial.skip]</text>
+                <cssClass>skip</cssClass>
+                <css>[local.css]uiTuto.css</css>
+            </Label>
+            <Hooks>
+                <onRelease />
+            </Hooks>
+        </Common>
+        <State type="OVER">
+            <SetProperties target="lbl_skip">
+                <cssClass>skipover</cssClass>
+            </SetProperties>
+        </State>
+    </Button>
+
+    <simpleButton name="btn_next">
+        <Anchors>
+            <Anchor>
+                <AbsDimension x="150" y="0" />
+            </Anchor>
+        </Anchors>
+        <Size>
+            <AbsDimension x="120" y="20" />
+        </Size>
+        <bgThemeDataId>button_thin_border</bgThemeDataId>
+        <css>[local.css]uiTuto.css</css>
+        <cssClass>endbutton</cssClass>
+        <label>[ui.common.next]</label>
+    </simpleButton>
+</Container>
+
+

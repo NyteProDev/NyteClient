@@ -1,0 +1,29 @@
+<simpleSlot>
+	
+	<!-- Parametres du template  -->
+	<Param name="width">44</Param>
+	<Param name="height">44</Param>
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="emptyTexture">[local.assets]tx_slotDofus</Param>
+	<Param name="highlightTexture">[config.ui.skin]bitmap/over.png</Param>
+	<Param name="selectedTexture">[config.ui.skin]bitmap/selected.png</Param>
+	<Param name="acceptDragTexture">[config.ui.skin]bitmap/acceptDrop.png</Param>
+	<Param name="refuseDragTexture">[config.ui.skin]bitmap/refuseDrop.png</Param>
+	<Param name="timerTexture">[local.assets]timerSlot</Param>
+		
+	<Slot name="#name">
+		<Anchors>#Anchors</Anchors>
+		<Size>
+			<AbsDimension x="#width" y="#height" />
+		</Size>
+		<emptyTexture>#emptyTexture</emptyTexture>
+		<highlightTexture>#highlightTexture</highlightTexture>
+		<selectedTexture>#selectedTexture</selectedTexture>
+		<acceptDragTexture>#acceptDragTexture</acceptDragTexture>
+		<refuseDragTexture>#refuseDragTexture</refuseDragTexture>
+		<timerTexture>#timerTexture</timerTexture>
+	</Slot>
+			
+	
+</simpleSlot>

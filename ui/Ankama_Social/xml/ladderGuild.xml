@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition>
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/labelCheckBox.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    <Import url="[config.mod.template]button/iconButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template.button]themeLabelCheckBox.xml" />
+	<Import url="[config.mod.template.button]comboBoxWithBackground.xml" />
+	<Import url="[config.mod.template]window.xml" />
+	<Import url="[config.mod.template]block.xml" />
+	
+    <Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+        <Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="heads" value="[config.content.path]gfx/heads/SmallHead_" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		
+		<Constant name="dead_uri" value="[local.assets]Social_tx_deadState" />
+		<Constant name="offline_uri" value="[local.assets]Social_tx_offlineState" />
+		<Constant name="fight_uri" value="[local.assets]Social_tx_fightState" />
+		
+		<Constant name="alignment_uri" value="[config.content.path]gfx/alignments/wings.swf|tx_alignment" />
+		<Constant name="smilies_uri" value="[config.content.path]gfx/smilies/assets.swf|" />
+		<Constant name="picto_uri" value="[config.content.path]gfx/emblems/" />
+	</Constants>
+    
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="12" y="55" />
+			</Anchor>
+		</Anchors>
+		<hintAvailable>true</hintAvailable>
+
+		<Texture>
+			<Size>
+				<AbsDimension x="1102" y="33" />
+			</Size>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+		
+		<!-- BOUTON DE TRIAGE -->
+		<sortButton name="btn_tabRank">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="26" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="24" y="24" />
+			</Size>
+		</sortButton>	
+		<sortButton name="btn_tabName">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="118" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="206" y="24" />
+			</Size>
+		</sortButton>	
+		<sortButton name="btn_tabPrestige">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="320" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="123" y="24" />
+			</Size>
+		</sortButton>
+		<sortButton name="btn_tabLevel">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="522" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="123" y="24" />
+			</Size>
+		</sortButton>		
+		<sortButton name="btn_tabExperience">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="724" y="0" />
+				</Anchor>
+			</Anchors>				
+			<Size>
+				<AbsDimension x="123" y="24" />
+			</Size>
+		</sortButton>		
+		<Container>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="5" />
+				</Anchor>
+			</Anchors>
+			<Label>
+				<Anchors>
+					<Anchor>
+							<AbsDimension x="118" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+						<AbsDimension x="250" y="16" />
+				</Size>
+				<text>[ui.common.name]</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+							<AbsDimension x="320" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="92" y="30" />
+				</Size>
+				<text>Prestige</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+							<AbsDimension x="522" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="92" y="30" />
+				</Size>
+				<text>Level</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+			<Label>
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="724" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="92" y="30" />
+				</Size>
+				<text>Experience</text>
+				<css>[local.css]small2.css</css>
+			</Label>
+		</Container>
+				
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="34" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1102" y="555" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+		
+		<!-- Grid gd_list -->
+
+		<Grid name="gd_list">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="33" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1102" y="555" />
+			</Size>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateLadderGuild,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>1102</slotWidth>
+				<slotHeight>44</slotHeight>
+                <autoSelectMode>0</autoSelectMode>
+			<Container>
+				<Label name="lbl_rank">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="10" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="53" y="20" />
+					</Size>
+					<text></text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				<!-- Texture icone classe -->
+				<Texture name="tx_emblemBack">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="36" y="3" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="30" y="30" />
+					</Size>
+					<autoGrid>false</autoGrid>
+				</Texture>
+				<Texture name="tx_emblemUp">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="42" y="9" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="18" y="18" />
+					</Size>
+					<autoGrid>false</autoGrid>
+				</Texture>
+				<!-- Label lblPlayerName-->
+				
+				<Label name="lbl_guildName">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="118" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="184" y="20" />
+					</Size>
+					<text></text>
+					<hyperlinkEnabled>true</hyperlinkEnabled>
+					<useStyleSheet>true</useStyleSheet>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<!-- Label lblLvl-->
+				
+				<Label name="lbl_prestige">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="320" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="123" y="20" />
+					</Size>
+					<text></text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+				
+				<Label name="lbl_level">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="522" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="123" y="20" />
+					</Size>
+					<text></text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+				<Label name="lbl_experience">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="724" y="6" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="123" y="20" />
+					</Size>
+					<text></text>
+					<css>[local.css]normal2.css</css>
+				</Label>
+
+			</Container>
+		</Grid>
+
+	</Container>
+</Definition>
+

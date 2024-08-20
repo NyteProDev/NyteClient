@@ -1,0 +1,131 @@
+<filterButtonInCartography>
+	
+	<!-- Parametres du template -->
+	<Param name="iconWidth">30</Param>
+	<Param name="iconHeigth">30</Param>
+	
+	<Param name="buttonWidth">220</Param>
+	<Param name="buttonHeight">40</Param>
+	
+	
+	
+	<Param name="name" />
+	<Param name="Anchors" />
+	<Param name="selected">false</Param>
+	<Param name="checkBox">false</Param>
+	<Param name="iconThemeDataId">button</Param>
+	<Param name="text"> </Param>
+	
+	<!-- Variables internes au template -->	
+	<Var name="bgTextureName">'bgTexture' + '#name'</Var>
+	<Var name="lblName">'lbl' + '#name'</Var>
+	<Var name="highLightTextureName">'hl' + '#name'</Var>
+	
+	<Var name="iconOff">'#iconThemeDataId' + '_off'</Var>
+	<Var name="iconOn">'#iconThemeDataId' + '_on'</Var>
+
+	
+	<Button name="#name">
+		<Common>
+			<checkBox>#checkBox</checkBox>
+			<Size>
+				<AbsDimension x="#buttonWidth" y="#buttonHeight"/>
+			</Size>
+			<selected>#selected</selected>
+			
+			<Anchors>#Anchors</Anchors>
+			
+
+			<Container name="$highLightTextureName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="-10" y="-5"/>
+					</Anchor>
+				</Anchors>
+				<Size><AbsDimension x="#buttonWidth" y="40"/></Size>
+				<visible>false</visible>
+				<bgAlpha>0.25</bgAlpha>
+				<bgColor>[colors.ui.modalbg]</bgColor>
+			</Container>
+			
+			<TextureBitmap name="$bgTextureName">
+				<Size>
+					<AbsDimension x="#iconWidth" y="#iconHeigth"/>
+				</Size>
+				<themeDataId>$iconOff</themeDataId>
+				<smooth>true</smooth>
+			</TextureBitmap>
+			
+			<Label name="$lblName">
+				<Anchors>
+					<Anchor>
+						<AbsDimension x="35" y="0" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="#buttonWidth" y="25"/>
+				</Size>
+				<verticalAlign>center</verticalAlign>
+				<cssClass>left</cssClass>
+				<css>[local.css]small2.css</css>
+				<text>#text</text>
+			</Label>	
+		</Common>
+				
+		<State type="OVER">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOff</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>true</visible>
+			</SetProperties>
+		</State>
+		
+		<State type="PRESSED">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOff</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>true</visible>
+			</SetProperties>
+		</State>
+		
+		<State type="DISABLED">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOff</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>false</visible>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOn</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>false</visible>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED_OVER">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOn</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>true</visible>
+			</SetProperties>
+		</State>
+		
+		<State type="SELECTED_PRESSED">
+			<SetProperties target="$bgTextureName">
+				<themeDataId>$iconOn</themeDataId>
+			</SetProperties>
+			<SetProperties target="$highLightTextureName">
+				<visible>true</visible>
+			</SetProperties>
+			
+		</State>
+	</Button>
+	
+</filterButtonInCartography>

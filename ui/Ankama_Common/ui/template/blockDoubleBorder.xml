@@ -1,0 +1,107 @@
+<blockDoubleBorder>
+
+	<!-- Parametres du template -->
+	<Param name="name">$TEMPLATE_INSTANCE_ID</Param>
+	<Param name="Size">
+		<AbsDimension x="500" y="400" />
+	</Param>
+	<Param name="Anchors">
+		<Anchor>
+			<AbsDimension x="0" y="0" />
+		</Anchor>
+	</Param>
+	<Param name="Content"></Param>
+	<Param name="bgAlpha">1</Param>
+
+	<Param name="headerHeight">0</Param>
+	<Param name="footerHeight">0</Param>
+
+	<Param name="isInstance">false</Param>
+	<Param name="visible">true</Param>
+
+	<!-- Variables internes au template -->
+	<Var name="block_tx_background">'tx_background_' + '#name'</Var>
+	<Var name="block_tx_border">'tx_border_frame_' + '#name'</Var>
+
+	<Var name="headerIgnore">#headerHeight == 0</Var>
+	<Var name="footerIgnore">#footerHeight == 0</Var>
+
+	<Container name="#name">
+		<Anchors>
+			#Anchors
+		</Anchors>
+		<Size>
+			#Size
+		</Size>
+		<isInstance>#isInstance</isInstance>
+        <visible>#visible</visible>
+
+		<TextureBitmap name="$block_tx_background">
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<themeDataId>block_background_double</themeDataId>
+			<alpha>#bgAlpha</alpha>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+
+		<TextureBitmap>
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<themeDataId>block_border_double_scratch</themeDataId>
+			<alpha>#bgAlpha</alpha>
+		</TextureBitmap>
+
+		<Container>
+			<Anchors>
+				<Anchor relativeTo="$block_tx_background" relativePoint="TOPLEFT">
+					<AbsDimension x="9" y="11" />
+				</Anchor>
+				<Anchor relativeTo="$block_tx_background" relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-7" y="-14" />
+				</Anchor>
+			</Anchors>
+			<isInstance>#isInstance</isInstance>
+			<TextureBitmap ignore="$headerIgnore">
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="#headerHeight" />
+				</Size>
+				<themeDataId>list_menu_background</themeDataId>
+				<isInstance>#isInstance</isInstance>
+			</TextureBitmap>
+
+			
+
+			<TextureBitmap ignore="$footerIgnore">
+				<Anchors>
+					<Anchor relativePoint="BOTTOMLEFT" point="BOTTOMLEFT">
+						<AbsDimension x="0" y="#footerHeight" />
+					</Anchor>
+				</Anchors>
+				<Size>
+					<RelDimension x="1" />
+					<AbsDimension y="#footerHeight" />
+				</Size>
+				<themeDataId>list_menu_background</themeDataId>
+				<scaleY>-1</scaleY>
+				<isInstance>#isInstance</isInstance>
+			</TextureBitmap>
+
+			#Content
+		</Container>
+
+
+
+		<TextureBitmap name="$block_tx_border">
+			<Size>
+				<RelDimension x="1" y="1" />
+			</Size>
+			<themeDataId>block_border_double</themeDataId>
+			<alpha>#bgAlpha</alpha>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+	</Container>
+
+</blockDoubleBorder>

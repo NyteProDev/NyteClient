@@ -1,0 +1,307 @@
+<window>
+    <Import url="[config.mod.template]button/themeIconButton.xml" />
+
+    <!-- Parametres du template -->
+    <Param name="name">$TEMPLATE_INSTANCE_ID</Param>
+    <Param name="title"> </Param>
+    <Param name="Size">
+        <AbsDimension x="500" y="400"  />
+    </Param>
+    <Param name="Anchors">
+        <Anchor>
+            <AbsDimension x="0" y="0" />
+        </Anchor>
+    </Param>
+    <Param name="iconUri">null</Param>                            <!-- affiche une icône de fenêtre si spécifié -->
+    <Param name="forceIconBackground">false</Param>                      <!-- affiche le fond d'icône sans iconUri -->
+
+    <Param name="titleLabelName">lbl_title</Param>                   <!-- permet de spécifier le nom du label de titre (en cas de windows multiples) -->
+
+	<Param name="helpButtonName">btn_help</Param>							<!-- permet de spécifier le nom du bouton help -->
+	<Param name="noHelpButton">false</Param>								<!-- permet de ne pas afficher le bouton help -->
+
+    <Param name="closeButtonName">btn_close</Param>							<!-- permet de spécifier le nom du bouton close -->
+	<Param name="noCloseButton">false</Param>								<!-- permet de ne pas afficher le bouton close -->
+	
+	<Param name="noSeparator">true</Param>									<!-- permet d’afficher une barre de séparation -->
+	<Param name="separatorAbsX">100</Param>									<!-- permet de placer la barre de séparation -->
+	
+	<Param name="mouseEnabled">true</Param>									<!-- prend les évènements souris -->
+	<Param name="movable">false</Param>										<!-- rend la fenêtre déplaçable -->
+	<Param name="visible">true</Param>
+	<Param name="hintAvailable">false</Param>
+	
+	<Param name="forceUppercase">true</Param>								<!-- force uppercase du titr -->
+	<Param name="cssClass">shadowedcenter</Param>							<!-- css du titre -->
+	
+	<Param name="Content"></Param>											<!--  -->
+	<Param name="OverFrameContent">null</Param>								<!-- Dans le cas ou il y aurait besoin de dessiner au dessus du border vous pouvez mettre du content ici (attention le 0,0 est en haut a gauche de la barre de titre)  -->
+	
+	<Param name="dark">false</Param>										<!-- met un fond plus sombre que celui par défaut (window_background_dark dans themeData-window) -->
+	<Param name="bgThemeDataId">window_background</Param>					<!-- permet de mettre le fond qu’on veut (laisser dark a false sinon cela ne marche pas) -->
+	<Param name="bgTextureAlpha">1</Param>
+	
+	<Param name="resizable">false</Param>
+
+	<Param name="isInstance">false</Param>
+	
+	<!-- Variables internes au template -->	
+	<Var name="window_container">'#name'</Var>
+	<Var name="window_tx_background">'tx_background_' + '#name'</Var>
+	<Var name="window_tx_border_frame">'tx_border_frame_' + '#name'</Var>	
+	<Var name="window_tx_title_bar">'tx_title_bar_' + '#name'</Var>
+	<Var name="window_tx_title_bar_right">'tx_title_bar_right_' + '#name'</Var>
+	<Var name="window_tx_icon_background">'tx_icon_background_' + '#name'</Var>
+	<Var name="window_tx_icon">'tx_icon_' + '#name'</Var>
+	<Var name="window_tx_separator">'tx_separator_' + '#name'</Var>
+	<Var name="window_tx_background_close_button">'tx_background_close_button_' + '#name'</Var>
+	<Var name="noIcon">'#iconUri' == 'null'</Var>
+	<Var name="noOverContent">'#OverFrameContent' == 'null'</Var>
+	<Var name="dragTargetName">('#movable' == 'true') ? '#name' : 'null'</Var>
+	
+	<Var name="window_content">'#name'+'_content'</Var>
+	<Var name="window_over_content">'#name'+'_over_content'</Var>
+
+		
+	<Container name="$window_container">
+		<Anchors>
+			#Anchors
+		</Anchors>
+		<Size>
+			#Size
+		</Size>
+		
+		<mouseEnabled>#mouseEnabled</mouseEnabled>
+        <visible>#visible</visible>
+		<hintAvailable>#hintAvailable</hintAvailable>
+		<isInstance>#isInstance</isInstance>
+
+		<!-- background -->
+		
+		<TextureBitmap name="$window_tx_background" ignore="#dark">
+			<Anchors>
+				<Anchor  relativePoint="TOPLEFT">
+					<AbsDimension x="14" y="42" />
+				</Anchor>
+				<Anchor  relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-14" y="-19" />
+				</Anchor>				
+			</Anchors>
+			<themeDataId>#bgThemeDataId</themeDataId>
+			<alpha>#bgTextureAlpha</alpha>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<TextureBitmap name="$window_tx_background" ignore="#!dark">
+			<Anchors>
+				<Anchor  relativePoint="TOPLEFT">
+					<AbsDimension x="14" y="42" />
+				</Anchor>
+				<Anchor  relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-14" y="-19" />
+				</Anchor>				
+			</Anchors>
+			<themeDataId>window_background_dark</themeDataId>
+			<alpha>#bgTextureAlpha</alpha>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+	     <!-- Content -->
+	     
+   		<Container name="$window_content">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="17" y="45" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-22" y="-25" />
+				</Anchor>				
+			</Anchors>
+			<isInstance>#isInstance</isInstance>
+			#Content
+		</Container>
+      
+		
+		<!-- frame bottom -->
+	
+		<TextureBitmap name="$window_tx_border_frame">
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="0" y="45" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="0" y="0" />
+				</Anchor>
+			</Anchors>		
+			<themeDataId>window_border_frame_bottom</themeDataId>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<!-- separator -->
+		
+		<TextureBitmap name="$window_tx_separator" ignore="#noSeparator">
+			<Anchors>
+				<Anchor point="CENTER" relativePoint="TOPLEFT">
+					<RelDimension y="0.5"/>
+					<AbsDimension x="#separatorAbsX"/>
+				</Anchor>
+			</Anchors>
+			<Size>
+				<RelDimension y="1"/>
+				<AbsDimension x="21"/>
+			</Size>		
+			<themeDataId>window_separator</themeDataId>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<!-- frame top -->
+	
+		<TextureBitmap name="$window_tx_title_bar">
+		
+			<Anchors>
+				<Anchor relativePoint="TOPLEFT">
+					<AbsDimension x="3" y="0" />
+				</Anchor>
+				<Anchor relativePoint="TOPRIGHT">
+					<AbsDimension x="-13" y="45" />
+				</Anchor>
+			</Anchors>		
+			<themeDataId>window_title_bar</themeDataId>
+			<dragTarget>$dragTargetName</dragTarget>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<TextureBitmap name="$window_tx_title_bar_right">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" >
+					<AbsDimension x="-5" y="1" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="38" y="44" />
+			</Size>
+			
+			<themeDataId>window_title_bar_right</themeDataId>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap> 
+		
+		<Container ignore="#!resizable">
+			<Anchors>
+				<Anchor  relativePoint="TOPLEFT">
+					<AbsDimension x="14" y="5" />
+				</Anchor>
+				<Anchor  relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-14" y="-19" />
+				</Anchor>				
+			</Anchors>
+			<resizeController>#resizable</resizeController>
+			<resizeTarget>$window_container</resizeTarget>
+			<isInstance>#isInstance</isInstance>
+		</Container>
+		
+		<!-- window icon -->
+		
+		<Texture ignore="#!forceIconBackground">
+			<Anchors>
+				<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+					<AbsDimension x="15" y="-9" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="160" y="58" />
+			</Size>
+			<uri>[local.common]window_border_icon_background.png</uri>
+			<isInstance>#isInstance</isInstance>
+		</Texture>
+		
+		<Texture name="$window_tx_icon_background" ignore="$noIcon">
+			<Anchors>
+				<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+					<AbsDimension x="15" y="-9" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="160" y="58" />
+			</Size>
+			<uri>[local.common]window_border_icon_background.png</uri>
+			<isInstance>#isInstance</isInstance>
+		</Texture>
+		
+		<Texture name="$window_tx_icon" ignore="$noIcon">
+			<Anchors>
+				<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+					<AbsDimension x="30" y="-8" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="50" y="50" />
+			</Size>			
+			<uri>#iconUri</uri>
+			<isInstance>#isInstance</isInstance>
+		</Texture>
+		
+		<!-- Title -->
+		
+		<Label name="#titleLabelName">
+			<Anchors>
+				<Anchor>
+					<RelDimension x="0" />	
+					<AbsDimension y="15" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<RelDimension x="1.0"/>
+			</Size>
+			<verticalAlign>center</verticalAlign>
+			<cssClass>#cssClass</cssClass>
+			<css>[local.css]title.css</css>
+			<forceUppercase>#forceUppercase</forceUppercase>
+			<text>#title</text>
+			<useDefaultFont>true</useDefaultFont>
+		</Label>
+
+		<!-- Help button -->
+
+		<themeIconButton name="#helpButtonName" ignore="#noHelpButton" smooth="true">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+                    <AbsDimension x="-52" y="14" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="22" y="22" />
+			</Size>
+            <bgThemeDataId>button_help</bgThemeDataId>
+			<visible>false</visible>
+		</themeIconButton>
+
+		<!-- Close button -->
+		
+		<themeIconButton name="#closeButtonName" ignore="#noCloseButton" smooth="true">
+			<Anchors>
+				<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+					<AbsDimension x="-22" y="13" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="30" y="25" />
+			</Size>
+			<bgThemeDataId>button_close</bgThemeDataId>
+	     </themeIconButton> 
+	     
+	     <!-- Over Content -->
+	     
+   		<Container ignore="$noOverContent" name="$window_over_content">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="17" y="45" />
+				</Anchor>
+				<Anchor relativePoint="BOTTOMRIGHT">
+					<AbsDimension x="-22" y="-25" />
+				</Anchor>				
+			</Anchors>
+			<isInstance>#isInstance</isInstance>
+			#OverFrameContent
+		</Container>
+     </Container>	     
+</window>

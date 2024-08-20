@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Definition SYSTEM "../dtd/ui.dtd">
+<Definition useCache="false" debug="false" debugLabel="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/themeIconButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+
+	<Constants>
+		<!-- Generic path -->
+		<Constant name="skin" value="[config.ui.skin]" />
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+		<Constant name="content" value="[config.content.path]" />
+		<Constant name="emblems" value="[config.content.path]gfx/emblems/" />
+		<Constant name="alignment" value="[config.content.path]gfx/alignments/" />
+		<Constant name="helpTooltips" value="[config.content.path]gfx/illusUi/helpTooltips/" />
+	</Constants>
+	<Container name="mainCtr">
+	<mouseEnabled>true</mouseEnabled>
+	    <Container>
+		    #content
+		</Container>
+		<Container name="backgroundCtr" strata="LOW">
+            <shadowColor>[colors.ui.shadow]</shadowColor>
+            <bgCornerRadius>10</bgCornerRadius>
+            <bgColor>[colors.tooltip.bg]</bgColor>
+            <bgAlpha>[colors.tooltip.bg.alpha]</bgAlpha>
+        </Container>
+	</Container>
+
+
+</Definition>

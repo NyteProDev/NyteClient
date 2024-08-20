@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition>
+	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+		<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="bitmap" value="[config.ui.skin]bitmap/" />
+		<Constant name="slotTexture" value="[config.ui.skin]texture/slot/" />
+
+		<Constant name="lbl_levelXNoJob" value="56" type="int" />
+		<Constant name="lbl_levelXWithJob" value="350" type="int" />
+	</Constants>
+
+	<Container name="mainCtr">
+		
+		<mouseEnabled>true</mouseEnabled>
+
+		<Texture name="tx_slot_background">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="1" y="4" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="46" y="92" />
+			</Size>
+			<uri>[local.slotTexture]slot_dark_background_empty.png</uri>
+		</Texture>
+
+		<Slot name="slotCraftedItem">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="3" y="34" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="44" y="44" />
+			</Size>
+			<forcedBackGroundIconUri>[local.assets]tx_invisible</forcedBackGroundIconUri>
+			<emptyTexture>[local.assets]tx_invisible</emptyTexture>
+			<handCursor>false</handCursor>
+		</Slot>
+
+
+
+		<Label name="lbl_name">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="56" y="2" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="346" y="20" />
+			</Size>
+			<cssClass>bold</cssClass>
+			<css>[local.css]normal2.css</css>
+		</Label>
+		
+		<Label name="lbl_job">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="56" y="23" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="190" y="20" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+		</Label>
+
+		<Label name="lbl_level">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="350" y="23" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="156" y="20" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+		</Label>
+
+		<Label name="lbl_noRecipe">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="100" y="60" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="400" y="20" />
+			</Size>
+			<css>[local.css]normal2.css</css>
+			<text>[ui.item.utilityNoReceipt]</text>
+			<visible>false</visible>
+		</Label>
+
+		<Grid name="gd_recipe">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="50" y="54" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="430" y="45" />
+			</Size>
+			<slotWidth>45</slotWidth>
+			<slotHeight>45</slotHeight>
+			<rendererName>InlineXmlGridRenderer</rendererName>
+			<rendererArgs>updateItems</rendererArgs>
+			<Container name="ctr_item">
+				<Slot name="slot_item">
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<allowDrag>false</allowDrag>
+					<css>[local.css]normal2.css</css>
+					<forcedBackGroundIconUri>[local.slotTexture]slot_dark_background_empty.png</forcedBackGroundIconUri>
+					<handCursor>false</handCursor>
+				</Slot>
+
+				<Texture name="tx_ingredientStateIcon">
+					<Anchors>
+						<Anchor>
+							<AbsDimension x="26" y="26" />
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension x="10" y="10" />
+					</Size>
+				</Texture>
+			</Container>
+		</Grid>
+	</Container>
+</Definition>
+

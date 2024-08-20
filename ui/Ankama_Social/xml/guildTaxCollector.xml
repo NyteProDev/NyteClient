@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definition labelDebug="false">
+
+    <Import url="[config.mod.template]button/simpleButton.xml" />
+	<Import url="[config.mod.template]button/sortButton.xml" />
+    
+   	<Constants>
+		<Constant name="assets" value="[config.ui.skin]assets.swf|" />
+       	<Constant name="css" value="[config.ui.skin]css/" />
+		<Constant name="common" value="[config.ui.skin]common/" />
+		<Constant name="texture" value="[config.ui.skin]texture/" />
+        <Constant name="state_uri" value="[local.assets]pony_tx_state" />
+   	</Constants>
+
+	<Container>
+		<Anchors>
+			<Anchor>
+				<AbsDimension x="10" y="151" />
+			</Anchor>
+		</Anchors>
+		<hintAvailable>true</hintAvailable>
+		
+		<Texture>
+			<Size>
+				<AbsDimension x="1105" y="36" />
+			</Size>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="62" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="250" y="16" />
+			</Size>
+			<text>[ui.common.name] / [ui.common.localisation]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="420" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="290" y="16" />
+			</Size>
+			<text>[ui.fight.timeBeforeFightStart]</text>
+			<cssClass>center</cssClass>
+			<css>[local.css]small2.css</css>
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="730" y="5" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="358" y="16" />
+			</Size>
+			<text>[ui.common.defenders] / [ui.common.attackers]</text>
+			<css>[local.css]small2.css</css>
+		</Label>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1105" y="392" />
+			</Size>
+			<uri>[local.common]bg_light.png</uri>
+		</Texture>
+
+		<Grid name="gd_pony">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="2" y="36" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1102" y="392" />
+			</Size>
+            <rendererName>InlineXmlGridRenderer</rendererName>
+            <rendererArgs>updateGridLine,[colors.grid.line]</rendererArgs>
+			<verticalScrollbarCss>[local.css]scrollBar.css</verticalScrollbarCss>
+			<slotWidth>1102</slotWidth>
+			<slotHeight>98</slotHeight>
+
+            <Container name="ctr_line">
+                <Size>
+                    <AbsDimension x="1102" y="98" />
+                </Size>
+
+                <Texture name="ctr_mine">
+                    <Size>
+                        <AbsDimension x="43" y="98" />
+                    </Size>
+                    <bgColor>[colors.grid.selected]</bgColor>
+                    <bgAlpha>0</bgAlpha>
+                </Texture>
+
+                <Texture name="tx_fightState">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="0" y="29" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="43" y="40" />
+                    </Size>
+                </Texture>
+
+                <Label name="lbl_ponyName">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="60" y="10" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="360" y="16" />
+                    </Size>
+                    <cssClass>whitebold</cssClass>
+                    <css>[local.css]small2.css</css>
+                </Label>
+
+                <Label name="lbl_ponyLoc">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="60" y="40" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="250" y="16" />
+                    </Size>
+                    <css>[local.css]small2.css</css>
+                </Label>
+
+                <Label name="lbl_ponyPosition">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension y="40" />
+                        </Anchor>
+                    </Anchors>
+                    <hyperlinkEnabled>true</hyperlinkEnabled>
+                    <useStyleSheet>true</useStyleSheet>
+                    <css>[local.css]small2.css</css>
+                </Label>
+
+                <Label name="lbl_ponyPodsXp">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="60" y="60" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="400" y="16" />
+                    </Size>
+                    <css>[local.css]small2.css</css>
+                </Label>
+
+                <Texture name="tx_mine">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="440" y="39" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="22" y="22" />
+                    </Size>
+                    <uri>[local.texture]icon_man.png</uri>
+                </Texture>
+
+                <ProgressBar name="pb_time">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="492" y="41" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="150" y="16" />
+                    </Size>
+                    <barColor>[colors.progressbar.yellow]</barColor>
+                    <separators>3</separators>
+                </ProgressBar>
+
+
+                <Texture name="tx_defenseTeam">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="719" y="13" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="40" y="30" />
+                    </Size>
+                    <uri>[local.assets]SocialGuildePercepteur_tx_PictoDefenseur</uri>
+                </Texture>
+
+                <Texture name="tx_attackTeam">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="719" y="55" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="40" y="30" />
+                    </Size>
+                    <uri>[local.assets]SocialGuildePercepteur_tx_PictoAttaquant</uri>
+                </Texture>
+
+                <Grid name="gd_defenseTeam">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="765" y="9" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="260" y="38" />
+                    </Size>
+                    <slotWidth>38</slotWidth>
+                    <slotHeight>38</slotHeight>
+                    <rendererName>EntityGridRenderer</rendererName>
+                    <rendererArgs>[local.texture]slot/slot_big_dark_background_empty.png</rendererArgs>
+                    <scrollDisplay>none</scrollDisplay>
+                    <autoSelectMode>0</autoSelectMode>
+                </Grid>
+
+                <Grid name="gd_attackTeam">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="765" y="51" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="218" y="38" />
+                    </Size>
+                    <slotWidth>38</slotWidth>
+                    <slotHeight>38</slotHeight>
+                    <rendererName>EntityGridRenderer</rendererName>
+                    <rendererArgs>[local.texture]slot/slot_big_dark_background_empty.png</rendererArgs>
+                    <scrollDisplay>none</scrollDisplay>
+                    <autoSelectMode>0</autoSelectMode>
+                </Grid>
+
+                <Texture name="tx_spectate">
+                    <Anchors>
+                        <Anchor>
+                            <AbsDimension x="1050" y="33" />
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="32" y="32" />
+                    </Size>
+                    <uri>[local.texture]icon_crossed_swords_light.png</uri>
+                </Texture>
+            </Container>
+		</Grid>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="0" y="488" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1104" y="60" />
+			</Size>
+			<scaleY>-1</scaleY>
+			<uri>[local.common]bg_dark.png</uri>
+		</Texture>
+
+		<Label name="lbl_ponyCount">
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="790" y="436" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="305" y="16" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]small2.css</css>				
+		</Label>
+
+		<Label>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="10" y="459" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="1085" y="16" />
+			</Size>
+			<cssClass>right</cssClass>
+			<css>[local.css]small2.css</css>
+			<text>[ui.social.guildHowDefendTax]</text>
+		</Label>
+	</Container>
+</Definition>

@@ -1,0 +1,72 @@
+<searchInput>
+	
+	<!-- Parametres du template  -->
+	<Param name="name">$TEMPLATE_INSTANCE_ID</Param>
+	<Param name="width">294</Param>
+	<Param name="Anchors" />
+	<Param name="inputName">inp_search</Param>
+	<Param name="btnCloseName">btn_closeSearch</Param>
+	<Param name="themeDataId">bg_small_border_light</Param>
+	<Param name="isInstance">false</Param>
+		
+	<Var name="inputWidth">#width - 69</Var>	
+	<Var name="closeButtonX">#width - 28</Var>
+	<Var name="bgName">'tx_inputBg_'+'#name'</Var>
+	
+	
+	<Container name="#name">
+		<Anchors>
+			#Anchors
+		</Anchors>
+		<isInstance>#isInstance</isInstance>
+			
+		<TextureBitmap name="$bgName">
+			<Size>
+				<AbsDimension x="#width" y="39" />
+			</Size>
+			<themeDataId>#themeDataId</themeDataId>
+			<smooth>true</smooth>
+			<isInstance>#isInstance</isInstance>
+		</TextureBitmap>
+		
+		<Texture>
+			<Anchors>
+				<Anchor>
+					<AbsDimension x="11" y="11" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="17" y="17" />
+			</Size>
+			<uri>[local.texture]icon_magnifier.png</uri>
+		</Texture>
+	
+		<Input name="#inputName">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="35" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="$inputWidth" y="15" />
+			</Size>
+			<css>[local.css]small2.css</css>
+		</Input>
+		
+		<themeIconButton name="#btnCloseName">
+			<Anchors> 
+				<Anchor>
+					<AbsDimension x="$closeButtonX" y="10" />
+				</Anchor>
+			</Anchors>
+			<Size>
+				<AbsDimension x="19" y="19" />
+			</Size>
+			<bgThemeDataId>btn_cross_in_grey_circle</bgThemeDataId>
+			<smooth>true</smooth>
+			<tooltipContent>[ui.common.search.erase]</tooltipContent>
+		</themeIconButton>
+			
+	</Container>
+	
+</searchInput>
